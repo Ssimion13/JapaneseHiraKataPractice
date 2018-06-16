@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import {connect} from "react-redux"
-import {addCharacterToList} from "./redux"
+import {addCharacterToList, removeCharacterFromList} from "./redux"
 
 
 class HiraganaTest extends Component{
@@ -8,13 +8,24 @@ class HiraganaTest extends Component{
         super()
         this.state = {}
     
-    this.addCharacterToList = this.addCharacterToList.bind(this);
+    this.addCharacterToList = this.addCharacterToList.bind(this)
     }
 
 //hiraganaCharacters 
 
     addCharacterToList(character){
-        this.props.addCharacterToList(character);
+        console.log(this.state);
+        if(!this.state[character]){
+            this.props.addCharacterToList(character);
+            this.setState({
+                [character]: true
+            })
+        } else {
+            this.props.removeCharacterFromList(character)
+            this.setState({
+                [character]: false
+            })
+        }
     }
 
 
@@ -37,4 +48,4 @@ class HiraganaTest extends Component{
     }
 }
 
-export default connect(state => state, {addCharacterToList})(HiraganaTest);
+export default connect(state => state, {addCharacterToList, removeCharacterFromList})(HiraganaTest);

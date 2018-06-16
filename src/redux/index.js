@@ -10,6 +10,16 @@ export const addCharacterToList = (character) => {
     }
 }
 
+export const removeCharacterFromList = (character) => {
+    return dispatch => {
+        dispatch({
+            type: "REMOVE_CHARACTER_FROM_LIST",
+            character: character
+        })
+    }
+}
+
+
 
 const initialState = {
     characterTranslation: [],
@@ -27,7 +37,15 @@ export const reducer = (prevState = initialState, action) => {
         case "ADD_CHARACTER_TO_LIST":
             return {
                 ...prevState,
-                currentStudyList: prevState.currentStudyList + action.character
+                currentStudyList: prevState.currentStudyList.concat(action.character)
+            }
+        case "REMOVE_CHARACTER_FROM_LIST":
+            console.log(prevState.currentStudyList);
+            return {
+                ...prevState,
+                currentStudyList: prevState.currentStudyList.filter(character => {
+                    return character !== action.character
+                })
             }
         default:
             return prevState;
