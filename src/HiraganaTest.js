@@ -1,31 +1,33 @@
 import React, {Component} from "react";
 import {connect} from "react-redux"
-import {addCharacterToList, removeCharacterFromList} from "./redux"
+import {addCharacterToList, removeCharacterFromList, clearCharacters} from "./redux"
 
 
 class HiraganaTest extends Component{
     constructor(){
         super()
-        this.state = {}
     
     this.addCharacterToList = this.addCharacterToList.bind(this)
     }
 
+    
 //hiraganaCharacters 
 
     addCharacterToList(character){
-        console.log(this.state);
-        if(!this.state[character]){
+        if(!this.props.currentStudyList.includes(character)){
+            console.log("blah")
             this.props.addCharacterToList(character);
-            this.setState({
-                [character]: true
-            })
         } else {
+            console.log("bleh");
             this.props.removeCharacterFromList(character)
-            this.setState({
-                [character]: false
+            var newStudyList = this.props.currentStudyList.filter(x => {
+                return x !== character
             })
         }
+    }
+    clearCharacters = () => {
+        console.log("hi");
+        this.props.clearCharacters();
     }
 
 
@@ -36,16 +38,31 @@ class HiraganaTest extends Component{
                     {character}
                 </div>
             )
-        })
+        });
+        const mappedQuestions = this.props.currentStudyList.map((character,i) => {
+            return(
+                <div key={"x"+character+i} className="individualCharacters">
+                {character}
+                </div>
+            )
+        });
         return(
             <div className="hiraganaTestMain">
                     <div className="mappedCharacters">
                         {mappedHiraganaCharacters}
-                        {this.props.currentStudyList}
+                    </div>
+                    <div className="buttonHolder"> 
+                        <button onClick={()=> this.clearCharacters()}> Clear </button>
+                    </div>
+                    <div className="selectedCharacterDiv">
+                        <h4> Selected Characters for Practice: </h4>
+                        <div className="flexRow">
+                            {mappedQuestions}
+                        </div>
                     </div>
             </div>
         )
     }
 }
 
-export default connect(state => state, {addCharacterToList, removeCharacterFromList})(HiraganaTest);
+export default connect(state => state, {addCharacterToList, removeCharacterFromList, clearCharacters})(HiraganaTest);

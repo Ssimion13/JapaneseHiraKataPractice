@@ -19,6 +19,16 @@ export const removeCharacterFromList = (character) => {
     }
 }
 
+export const clearCharacters = (character) => {
+    return dispatch => {
+        dispatch({
+            type: "CLEAR_CHARACTERS"
+        })
+    }
+}
+
+
+
 
 
 const initialState = {
@@ -47,6 +57,8 @@ export const reducer = (prevState = initialState, action) => {
                     return character !== action.character
                 })
             }
+        case "CLEAR_CHARACTERS":
+            return initialState
         default:
             return prevState;
     }
