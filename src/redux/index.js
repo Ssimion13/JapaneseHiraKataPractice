@@ -27,11 +27,12 @@ export const clearCharacters = (character) => {
         })
     }
 }
-export const createMultipleChoice = (array) => {
+export const createMultipleChoice = (array, random) => {
     return dispatch => {
         dispatch({
             type: "CREATE_MULTIPLE_CHOICE",
-            array: array
+            array: array,
+            random: random
         })
     }
 }
@@ -45,7 +46,8 @@ const initialState = {
     hiraganaCharacters: hiraganaCharacters,
     katakanaCharacters: katakanaCharacters,
     currentStudyList: [],
-    multipleChoice: []
+    multipleChoice: [],
+    currentQuestion: null
 }
 
 export const reducer = (prevState = initialState, action) => {
@@ -66,7 +68,8 @@ export const reducer = (prevState = initialState, action) => {
         case "CREATE_MULTIPLE_CHOICE":
             return {
                 ...prevState,
-                multipleChoice: action.array
+                multipleChoice: action.array,
+                currentQuestion: action.array[action.random].reading
             }
 
         case "CLEAR_CHARACTERS":

@@ -35,7 +35,8 @@ class HiraganaTest extends Component{
                 currentArray[i] = currentArray[j];
                 currentArray[j] = x;
         }
-    this.props.createMultipleChoice(currentArray)
+        var randomNumber = Math.floor(Math.random() * currentArray.length - 1)
+    this.props.createMultipleChoice(currentArray, randomNumber)
     }
 
 
@@ -55,8 +56,9 @@ class HiraganaTest extends Component{
             )
         });
         const mappedMultipleChoice = this.props.multipleChoice.map((character, i)=> {
-            return (<div key={"x"+character+i} className="individualCharacters">
-            {character.character}
+            return(
+            <div key={"y"+character+i} className="individualCharacters">
+                {character.character}
             </div>)
         })
         return(
@@ -74,7 +76,12 @@ class HiraganaTest extends Component{
                             {mappedQuestions}
                         </div>
                     </div>
-                    {mappedMultipleChoice}
+                    <div className="selectedCharacterDiv">
+                        <div className="multipleChoiceSelections">
+                            {this.props.currentQuestion}
+                            {mappedMultipleChoice}
+                        </div>
+                    </div>
             </div>
         )
     }
