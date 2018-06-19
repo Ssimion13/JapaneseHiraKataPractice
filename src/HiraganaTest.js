@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import {connect} from "react-redux"
-import {addCharacterToList, removeCharacterFromList, clearCharacters, createMultipleChoice} from "./redux"
+import {addCharacterToList, removeCharacterFromList, clearCharacters, createMultipleChoice, addCorrect, addIncorrect} from "./redux"
 
 
 class HiraganaTest extends Component{
@@ -8,6 +8,8 @@ class HiraganaTest extends Component{
         super()
     
     this.addCharacterToList = this.addCharacterToList.bind(this)
+    this.clearCharacters = this.clearCharacters.bind(this);
+    this.createMultipleChoice = this.createMultipleChoice.bind(this);
     }
 
     
@@ -22,7 +24,6 @@ class HiraganaTest extends Component{
         }
     }
     clearCharacters = () => {
-        console.log("hi");
         this.props.clearCharacters();
     }
     createMultipleChoice = () => {
@@ -30,14 +31,24 @@ class HiraganaTest extends Component{
         var j, x, i;
             for (i = currentArray.length - 1; i > 0; i--) {
                 j = Math.floor(Math.random() * (i + 1));
-                console.log(j)
                 x = currentArray[i];
                 currentArray[i] = currentArray[j];
                 currentArray[j] = x;
         }
-        var randomNumber = Math.floor(Math.random() * currentArray.length - 1)
+        var randomNumber = Math.floor(Math.random() * currentArray.length)
+        console.log(randomNumber);
     this.props.createMultipleChoice(currentArray, randomNumber)
     }
+
+    checkAnswer = (reading) => {
+        if(this.props.currentQuestion === reading){
+            this.props.addCorrect();
+            this.createMultipleChoice();
+        } else {
+            this.props.addIncorrect();
+        }
+    }
+
 
 
     render(){
@@ -57,8 +68,8 @@ class HiraganaTest extends Component{
         });
         const mappedMultipleChoice = this.props.multipleChoice.map((character, i)=> {
             return(
-            <div key={"y"+character+i} className="individualCharacters">
-                {character.character}
+            <div key={"y"+character+i} className="individualQuestionCharacters">
+                <button className="questionButton" onClick={()=> this.checkAnswer(character.reading)}> {character.character} </button>
             </div>)
         })
         return(
@@ -76,9 +87,15 @@ class HiraganaTest extends Component{
                             {mappedQuestions}
                         </div>
                     </div>
-                    <div className="selectedCharacterDiv">
-                        <div className="multipleChoiceSelections">
+                    <div className="quizSection">
+                        <div className="scoreHolder">
+                            <h3> Correct: {this.props.numberCorrect} </h3>
+                            <h3> Incorrect: {this.props.numberIncorrect} </h3>
+                        </div>
+                        <div className="question">
                             {this.props.currentQuestion}
+                        </div>
+                        <div className="multipleChoiceSelections">
                             {mappedMultipleChoice}
                         </div>
                     </div>
@@ -87,4 +104,4 @@ class HiraganaTest extends Component{
     }
 }
 
-export default connect(state => state, {addCharacterToList, removeCharacterFromList, clearCharacters, createMultipleChoice})(HiraganaTest);
+export default connect(state => state, {addCharacterToList, removeCharacterFromList, clearCharacters, addCorrect, addIncorrect, createMultipleChoice})(HiraganaTest);

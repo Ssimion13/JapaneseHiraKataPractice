@@ -26,6 +26,24 @@ body {
   height: 30px;
   border: 1px solid black;
 }
+.individualQuestionCharacters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+}
+
+.questionButton{
+  width: 100%;
+  height: 100%;
+  font-size: 30px;
+}
+
+.scoreHolder {
+  display: flex;
+  justify-content: space-around;
+}
 
 .selectedCharacterDiv {
   display:flex;
@@ -43,4 +61,22 @@ body {
 .multipleChoiceSelections{
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around
+}
+
+.quizSection {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  width: 80%;
+  height: 500px;
+  background-color: whitesmoke;
+}
+
+.question {
+  height: 300px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-size: 40px;
 }

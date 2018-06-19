@@ -37,6 +37,20 @@ export const createMultipleChoice = (array, random) => {
     }
 }
 
+export const addCorrect = () => {
+    return dispatch => {
+        dispatch({
+            type: "ADD_CORRECT",
+        })
+    }
+}
+export const addIncorrect = () => {
+    return dispatch => {
+        dispatch({
+            type: "ADD_INCORRECT",
+        })
+    }
+}
 
 
 
@@ -47,7 +61,9 @@ const initialState = {
     katakanaCharacters: katakanaCharacters,
     currentStudyList: [],
     multipleChoice: [],
-    currentQuestion: null
+    currentQuestion: null,
+    numberCorrect: 0,
+    numberIncorrect: 0,
 }
 
 export const reducer = (prevState = initialState, action) => {
@@ -71,7 +87,16 @@ export const reducer = (prevState = initialState, action) => {
                 multipleChoice: action.array,
                 currentQuestion: action.array[action.random].reading
             }
-
+        case "ADD_CORRECT":
+                return {
+                    ...prevState,
+                    numberCorrect: prevState.numberCorrect + 1
+                }
+        case "ADD_INCORRECT":
+                return {
+                    ...prevState,
+                    numberIncorrect: prevState.numberIncorrect + 1
+                }
         case "CLEAR_CHARACTERS":
             return initialState
 
