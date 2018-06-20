@@ -1,11 +1,19 @@
 import React, {Component} from "react";
 import {connect} from "react-redux"
 import {addCharacterToList, removeCharacterFromList, clearCharacters, createMultipleChoice, addCorrect, addIncorrect} from "./redux"
+import { Button } from 'semantic-ui-react'
+import { Dropdown } from 'semantic-ui-react'
+
+
+const languageOptions = [ { key: 'Hiragana', value: 'Hiragana', text: 'Hiragana'}, {key:"Katakana", value:"Katakana",text:"Katakana"} ]
 
 
 class HiraganaTest extends Component{
     constructor(){
         super()
+        this.state = {
+            value: []
+        }
     
     this.addCharacterToList = this.addCharacterToList.bind(this)
     this.clearCharacters = this.clearCharacters.bind(this);
@@ -13,7 +21,8 @@ class HiraganaTest extends Component{
     }
 
     
-//hiraganaCharacters 
+
+    handleChange = (e, { value }) => this.setState({ value })
 
     addCharacterToList(character){
         if(!this.props.currentStudyList.includes(character)){
@@ -41,7 +50,7 @@ class HiraganaTest extends Component{
     }
 
     checkAnswer = (reading) => {
-        if(this.props.currentQuestion === reading){
+        if(this.props.currentQuestion.reading === reading){
             this.props.addCorrect();
             this.createMultipleChoice();
         } else {
@@ -59,6 +68,15 @@ class HiraganaTest extends Component{
                 </div>
             )
         });
+
+        const mappedKatakanaCharacters = this.props.katakanaCharacters.map((character,i) => {
+            return(
+                <div key={character+i} onClick={()=> this.addCharacterToList(character)} className="individualCharacters">
+                    {character.character}
+                </div>
+            )
+        });
+
         const mappedQuestions = this.props.currentStudyList.map((character,i) => {
             return(
                 <div key={"x"+character+i} className="individualCharacters">
@@ -69,17 +87,27 @@ class HiraganaTest extends Component{
         const mappedMultipleChoice = this.props.multipleChoice.map((character, i)=> {
             return(
             <div key={"y"+character+i} className="individualQuestionCharacters">
-                <button className="questionButton" onClick={()=> this.checkAnswer(character.reading)}> {character.character} </button>
+                <Button className="questionButton" onClick={()=> this.checkAnswer(character.reading)}> {character.character} </Button>
             </div>)
         })
         return(
             <div className="hiraganaTestMain">
-                    <div className="mappedCharacters">
-                        {mappedHiraganaCharacters}
+                    <div>
+                        <Dropdown placeholder="Select Hiragana or Katakana" onChange={this.handleChange} fluid multiple search selection options ={languageOptions}/>
                     </div>
+                    {this.state.value.includes("Hiragana") ?
+                        <div className="mappedCharacters">
+                            {mappedHiraganaCharacters}
+                        </div>
+                    : null}
+                    {this.state.value.includes("Katakana") ?
+                        <div className="mappedCharacters">
+                            {mappedKatakanaCharacters}
+                        </div>
+                    : null}
                     <div className="buttonHolder"> 
-                        <button onClick={this.clearCharacters}> Clear </button>
-                        <button onClick={this.createMultipleChoice}> Start </button>
+                        <Button onClick={this.clearCharacters}> Clear </Button>
+                        <Button onClick={this.createMultipleChoice}> Start </Button>
                     </div>
                     <div className="selectedCharacterDiv">
                         <h4> Selected Characters for Practice: </h4>
@@ -93,7 +121,12 @@ class HiraganaTest extends Component{
                             <h3> Incorrect: {this.props.numberIncorrect} </h3>
                         </div>
                         <div className="question">
-                            {this.props.currentQuestion}
+                        {this.props.currentQuestion !== null ?
+                            <p> {this.props.currentQuestion.type} </p>
+                            : null }
+                        {this.props.currentQuestion !== null ?
+                            <h2> {this.props.currentQuestion.reading} </h2>
+                            : null }
                         </div>
                         <div className="multipleChoiceSelections">
                             {mappedMultipleChoice}
