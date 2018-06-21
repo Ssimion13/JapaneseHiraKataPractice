@@ -69,7 +69,7 @@ class HiraganaTest extends Component{
 
         const mappedKatakanaCharacters = this.props.katakanaCharacters.map((character,i) => {
             return(
-                <div key={character+i} onClick={()=> this.addCharacterToList(character)} className="individualCharacters">
+                <div key={character+i} onClick={()=> this.addCharacterToList(character)} className={this.props.currentSelectedCharacters.includes(character.character) ? "selectedIndividualCharacters" : "individualCharacters"}>
                     {character.character}
                 </div>
             )
