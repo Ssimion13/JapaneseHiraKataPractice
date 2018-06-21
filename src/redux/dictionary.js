@@ -121,26 +121,79 @@ export const N5Kanji = [
     {character:"古", OnReading:"こ", KunReading:"ふる（い）", Meaning:"Old, used"},
     {character:"五", OnReading:"ご", KunReading:"いつ（つ）、いつ-", Meaning:"Five"},
     {character:"後", OnReading:"ご、こう", KunReading:"あと、おく（れる）、のち", Meaning:"after, later, back, to stay behind"},
-    // 午
-    // 語
-    // 校
-    // 口
-    // 行
-    // 高
-    // 国
-    // 今
-    // 左
-    // 三
-    // 四
-    // 子
-    // 耳
-    // 時
-    // 七
-    // 車
-    // 社
-    // 手
-
-
-
-
+    {character:"午", OnReading:"午", KunReading:"None", Meaning:"Noon"},
+    {character:"語", OnReading:"ご", KunReading:"かた（る）、かた（らう）", Meaning:"word, to talk"},
+    {character:"校", OnReading:"こう", KunReading:"None", Meaning:"School"},
+    {character:"口", OnReading:"こう、く", KunReading:"くち", Meaning:"Mouth" },
+    {character:"行", OnReading:"こう", KunReading:"い（く）、ゆ（く）、おこな（う）", Meaning:"To walk, to go, to do, to carry out"},
+    {character:"高", OnReading:"こう", KunReading:"たか（い）、たか（まる）、たか（める）", Meaning:"High, expensive, increase, quantity"},
+    {character:"国", OnReading:"こく", KunReading:"くに", Meaning:"Country"},
+    {character:"今", OnReading:"こん、にん", KunReading:"いま", Meaning:"Now"},
+    {character:"左", OnReading:"さ", KunReading:"ひだり", Meaning:"Left (direction)"},
+    {character:"三", OnReading:"さん", KunReading:"み（つ）、み-", Meaning:"Three"},
+    {character:"四", OnReading:"し", KunReading:"よ（っつ),ゆ（つ）、よ-、よん-", Meaning:"Four"},
+    {character:"子", OnReading:"し、す", KunReading:"こ", Meaning:"Child"},
+    {character:"耳", OnReading:"じ", KunReading:"みみ", Meaning:"Ear"},
+    {character:"時", OnReading:"じ", KunReading:"とき", Meaning:"Time, hour"},
+    {character:"七", OnReading:"しち", KunReading:"なな（つ）、なな-、なの-", Meaning:"Seven"},
+    {character:"車", OnReading:"しゃ", KunReading:"くるま", Meaning:"Car, wheel"},
+    {character:"社", OnReading:"しゃ", KunReading:"やしろ", Meaning:"Shinto shrine, society"},
+    {character:"手", OnReading:"しゅ", KunReading:"て", Meaning:"Hand"},
+    {character:"週", OnReading:"しゅう", KunReading:"None", Meaning:"Week"},
+    {character:"十", OnReading:"じゅう、じ", KunReading:"とう、と-", Meaning:"Ten"},
+    {character:"出", OnReading:"しゅつ", KunReading:"で（る）、だ（す）", Meaning:"To leave, to get out, to take out"},
+    {character:"書", OnReading:"しょ", KunReading:"か（く）", Meaning:"To write"},
+    {character:"女", OnReading:"じょ、にょ", KunReading:"おんな、め", Meaning:"Woman, female"},
+    {character:"小", OnReading:"しょう", KunReading:"ちい（さい）、こ-、お-", Meaning:"Small"},
+    {character:"少", OnReading:"しょう", KunReading:"すこ（し）、すく（ない）", Meaning:"A little"},
+    {character:"上", OnReading:"しょう、じょう", KunReading:"いえ、かみ、あ（げる）、あ（がる）", Meaning:"Above, upper"},
+    {character:"食", OnReading:"しょく", KunReading:"た（べる）、く（る）、く（らう）", Meaning:" To Eat"},
+    {character:"新", OnReading:"しん", KunReading:"あたら（しい）、あら（た）、に-", Meaning:"New"},
+    {character:"人", OnReading:"じん、にん", KunReading:"ひと", Meaning:"person"},
+    {character:"水", OnReading:"すい", KunReading:"みず", Meaning:"Water" },
+    {character:"生", OnReading:"せい、しょう", KunReading:"い（きる）、う（む）、は（やす）、なま、き", Meaning:" To live, to grow, to be born, raw"},
+    {character:"西", OnReading:"せい、さい", KunReading:"にし", Meaning:"West" },
+    {character:"川", OnReading:"せん", KunReading:"かわ", Meaning:"River" },
+    {character:"千", OnReading:"せん", KunReading:"ち", Meaning:"Thousand" },
+    {character:"先", OnReading:"せん", KunReading:"さき", Meaning:"Before, in future"},
+    {character:"前", OnReading:"ぜん", KunReading:"まえ", Meaning:"Before, In front of" },
+    {character:"足", OnReading:"そく", KunReading:"あし、た（りる）、た（す）",  Meaning:"Foot, to be sufficient, to add"},
+    {character:"多", OnReading:"た", KunReading:"おお（い）", Meaning:"Many" },
+    {character:"大", OnReading:"だい、たい", KunReading:"おう（きい）、おお（い）", Meaning:"Big, a lot"},
+    {character:"男", OnReading:"だん、なん", KunReading:"おとこ", Meaning:"Man, Male" },
+    {character:"中", OnReading:"ちゅう", KunReading:"なか", Meaning:"Inner, center, between" },
+    {character:"長", OnReading:"ちょう", KunReading:"なが（い）", Meaning:"Long, Leader" },
+    {character:"天", OnReading:"てん", KunReading:"あめ、あま", Meaning:"Sky, heavens" },
+    {character:"店", OnReading:"てん", KunReading:"みせ", Meaning:"Store, shop" },
+    {character:"電", OnReading:"でん", KunReading:"None", Meaning:"Electricity" },
+    {character:"土", OnReading:"ど、と", KunReading:"つち", Meaning:"Earth, Ground"},
+    {character:"東", OnReading:"とう", KunReading:"ひがし", Meaning:"East" },
+    {character:"道", OnReading:"どう", KuNReading:'みち', Meaning:"Road, Street, Path"},
+    {character:"読", OnReading:"どく", KunReading:"よ（む）", Meaning:"To Read"},
+    {character:"南", OnReading:"なん", KunReading:"みなみ", Meaning:"South" },
+    {character:"二", OnReading:"に", KunReading:"ふた（つ）、ふた-", Meaning:"Two"},
+    {character:"日", OnReading:"にち、じつ", KunReading:"ひ、-か", Meaning:"Day, Sun"},
+    {character:"入", OnReading:"にゅう", KunReading:"はい（る）、い（る）、い（れる）", Meaning:"To enter, to insert" },
+    {character:"年", OnReading:"ねん", KunReading:"とし", Meaning:"Year" },
+    {characteR:"買", OnReading:"ばい", KunReading:"か（う）", Meaning:"To Buy" },
+    {character:"白", OnReading:"はく、びゃく", KunReading:"しろ（い）、しろ", Meaning:"White" },
+    {character:"八", OnReading:"はち", KunReading:"や（つ）、たっ（つ）、や-、よう-", Meaning:"Eight"},
+    {character:"半", OnReading:"はん", KunReading:"なか（ば）", Meaning:"Half, middle, semi-" },
+    {character:"百", OnReading:"ひゃく", KunReading:"None", Meaning:"Hundred" },
+    {character:"父", OnReading:"ふ", KunReading:"ちち", Meaning:"Father" },
+    {character:"分", OnReading:"ぶん、ぶ、ふん", KunReading:"わ（ける）、わ（かれる）、わ（かる）", Meaning:" Part, Minute, to divide, to understand"},
+    {character:"聞", OnReading:"ぶん、もん", KunReading:"き（く）、き（こえる）", Meaning:" To hear, to listen, to ask" },
+    {character:"母", OnReading:"ぼ", KunReading:"はは", Meaning:"Mother" },
+    {character:"北", OnReading:"ほく", KunReading:"きた", Meaning:" North" },
+    {character:"木", OnReading:"ぼく、もく", KunReading:"き、こ", Meaning:"Tree, wood" },
+    {character:"本", OnReading:"ほん", KunReading:"もと", Meaning:"Book, source, main-" },
+    {character:"毎", OnReading:"まい", KunReading:" None", Meaning:"Every, each" },
+    {character:"万", OnReading:"まん、ばん", KunReading:"None", Meaning:" Ten Thousand" },
+    {character:"名", OnReading:"めい、みょう", KunReading:"な", Meaning:" Name, reputation"  },
+    {character:"目", OnReading:"もく", KunReading:"め", Meaning:"Eye" },
+    {character:"友", OnReading:"ゆう", KunReading:"とも", Meaning:"Friend" },
+    {character:"来", OnReading:"らい", KunReading:"く（る）、きた（る）、きた（す）", Meaning:"To come" },
+    {character:"立", OnReading:"りつ", KunReading:"た（つ）、た（てる）", Meaning:"To stand, to establish)" },
+    {character:"六", OnReading:"ろく", KunReading:"むっ（つ）、む（つ）、む、むい", Meaning:"Six" },
+    {character:"話", OnReading:"わ", KunReading:"はなし、はな（つ）", Meaning:"Speech, to talk, story, conversation"}
 ]
