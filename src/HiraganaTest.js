@@ -6,14 +6,12 @@ import { Dropdown } from 'semantic-ui-react'
 
 
 const languageOptions = [ { key: 'Hiragana', value: 'Hiragana', text: 'Hiragana'}, {key:"Katakana", value:"Katakana",text:"Katakana"} ]
-
+const initialState = { value: [] }
 
 class HiraganaTest extends Component{
     constructor(){
         super()
-        this.state = {
-            value: []
-        }
+        this.state = {...initialState}
     
     this.addCharacterToList = this.addCharacterToList.bind(this)
     this.clearCharacters = this.clearCharacters.bind(this);
@@ -28,7 +26,6 @@ class HiraganaTest extends Component{
         if(!this.props.currentStudyList.includes(character)){
             this.props.addCharacterToList(character);
         } else {
-            console.log("bleh");
             this.props.removeCharacterFromList(character)
         }
     }
@@ -62,9 +59,10 @@ class HiraganaTest extends Component{
 
     render(){
         const mappedHiraganaCharacters = this.props.hiraganaCharacters.map((character,i) => {
+
             return(
-                <div key={character+i} onClick={()=> this.addCharacterToList(character)} className="individualCharacters">
-                    {character.character}
+                <div key={character+i} name={character.character} onClick={()=> this.addCharacterToList(character)} className={this.props.currentSelectedCharacters.includes(character.character) ? "selectedIndividualCharacters" : "individualCharacters"}>
+                  {character.character}
                 </div>
             )
         });
@@ -92,8 +90,8 @@ class HiraganaTest extends Component{
         })
         return(
             <div className="hiraganaTestMain">
-                    <div>
-                        <Dropdown placeholder="Select Hiragana or Katakana" onChange={this.handleChange} fluid multiple search selection options ={languageOptions}/>
+                    <div className="alphabetDropdown">
+                        <Dropdown placeholder="Select Hiragana or Katakana"  onChange={this.handleChange} fluid multiple search selection options ={languageOptions}/>
                     </div>
                     {this.state.value.includes("Hiragana") ?
                         <div className="mappedCharacters">
@@ -117,15 +115,15 @@ class HiraganaTest extends Component{
                     </div>
                     <div className="quizSection">
                         <div className="scoreHolder">
-                            <h3> Correct: {this.props.numberCorrect} </h3>
-                            <h3> Incorrect: {this.props.numberIncorrect} </h3>
+                            <p> Correct: {this.props.numberCorrect} </p>
+                            <p> Incorrect: {this.props.numberIncorrect} </p>
                         </div>
                         <div className="question">
                         {this.props.currentQuestion !== null ?
                             <p> {this.props.currentQuestion.type} </p>
                             : null }
                         {this.props.currentQuestion !== null ?
-                            <h2> {this.props.currentQuestion.reading} </h2>
+                            <p> {this.props.currentQuestion.reading} </p>
                             : null }
                         </div>
                         <div className="multipleChoiceSelections">

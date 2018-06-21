@@ -60,6 +60,7 @@ const initialState = {
     hiraganaCharacters: hiraganaCharacters,
     katakanaCharacters: katakanaCharacters,
     currentStudyList: [],
+    currentSelectedCharacters: [],
     multipleChoice: [],
     currentQuestion: null,
     numberCorrect: 0,
@@ -71,7 +72,8 @@ export const reducer = (prevState = initialState, action) => {
         case "ADD_CHARACTER_TO_LIST":
             return {
                 ...prevState,
-                currentStudyList: prevState.currentStudyList.concat(action.character)
+                currentStudyList: [...prevState.currentStudyList, action.character],
+                currentSelectedCharacters: [...prevState.currentSelectedCharacters, action.character.character]
             }
         case "REMOVE_CHARACTER_FROM_LIST":
             console.log(prevState.currentStudyList);
@@ -79,6 +81,9 @@ export const reducer = (prevState = initialState, action) => {
                 ...prevState,
                 currentStudyList: prevState.currentStudyList.filter(character => {
                     return character !== action.character
+                }),
+                currentSelectedCharacters: prevState.currentSelectedCharacters.filter(character => {
+                    return character !== action.character.character
                 })
             }
         case "CREATE_MULTIPLE_CHOICE":

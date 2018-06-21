@@ -93,3 +93,54 @@ export const katakanaCharacters = [
 
 ]
 
+export const N5Kanji = [
+    {character:"安", OnReading:"あん", KunReading:"やす(い)", Meaning: "Peace, cheap, safety"},
+    {character:"一", OnReading:"いち、いつ", KunReading:"ひと（つ）、ひと-", Meaning:"One"},
+    {character:"飲", OnReading:"いん", KunReading:"の（む）", Meaning:"To Drink"},
+    {character:"右", OnReading:"う、ゆう", KunReading:"みぎ", Meaning:"Right"},
+    {character:"雨", OnReading:"う", KunReading:"あめ", Meaning:"Rain"},
+    {character:"駅", OnReading:"駅", KunReading:"None", Meaning:"Station"},
+    {character:"円", OnReading:"えん", KunReading:"まる（い）", Meaning: "Circle, Yen, round"},
+    {character:"火", OnReading:"か", KunReading: "ひ", Meaning: "Fire"},
+    {character:"花", OnReading:"か", KunReading:"はな", Meaning:"Flower"},
+    {character:"下", OnReading:"か、げ", KunReading:"しも、さ（げる）、お（ろす）、く（だる）", Meaning:"Below, down"},
+    {character:"何", OnReading:"か", KunReading:"なに", Meaning:"What, how many, which"},
+    {character:"会", OnReading:"かい", KunReading:"あ（う）", Meaning:"To meet, to come together, society"},
+    {character:"外", OnReading:"がい、げ", KunReading:"そと、ほか、はず（れる）、はず（す）", Meaning:"Outside, other, disconnect"},
+    {character:"学", OnReading:"がく", KunReading:"まな（ぶ）", Meaning:"School, science, learning"},
+    {character:"間", OnReading:"かん、けん", KunReading:"あいだ", Meaning:"Time, time span"},
+    {character:"気", OnReading:"き、け", KunReading:"None", Meaning:"Soul, spirit"}, 
+    {character:"九", OnReading:"きゅう、く", KunReading:"ここ（のつ）、ここの-", Meaning:"Nine" },
+    {character:"休", OnReading:"きゅう", KunReading:"やす（む）", Meaning:"To rest"},
+    {character:"魚", OnReading:"ぎょ", KunReading:"さかな、うお", Meaning:"Fish" },
+    {character:"金", OnReading:"きん、こん", KunReading:"かね", Meaning:"Gold, metal, money",},
+    {character:"空", OnReading:"くう",　KunReading:"そら、あ（ける）、から", Meaning:"Sky, to become free, empty"},
+    {character:"月", OnReading:"げつ、がつ", KunReading:"つき", Meaning:"Month, Moon"},
+    {character:"見", OnReading:"けん", KunReading:"み（る）、み（える）、み（せる）", Meaning:"To see, to be visible, to show"},
+    {character:"言", OnReading:"げん、ごん", KunReading:"い（う）", Meaning:"To say, word, to talk"},
+    {character:"古", OnReading:"こ", KunReading:"ふる（い）", Meaning:"Old, used"},
+    {character:"五", OnReading:"ご", KunReading:"いつ（つ）、いつ-", Meaning:"Five"},
+    {character:"後", OnReading:"ご、こう", KunReading:"あと、おく（れる）、のち", Meaning:"after, later, back, to stay behind"},
+    // 午
+    // 語
+    // 校
+    // 口
+    // 行
+    // 高
+    // 国
+    // 今
+    // 左
+    // 三
+    // 四
+    // 子
+    // 耳
+    // 時
+    // 七
+    // 車
+    // 社
+    // 手
+
+
+
+
+]
