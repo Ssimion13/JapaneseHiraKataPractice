@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import {connect} from "react-redux"
 import {addCharacterToList, removeCharacterFromList, clearCharacters, createMultipleChoice, addCorrect, addIncorrect} from "./redux"
-import { Button } from 'semantic-ui-react'
+import { Button, Header, Modal} from 'semantic-ui-react'
 import { Dropdown } from 'semantic-ui-react'
 
 
@@ -100,59 +100,70 @@ class HiraganaTest extends Component{
         
         return(
             <div className="hiraganaTestMain">
-                    <div className="alphabetDropdown">
-                        <Dropdown placeholder="Select Hiragana or Katakana"  onChange={this.handleChange} fluid multiple search selection options ={languageOptions}/>
+                <Modal trigger={<Button>Show Modal</Button>}>
+                    <Modal.Header>How To Use</Modal.Header>
+                    <Modal.Content>
+                    <Modal.Description>
+                        <Header>Using the Japanese Quiz App</Header>
+                        <p>Use the dropdown list at the top of the page to select what you would like to review.</p>
+                        <p>Once selected, click any characters you would like to use, or click "all" to select all of that type.</p>
+                        <p> Once you are ready to begin, click start and the quiz will appear. Click the correct character listed below the question to answer! </p>
+                    </Modal.Description>
+                    </Modal.Content>
+                </Modal>
+                <div className="alphabetDropdown">
+                    <Dropdown placeholder="Select Hiragana or Katakana"  onChange={this.handleChange} fluid multiple search selection options ={languageOptions}/>
+                </div>
+                {this.state.value.includes("Hiragana") ?
+                    <div className="mappedCharacters">
+                        {mappedHiraganaCharacters}
                     </div>
-                    {this.state.value.includes("Hiragana") ?
-                        <div className="mappedCharacters">
-                            {mappedHiraganaCharacters}
+                : null}
+                {this.state.value.includes("Katakana") ?
+                    <div className="mappedCharacters">
+                        {mappedKatakanaCharacters}
+                    </div>
+                : null}
+                {this.state.value.includes("N5Kanji") ?
+                    <div className="mappedCharacters">
+                        {mappedN5KanjiCharacters}
+                    </div>
+                : null}                    
+                <div className="buttonHolder"> 
+                    <Button onClick={this.clearCharacters}> Clear </Button>
+                    <Button onClick={this.createMultipleChoice}> Start </Button>
+                </div>
+                <div className="selectedCharacterDiv">
+                    <h4> Selected Characters for Practice: </h4>
+                    <div className="flexRow">
+                        {mappedQuestions}
+                    </div>
+                </div>
+                <div className="quizSection">
+                    <div className="scoreHolder">
+                        <p> Correct: {this.props.numberCorrect} </p>
+                        <p> Incorrect: {this.props.numberIncorrect} </p>
+                    </div>
+                    <div className="question">
+                    {this.props.currentQuestion !== null && this.props.currentQuestion.type !== "Kanji"?
+                        <p> {this.props.currentQuestion.type} </p>
+                        : null }
+                    {this.props.currentQuestion !== null && this.props.currentQuestion.type !== "Kanji" ?
+                        <p> {this.props.currentQuestion.reading} </p>
+                        : null }
+                    {this.props.currentQuestion !== null && this.props.currentQuestion.type === "Kanji" ?
+                        <div className="kanjiQuestion">
+                            <h2> N5 Kanji: </h2>
+                            <p> On-Reading: {this.props.currentQuestion.OnReading} </p>
+                            <p> Kun-Reading: {this.props.currentQuestion.KunReading} </p>
+                            <p> Meaning: {this.props.currentQuestion.Meaning} </p>
                         </div>
                     : null}
-                    {this.state.value.includes("Katakana") ?
-                        <div className="mappedCharacters">
-                            {mappedKatakanaCharacters}
-                        </div>
-                    : null}
-                    {this.state.value.includes("N5Kanji") ?
-                        <div className="mappedCharacters">
-                            {mappedN5KanjiCharacters}
-                        </div>
-                    : null}                    
-                    <div className="buttonHolder"> 
-                        <Button onClick={this.clearCharacters}> Clear </Button>
-                        <Button onClick={this.createMultipleChoice}> Start </Button>
                     </div>
-                    <div className="selectedCharacterDiv">
-                        <h4> Selected Characters for Practice: </h4>
-                        <div className="flexRow">
-                            {mappedQuestions}
-                        </div>
+                    <div className="multipleChoiceSelections">
+                        {mappedMultipleChoice}
                     </div>
-                    <div className="quizSection">
-                        <div className="scoreHolder">
-                            <p> Correct: {this.props.numberCorrect} </p>
-                            <p> Incorrect: {this.props.numberIncorrect} </p>
-                        </div>
-                        <div className="question">
-                        {this.props.currentQuestion !== null && this.props.currentQuestion.type !== "Kanji"?
-                            <p> {this.props.currentQuestion.type} </p>
-                            : null }
-                        {this.props.currentQuestion !== null && this.props.currentQuestion.type !== "Kanji" ?
-                            <p> {this.props.currentQuestion.reading} </p>
-                            : null }
-                        {this.props.currentQuestion !== null && this.props.currentQuestion.type === "Kanji" ?
-                            <div className="kanjiQuestion">
-                                <h2> N5 Kanji: </h2>
-                                <p> On-Reading: {this.props.currentQuestion.OnReading} </p>
-                                <p> Kun-Reading: {this.props.currentQuestion.KunReading} </p>
-                                <p> Meaning: {this.props.currentQuestion.Meaning} </p>
-                            </div>
-                        : null}
-                        </div>
-                        <div className="multipleChoiceSelections">
-                            {mappedMultipleChoice}
-                        </div>
-                    </div>
+                </div>
             </div>
         )
     }
