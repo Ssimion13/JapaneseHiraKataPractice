@@ -5,7 +5,8 @@ import { Button } from 'semantic-ui-react'
 import { Dropdown } from 'semantic-ui-react'
 
 
-const languageOptions = [ { key: 'Hiragana', value: 'Hiragana', text: 'Hiragana'}, {key:"Katakana", value:"Katakana",text:"Katakana"} ]
+const languageOptions = [ { key: 'Hiragana', value: 'Hiragana', text: 'Hiragana'}, {key:"Katakana", value:"Katakana",text:"Katakana"},
+{key:"N5Kanji", value:"N5Kanji", text:"N5 Kanji"} ]
 const initialState = { value: [] }
 
 class HiraganaTest extends Component{
@@ -75,6 +76,14 @@ class HiraganaTest extends Component{
             )
         });
 
+        const mappedN5KanjiCharacters = this.props.n5KanjiCharacters.map((character,i) => {
+            return(
+                <div key={character+i} onClick={()=> this.addCharacterToList(character)} className={this.props.currentSelectedCharacters.includes(character.character) ? "selectedIndividualCharacters" : "individualCharacters"}>
+                    {character.character}
+                </div>
+            )
+        });
+
         const mappedQuestions = this.props.currentStudyList.map((character,i) => {
             return(
                 <div key={"x"+character+i} className="individualCharacters">
@@ -88,6 +97,7 @@ class HiraganaTest extends Component{
                 <Button className="questionButton" onClick={()=> this.checkAnswer(character.reading)}> {character.character} </Button>
             </div>)
         })
+        
         return(
             <div className="hiraganaTestMain">
                     <div className="alphabetDropdown">
@@ -103,6 +113,11 @@ class HiraganaTest extends Component{
                             {mappedKatakanaCharacters}
                         </div>
                     : null}
+                    {this.state.value.includes("N5Kanji") ?
+                        <div className="mappedCharacters">
+                            {mappedN5KanjiCharacters}
+                        </div>
+                    : null}                    
                     <div className="buttonHolder"> 
                         <Button onClick={this.clearCharacters}> Clear </Button>
                         <Button onClick={this.createMultipleChoice}> Start </Button>
@@ -119,12 +134,20 @@ class HiraganaTest extends Component{
                             <p> Incorrect: {this.props.numberIncorrect} </p>
                         </div>
                         <div className="question">
-                        {this.props.currentQuestion !== null ?
+                        {this.props.currentQuestion !== null && this.props.currentQuestion.type !== "Kanji"?
                             <p> {this.props.currentQuestion.type} </p>
                             : null }
-                        {this.props.currentQuestion !== null ?
+                        {this.props.currentQuestion !== null && this.props.currentQuestion.type !== "Kanji" ?
                             <p> {this.props.currentQuestion.reading} </p>
                             : null }
+                        {this.props.currentQuestion !== null && this.props.currentQuestion.type === "Kanji" ?
+                            <div className="kanjiQuestion">
+                                <h2> N5 Kanji: </h2>
+                                <p> On-Reading: {this.props.currentQuestion.OnReading} </p>
+                                <p> Kun-Reading: {this.props.currentQuestion.KunReading} </p>
+                                <p> Meaning: {this.props.currentQuestion.Meaning} </p>
+                            </div>
+                        : null}
                         </div>
                         <div className="multipleChoiceSelections">
                             {mappedMultipleChoice}
