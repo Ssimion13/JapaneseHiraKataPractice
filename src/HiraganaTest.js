@@ -100,7 +100,7 @@ class HiraganaTest extends Component{
         
         return(
             <div className="hiraganaTestMain">
-                <Modal trigger={<Button>Show Modal</Button>}>
+                <Modal trigger={<Button> Instructions </Button>}>
                     <Modal.Header>How To Use</Modal.Header>
                     <Modal.Content>
                     <Modal.Description>
@@ -133,12 +133,15 @@ class HiraganaTest extends Component{
                     <Button onClick={this.clearCharacters}> Clear </Button>
                     <Button onClick={this.createMultipleChoice}> Start </Button>
                 </div>
+                { mappedQuestions.length > 0 ? 
                 <div className="selectedCharacterDiv">
                     <h4> Selected Characters for Practice: </h4>
                     <div className="flexRow">
                         {mappedQuestions}
                     </div>
                 </div>
+                :null }
+                {this.props.currentQuestion !== null ?
                 <div className="quizSection">
                     <div className="scoreHolder">
                         <p> Correct: {this.props.numberCorrect} </p>
@@ -164,6 +167,7 @@ class HiraganaTest extends Component{
                         {mappedMultipleChoice}
                     </div>
                 </div>
+                : null }
             </div>
         )
     }
