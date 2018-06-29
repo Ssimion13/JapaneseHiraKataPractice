@@ -3,6 +3,7 @@ import {connect} from "react-redux"
 import {addCharacterToList, removeCharacterFromList, clearCharacters, createMultipleChoice, addCorrect, addIncorrect} from "./redux"
 import { Button, Header, Modal} from 'semantic-ui-react'
 import { Dropdown } from 'semantic-ui-react'
+import HiraganaTestComponent from "./HiraganaTestComponent";
 
 
 const languageOptions = [ { key: 'Hiragana', value: 'Hiragana', text: 'Hiragana'}, {key:"Katakana", value:"Katakana",text:"Katakana"},
@@ -34,17 +35,24 @@ class HiraganaTest extends Component{
         this.props.clearCharacters();
     }
     createMultipleChoice = () => {
-        var currentArray = [...this.props.currentStudyList]
-        var j, x, i;
-            for (i = currentArray.length - 1; i > 0; i--) {
-                j = Math.floor(Math.random() * (i + 1));
-                x = currentArray[i];
-                currentArray[i] = currentArray[j];
-                currentArray[j] = x;
-        }
+        var currentArray = [...this.props.currentStudyList];
         var randomNumber = Math.floor(Math.random() * currentArray.length)
-        console.log(randomNumber);
-    this.props.createMultipleChoice(currentArray, randomNumber)
+        while(currentArray[randomNumber] === this.props.currentQuestion){
+            randomNumber = Math.floor(Math.random() * currentArray.length)
+        }
+        var randomQuestion = currentArray[randomNumber]
+        currentArray.splice(currentArray.indexOf(randomQuestion), 1)
+
+        var multipleChoiceArray = currentArray.splice(currentArray[0], 4)
+        var newArray = [randomQuestion, ...multipleChoiceArray]
+        var j, x, i;
+        for (i = newArray.length - 1; i > 0; i--) {
+            j = Math.floor(Math.random() * (i + 1));
+            x = newArray[i];
+            newArray[i] = newArray[j];
+            newArray[j] = x;
+    }
+    this.props.createMultipleChoice(newArray, randomQuestion)
     }
 
     checkAnswer = (reading) => {
@@ -53,6 +61,7 @@ class HiraganaTest extends Component{
             this.createMultipleChoice();
         } else {
             this.props.addIncorrect();
+            this.createMultipleChoice();
         }
     }
 
@@ -83,7 +92,6 @@ class HiraganaTest extends Component{
                 </div>
             )
         });
-
         const mappedQuestions = this.props.currentStudyList.map((character,i) => {
             return(
                 <div key={"x"+character+i} className="individualCharacters">
@@ -97,6 +105,7 @@ class HiraganaTest extends Component{
                 <Button className="questionButton" onClick={()=> this.checkAnswer(character.reading)}> {character.character} </Button>
             </div>)
         })
+
         
         return(
             <div className="hiraganaTestMain">
@@ -133,41 +142,7 @@ class HiraganaTest extends Component{
                     <Button onClick={this.clearCharacters}> Clear </Button>
                     <Button onClick={this.createMultipleChoice}> Start </Button>
                 </div>
-                { mappedQuestions.length > 0 ? 
-                <div className="selectedCharacterDiv">
-                    <h4> Selected Characters for Practice: </h4>
-                    <div className="flexRow">
-                        {mappedQuestions}
-                    </div>
-                </div>
-                :null }
-                {this.props.currentQuestion !== null ?
-                <div className="quizSection">
-                    <div className="scoreHolder">
-                        <p> Correct: {this.props.numberCorrect} </p>
-                        <p> Incorrect: {this.props.numberIncorrect} </p>
-                    </div>
-                    <div className="question">
-                    {this.props.currentQuestion !== null && this.props.currentQuestion.type !== "Kanji"?
-                        <p> {this.props.currentQuestion.type} </p>
-                        : null }
-                    {this.props.currentQuestion !== null && this.props.currentQuestion.type !== "Kanji" ?
-                        <p> {this.props.currentQuestion.reading} </p>
-                        : null }
-                    {this.props.currentQuestion !== null && this.props.currentQuestion.type === "Kanji" ?
-                        <div className="kanjiQuestion">
-                            <h2> N5 Kanji: </h2>
-                            <p> On-Reading: {this.props.currentQuestion.OnReading} </p>
-                            <p> Kun-Reading: {this.props.currentQuestion.KunReading} </p>
-                            <p> Meaning: {this.props.currentQuestion.Meaning} </p>
-                        </div>
-                    : null}
-                    </div>
-                    <div className="multipleChoiceSelections">
-                        {mappedMultipleChoice}
-                    </div>
-                </div>
-                : null }
+                <HiraganaTestComponent checkAnswer={this.checkAnswer} mappedQuestions={mappedQuestions} mappedMultipleChoice={mappedMultipleChoice}/>
             </div>
         )
     }

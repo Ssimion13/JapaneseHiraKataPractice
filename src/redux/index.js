@@ -91,7 +91,7 @@ export const reducer = (prevState = initialState, action) => {
             return {
                 ...prevState,
                 multipleChoice: action.array,
-                currentQuestion: action.array[action.random]
+                currentQuestion: action.random
             }
         case "ADD_CORRECT":
                 return {

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import HiraganaTest from "./HiraganaTest";
 import Sidebar from "./Sidebar"
 
 class App extends Component {

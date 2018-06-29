@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, Header, Icon, Image, Menu, Segment, Sidebar } from 'semantic-ui-react'
+import { Button,  Icon, Menu, Segment, Sidebar } from 'semantic-ui-react'
 import HiraganaTest from "./HiraganaTest"
 
 export default class SidebarComponent extends Component {
