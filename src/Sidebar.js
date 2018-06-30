@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Button,  Icon, Menu, Segment, Sidebar } from 'semantic-ui-react'
+import {Switch, Route} from "react-router-dom"
 import HiraganaTest from "./HiraganaTest"
+import HomePage from "./HomePage"
 
 export default class SidebarComponent extends Component {
   state = { visible: false }
@@ -42,7 +44,10 @@ export default class SidebarComponent extends Component {
           </Sidebar>
 
           <Sidebar.Pusher>
-              <HiraganaTest />
+            <Switch>
+              <Route path="/HiraganaTest" component={HiraganaTest} />
+              <Route exact path="/" component={HomePage} />
+            </Switch>
           </Sidebar.Pusher>
         </Sidebar.Pushable>
       </div>

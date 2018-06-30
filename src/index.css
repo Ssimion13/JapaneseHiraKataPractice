@@ -130,3 +130,7 @@ body {
   border-radius: 0 !important;
   width: 20% !important;
 }
+
+.homepageMainDiv {
+  height: 1000px;
+}
