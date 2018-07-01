@@ -1,14 +1,19 @@
 import React, {Component} from "react";
 import {connect} from "react-redux"
-import {addCharacterToList, removeCharacterFromList, clearCharacters, createMultipleChoice, addCorrect, addIncorrect} from "./redux"
+import {addCharacterToList, removeCharacterFromList, addAllCharacters, clearCharacters, createMultipleChoice, addCorrect, addIncorrect} from "./redux"
 import { Button, Header, Modal} from 'semantic-ui-react'
 import { Dropdown } from 'semantic-ui-react'
 import HiraganaTestComponent from "./HiraganaTestComponent";
 
 
+
 const languageOptions = [ { key: 'Hiragana', value: 'Hiragana', text: 'Hiragana'}, {key:"Katakana", value:"Katakana",text:"Katakana"},
 {key:"N5Kanji", value:"N5Kanji", text:"N5 Kanji"} ]
-const initialState = { value: [] }
+const initialState = { 
+    value: [],
+    handleModalClose: false,
+    selectedAccounts: ""
+    }
 
 class HiraganaTest extends Component{
     constructor(){
@@ -18,11 +23,17 @@ class HiraganaTest extends Component{
     this.addCharacterToList = this.addCharacterToList.bind(this)
     this.clearCharacters = this.clearCharacters.bind(this);
     this.createMultipleChoice = this.createMultipleChoice.bind(this);
+    this.addAllCharacters = this.addAllCharacters.bind(this);
+    this.handleModalOpen = this.handleModalOpen.bind(this);
+    this.handleModalClose = this.handleModalClose.bind(this);
     }
 
     
 
     handleChange = (e, { value }) => this.setState({ value })
+
+    handleModalOpen = () => this.setState({handleClose: true})
+    handleModalClose = () => this.setState({handleClose: false})
 
     addCharacterToList(character){
         if(!this.props.currentStudyList.includes(character)){
@@ -31,11 +42,42 @@ class HiraganaTest extends Component{
             this.props.removeCharacterFromList(character)
         }
     }
+
+    addAllCharacters(){
+        var newStudyListArray = []
+        var newSelectedCharactersArray = []
+            if(this.state.value.includes("Hiragana")){
+                this.props.hiraganaCharacters.forEach(character => {
+                    newSelectedCharactersArray = newSelectedCharactersArray.concat(character.character)
+                    newStudyListArray = newStudyListArray.concat(character)
+                    
+                })
+            }
+            if(this.state.value.includes("Katakana")){
+                this.props.katakanaCharacters.forEach(character => {
+                    newSelectedCharactersArray = newSelectedCharactersArray.concat(character.character)
+                    newStudyListArray = newStudyListArray.concat(character)
+                })
+            }
+            if(this.state.value.includes("N5Kanji")){
+                this.props.n5KanjiCharacters.forEach(character => {
+                    newSelectedCharactersArray = newSelectedCharactersArray.concat(character.character)
+                    newStudyListArray = newStudyListArray.concat(character)
+                })
+            }
+            console.log(newSelectedCharactersArray);
+            console.log(newStudyListArray);
+        this.props.addAllCharacters(newStudyListArray, newSelectedCharactersArray);
+        
+    }
+
     clearCharacters = () => {
         this.props.clearCharacters();
+        this.setState({...initialState});
     }
     createMultipleChoice = () => {
         var currentArray = [...this.props.currentStudyList];
+
         var randomNumber = Math.floor(Math.random() * currentArray.length)
         while(currentArray[randomNumber] === this.props.currentQuestion){
             randomNumber = Math.floor(Math.random() * currentArray.length)
@@ -121,26 +163,62 @@ class HiraganaTest extends Component{
                     </Modal.Content>
                 </Modal>
                 <div className="alphabetDropdown">
-                    <Dropdown placeholder="Select Hiragana or Katakana"  onChange={this.handleChange} fluid multiple search selection options ={languageOptions}/>
+                    <Dropdown placeholder="Select Hiragana or Katakana"  value = {this.state.value} onChange={this.handleChange} fluid multiple search selection options ={languageOptions}/>
                 </div>
-                {this.state.value.includes("Hiragana") ?
+                {this.state.value.includes("Hiragana") && this.state.value.length === 1 ?
                     <div className="mappedCharacters">
                         {mappedHiraganaCharacters}
                     </div>
                 : null}
-                {this.state.value.includes("Katakana") ?
+                {this.state.value.includes("Katakana") && this.state.value.length === 1 ?
                     <div className="mappedCharacters">
                         {mappedKatakanaCharacters}
                     </div>
                 : null}
-                {this.state.value.includes("N5Kanji") ?
+                {this.state.value.includes("N5Kanji") && this.state.value.length === 1 ?
                     <div className="mappedCharacters">
                         {mappedN5KanjiCharacters}
                     </div>
-                : null}                    
+                : null}
+
+                {this.state.value.length >= 2 ?
+                    <Modal open={this.state.handleClose} trigger={<Button onClick={this.handleModalOpen} className="giantButton"> Character Selector </Button>}>
+                    <Modal.Header>Select Characters For Review: </Modal.Header>
+                    <Modal.Content>
+                    <Modal.Description>
+                    {this.state.value.includes("Hiragana") ?
+                    <div className="mappedCharacters mappedCharactersModal">
+                        {mappedHiraganaCharacters}
+                    </div>
+                    : null }
+                    {this.state.value.includes("Katakana") ?  
+                    <div className="mappedCharacters mappedCharactersModal">
+                        {mappedKatakanaCharacters}
+                    </div>
+                    : null }
+                    {this.state.value.includes("N5Kanji") ? 
+                    <div className="mappedCharacters mappedCharactersModal">
+                        {mappedN5KanjiCharacters}
+                    </div>
+                    : null }
+                    <Button  onClick={this.addAllCharacters}> Add All Characters </Button> 
+                    <Button onClick={this.handleModalClose}> Close </Button>
+                    </Modal.Description>
+                    </Modal.Content>
+                    </Modal>
+                : null}
+
                 <div className="buttonHolder"> 
-                    <Button onClick={this.clearCharacters}> Clear </Button>
-                    <Button onClick={this.createMultipleChoice}> Start </Button>
+                    {this.state.value.length === 1 ? 
+                    <div className="selectAllCharactersButton"> 
+                        <Button  onClick={this.addAllCharacters}> Add All Characters From Above List </Button> 
+                    </div>
+                    : null}
+                    <div> 
+                        <Button onClick={this.clearCharacters}> Clear </Button>
+                        <Button onClick={this.createMultipleChoice}> Start </Button>
+                    </div>
+                    
                 </div>
                 <HiraganaTestComponent checkAnswer={this.checkAnswer} mappedQuestions={mappedQuestions} mappedMultipleChoice={mappedMultipleChoice}/>
             </div>
@@ -148,4 +226,4 @@ class HiraganaTest extends Component{
     }
 }
 
-export default connect(state => state, {addCharacterToList, removeCharacterFromList, clearCharacters, addCorrect, addIncorrect, createMultipleChoice})(HiraganaTest);
+export default connect(state => state, {addCharacterToList, addAllCharacters, removeCharacterFromList, clearCharacters, addCorrect, addIncorrect, createMultipleChoice})(HiraganaTest);

@@ -52,6 +52,15 @@ export const addIncorrect = () => {
     }
 }
 
+export const addAllCharacters = (studyArray, selectedArray) => {
+    return dispatch => {
+        dispatch({
+            type:"ADD_ALL_CHARACTERS",
+            studyArray: studyArray,
+            selectedArray: selectedArray
+        })
+    }
+}
 
 
 
@@ -75,6 +84,12 @@ export const reducer = (prevState = initialState, action) => {
                 ...prevState,
                 currentStudyList: [...prevState.currentStudyList, action.character],
                 currentSelectedCharacters: [...prevState.currentSelectedCharacters, action.character.character]
+            }
+        case "ADD_ALL_CHARACTERS":
+            return {
+                ...prevState,
+                currentStudyList: [...action.studyArray],
+                currentSelectedCharacters: [...action.selectedArray]
             }
         case "REMOVE_CHARACTER_FROM_LIST":
             console.log(prevState.currentStudyList);

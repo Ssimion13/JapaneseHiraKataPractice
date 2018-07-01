@@ -25,7 +25,7 @@ export default class SidebarComponent extends Component {
             animation='overlay'
             icon='labeled'
             inverted
-            onHide={this.handleSidebarHide}
+            onClick={this.handleSidebarHide}
             vertical
             visible={visible}
             width='thin'
