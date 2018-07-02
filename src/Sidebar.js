@@ -46,6 +46,13 @@ export default class SidebarComponent extends Component {
               Quiz
               </Link>
             </Menu.Item>
+            <Menu.Item as='a'>
+              <Link to="/LanguageChart">
+              <Icon name='clipboard' /> <br/>
+              Language <br/> 
+              Charts
+              </Link>
+            </Menu.Item>
           </Sidebar>
 
           <Sidebar.Pusher>
