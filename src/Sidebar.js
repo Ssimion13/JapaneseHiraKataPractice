@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import { Button,  Icon, Menu, Segment, Sidebar } from 'semantic-ui-react'
-import {Switch, Route} from "react-router-dom"
+import {Switch,Link, Route} from "react-router-dom"
 import HiraganaTest from "./HiraganaTest"
 import HomePage from "./HomePage"
+import LanguageChart from "./LanguageChart"
 
 export default class SidebarComponent extends Component {
   state = { visible: false }
@@ -31,21 +32,26 @@ export default class SidebarComponent extends Component {
             width='thin'
           >
             <Menu.Item as='a'>
-              <Icon name='home' />
+              <Link to="./" >
+              <Icon name='home' /> <br/>
               Home
+              </Link>
             </Menu.Item>
             <Menu.Item as='a'>
-              <Icon name='book' />
+              <Link to="/HiraganaTest">
+              <Icon name='book' /> <br/>
               Hiragana <br/>
               Katakana <br/>
               Kanji <br/> 
               Quiz
+              </Link>
             </Menu.Item>
           </Sidebar>
 
           <Sidebar.Pusher>
             <Switch>
               <Route path="/HiraganaTest" component={HiraganaTest} />
+              <Route path="/LanguageChart" component={LanguageChart} />
               <Route exact path="/" component={HomePage} />
             </Switch>
           </Sidebar.Pusher>
