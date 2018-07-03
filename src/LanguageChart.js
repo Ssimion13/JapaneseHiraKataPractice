@@ -16,7 +16,7 @@ class LanguageChart extends Component {
     render(){
         var hiraganaCharacterMap = this.props.hiraganaCharacters.map(character => {
             return (
-                <div className="languageChartCharacter"> 
+                <div key={character + "a"} className="languageChartCharacter"> 
                 {character.character} <br/>
                 {character.reading}
                 </div>
@@ -24,7 +24,7 @@ class LanguageChart extends Component {
         })
         var katakanaCharacterMap = this.props.katakanaCharacters.map(character => {
             return (
-                <div className="languageChartCharacter"> 
+                <div key={character + "b"} className="languageChartCharacter"> 
                 {character.character} <br/>
                 {character.reading}
                 </div>
@@ -33,7 +33,7 @@ class LanguageChart extends Component {
 
         var n5KanjiCharacterMap = this.props.n5KanjiCharacters.map(character => {
             return (
-                <Popup trigger={<div key={character + "a"} className="languageChartCharacter"> { character.character } </div>}>
+                <Popup trigger={<div key={character + "c"} className="languageChartCharacter"> { character.character } </div>}>
                 Meaning: {character.Meaning} <br/>
                 On-Reading: {character.OnReading} <br/>
                 Kun-Reading: {character.KunReading}
