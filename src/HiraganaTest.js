@@ -76,6 +76,10 @@ class HiraganaTest extends Component{
         this.setState({...initialState});
     }
     createMultipleChoice = () => {
+        if(this.props.currentStudyList.length === 0){
+            alert("Please add characters to the study list!")
+            return;
+        }
         var currentArray = [...this.props.currentStudyList];
 
         var randomNumber = Math.floor(Math.random() * currentArray.length)
@@ -163,7 +167,7 @@ class HiraganaTest extends Component{
                     </Modal.Content>
                 </Modal>
                 <div className="alphabetDropdown">
-                    <Dropdown placeholder="Select Hiragana or Katakana"  value = {this.state.value} onChange={this.handleChange} fluid multiple search selection options ={languageOptions}/>
+                    <Dropdown placeholder="Select Characters For Review"  value = {this.state.value} onChange={this.handleChange} fluid multiple search selection options ={languageOptions}/>
                 </div>
                 {this.state.value.includes("Hiragana") && this.state.value.length === 1 ?
                     <div className="mappedCharacters">
@@ -182,7 +186,7 @@ class HiraganaTest extends Component{
                 : null}
 
                 {this.state.value.length >= 2 ?
-                    <Modal open={this.state.handleClose} trigger={<Button onClick={this.handleModalOpen} className="giantButton"> Character Selector </Button>}>
+                    <Modal open={this.state.handleClose} trigger={<Button onClick={this.handleModalOpen} className="giantButton"> Select Characters </Button>}>
                     <Modal.Header>Select Characters For Review: </Modal.Header>
                     <Modal.Content>
                     <Modal.Description>

@@ -31,13 +31,13 @@ export default class SidebarComponent extends Component {
             visible={visible}
             width='thin'
           >
-            <Menu.Item as='a'>
+            <Menu.Item>
               <Link to="./" >
               <Icon name='home' /> <br/>
               Home
               </Link>
             </Menu.Item>
-            <Menu.Item as='a'>
+            <Menu.Item>
               <Link to="/HiraganaTest">
               <Icon name='book' /> <br/>
               Hiragana <br/>
@@ -46,7 +46,7 @@ export default class SidebarComponent extends Component {
               Quiz
               </Link>
             </Menu.Item>
-            <Menu.Item as='a'>
+            <Menu.Item>
               <Link to="/LanguageChart">
               <Icon name='clipboard' /> <br/>
               Language <br/> 
