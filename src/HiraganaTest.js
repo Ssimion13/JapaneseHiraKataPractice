@@ -8,7 +8,7 @@ import HiraganaTestComponent from "./HiraganaTestComponent";
 
 
 const languageOptions = [ { key: 'Hiragana', value: 'Hiragana', text: 'Hiragana'}, {key:"Katakana", value:"Katakana",text:"Katakana"},
-{key:"N5Kanji", value:"N5Kanji", text:"N5 Kanji"} ]
+{key:"N5Kanji", value:"N5Kanji", text:"N5 Kanji"}, {key:"N5Vocab", value:"N5Vocab", text:"N5 Vocabulary"} ]
 const initialState = { 
     value: [],
     handleModalClose: false,
@@ -28,7 +28,9 @@ class HiraganaTest extends Component{
     this.handleModalClose = this.handleModalClose.bind(this);
     }
 
-    
+    componentDidMount() {
+        this.props.clearCharacters();
+    }
 
     handleChange = (e, { value }) => this.setState({ value })
 
@@ -45,29 +47,35 @@ class HiraganaTest extends Component{
 
     addAllCharacters(){
         var newStudyListArray = []
-        var newSelectedCharactersArray = []
+        var newSelectedArray = []
             if(this.state.value.includes("Hiragana")){
                 this.props.hiraganaCharacters.forEach(character => {
-                    newSelectedCharactersArray = newSelectedCharactersArray.concat(character.character)
+                    newSelectedArray = newSelectedArray.concat(character.character)
                     newStudyListArray = newStudyListArray.concat(character)
                     
                 })
             }
             if(this.state.value.includes("Katakana")){
                 this.props.katakanaCharacters.forEach(character => {
-                    newSelectedCharactersArray = newSelectedCharactersArray.concat(character.character)
+                    newSelectedArray = newSelectedArray.concat(character.character)
                     newStudyListArray = newStudyListArray.concat(character)
                 })
             }
             if(this.state.value.includes("N5Kanji")){
                 this.props.n5KanjiCharacters.forEach(character => {
-                    newSelectedCharactersArray = newSelectedCharactersArray.concat(character.character)
+                    newSelectedArray = newSelectedArray.concat(character.character)
                     newStudyListArray = newStudyListArray.concat(character)
                 })
             }
-            console.log(newSelectedCharactersArray);
+            if(this.state.value.includes("N5Vocab")){
+                this.props.n5Vocab.forEach(word => {
+                    newSelectedArray = newSelectedArray.concat(word.word)
+                    newStudyListArray = newStudyListArray.concat(word)
+                })
+            }
+            console.log(newSelectedArray);
             console.log(newStudyListArray);
-        this.props.addAllCharacters(newStudyListArray, newSelectedCharactersArray);
+        this.props.addAllCharacters(newStudyListArray, newSelectedArray);
         
     }
 
@@ -101,13 +109,33 @@ class HiraganaTest extends Component{
     this.props.createMultipleChoice(newArray, randomQuestion)
     }
 
-    checkAnswer = (reading) => {
-        if(this.props.currentQuestion.reading === reading){
-            this.props.addCorrect();
-            this.createMultipleChoice();
-        } else {
-            this.props.addIncorrect();
-            this.createMultipleChoice();
+    checkAnswer = (answer) => {
+        if(this.props.currentQuestion.reading){
+            if(this.props.currentQuestion.reading === answer){
+                this.props.addCorrect();
+                this.createMultipleChoice();
+            } else {
+                this.props.addIncorrect();
+                this.createMultipleChoice();
+            }
+        }
+        else if(this.props.currentQuestion.OnReading){
+            if(this.props.currentQuestion.OnReading === answer){
+                this.props.addCorrect();
+                this.createMultipleChoice();
+            } else {
+                this.props.addIncorrect();
+                this.createMultipleChoice();
+            }
+        }
+        else if(this.props.currentQuestion.grammarType){
+            if(this.props.currentQuestion.word === answer){
+                this.props.addCorrect();
+                this.createMultipleChoice();
+            } else {
+                this.props.addIncorrect();
+                this.createMultipleChoice();
+            }
         }
     }
 
@@ -145,11 +173,26 @@ class HiraganaTest extends Component{
                 </div>
             )
         });
-        const mappedMultipleChoice = this.props.multipleChoice.map((character, i)=> {
-            return(
-            <div key={"y"+character+i} className="individualQuestionCharacters">
-                <Button className="questionButton" onClick={()=> this.checkAnswer(character.reading)}> {character.character} </Button>
-            </div>)
+        const mappedMultipleChoice = this.props.multipleChoice.map((character, i) => {
+            console.log(character.OnReading);
+            if(character.reading){
+                return(
+                    <div key={"y"+character+i} className="individualQuestionCharacters">
+                        <Button className="questionButton" onClick={()=> this.checkAnswer(character.reading)}> {character.character} </Button>
+                    </div>)
+            } 
+            else if(character.OnReading){
+                return(
+                    <div key={"y"+character+i} className="individualQuestionCharacters">
+                        <Button className="questionButton" onClick={()=> this.checkAnswer(character.OnReading)}> {character.character} </Button>
+                    </div>)
+            }
+            else if(character.grammarType){
+                return(
+                    <div key={"y"+character+i} className="individualQuestionMeanings">
+                        <Button className="questionButton" onClick={()=> this.checkAnswer(character.word)}> {character.Meaning} </Button>
+                    </div>)
+            }
         })
 
         

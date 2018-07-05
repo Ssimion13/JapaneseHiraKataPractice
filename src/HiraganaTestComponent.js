@@ -28,7 +28,7 @@ function HiraganaTestComponent(props) {
                         <p> Incorrect: {props.numberIncorrect} </p>
                     </div>
                     <div className="question">
-                        {props.currentQuestion !== null && props.currentQuestion.type !== "Kanji"?
+                        {props.currentQuestion !== null ?
                             <Popup trigger={<p> { props.currentQuestion.type } </p>}>
                                 This is what type of writing the question is.
                             </Popup>    
@@ -38,23 +38,34 @@ function HiraganaTestComponent(props) {
                                 The reading of the character in question.
                             </Popup>    
                         : null }
-                        {props.currentQuestion !== null && props.currentQuestion.type === "Kanji" ?
-                            <div className="kanjiQuestion">
-                                <h2> N5 Kanji: </h2>
-                                <Popup trigger={<p> On-Reading: {props.currentQuestion.OnReading} </p>}>
+                    {props.currentQuestion !== null && props.currentQuestion.type === "Kanji" ?
+                        <div className="kanjiQuestion">
+                            <Popup trigger={<p> On-Reading: {props.currentQuestion.OnReading} </p>}>
                                 The chinese pronunciation(s) (On-yomi) of the character
-                                </Popup> 
-                                
-                                <Popup trigger={<p> Kun-Reading: {props.currentQuestion.KunReading} </p>}>
+                            </Popup> 
+                            <Popup trigger={<p> Kun-Reading: {props.currentQuestion.KunReading} </p>}>
                                 The native Japanese pronunciation(s) (Kun-yomi) of the character
-                                </Popup> 
-                                <Popup trigger={<p> Meaning: {props.currentQuestion.Meaning} </p>}>
+                            </Popup> 
+                            <Popup trigger={<p> Meaning: {props.currentQuestion.Meaning} </p>}>
                                 The meaning of the character.
-                                </Popup>
+                            </Popup>
+                            </div>
+                        : null}
+                    {props.currentQuestion !== null && props.currentQuestion.type === "Vocab" ?
+                        <div className="kanjiQuestion">
+                            <Popup trigger={<p> {props.currentQuestion.word} </p>}>
+                                The word in question in Hiragana/Katakana. 
+                            </Popup> 
+                            <Popup trigger={<p> Kanji: {props.currentQuestion.kanji} </p>}>
+                                The Kanji used in the word to denote it from homophones.
+                            </Popup>
+                            <Popup trigger={<p> Grammar Type: {props.currentQuestion.grammarType} </p>}>
+                                How the word is used grammatically in the sentence.
+                            </Popup> 
                             </div>
                         : null}
                     </div>
-                    <div className="multipleChoiceSelections">
+                    <div className={props.currentQuestion.grammarType ? "multipleChoiceVocabularyMeanings"  : "multipleChoiceSelections"}>
                         {props.mappedMultipleChoice}
                     </div>
                 </div>
