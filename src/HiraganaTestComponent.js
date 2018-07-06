@@ -4,7 +4,6 @@ import { Popup, Modal, Button, Header} from 'semantic-ui-react'
 
 
 function HiraganaTestComponent(props) {
-
     return(
         <div className="hiraganaTestComponentMain">
             { props.mappedQuestions.length > 0 ? 
@@ -14,7 +13,8 @@ function HiraganaTestComponent(props) {
                 <Modal.Description>
                     <Header>Selected Characters For Practice:</Header>
                     <div className="mappedQuestions">
-                        {props.mappedQuestions}
+                        {props.mappedQuestions} <br/>
+                        {props.value.indexOf("N5Vocab") !== -1 ?  <p> and N5 Vocabulary </p> : null}
                     </div>
                 </Modal.Description>
                 </Modal.Content>

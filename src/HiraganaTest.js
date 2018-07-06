@@ -89,7 +89,6 @@ class HiraganaTest extends Component{
             return;
         }
         var currentArray = [...this.props.currentStudyList];
-
         var randomNumber = Math.floor(Math.random() * currentArray.length)
         while(currentArray[randomNumber] === this.props.currentQuestion){
             randomNumber = Math.floor(Math.random() * currentArray.length)
@@ -143,7 +142,6 @@ class HiraganaTest extends Component{
 
     render(){
         const mappedHiraganaCharacters = this.props.hiraganaCharacters.map((character,i) => {
-
             return(
                 <div key={character+i} name={character.character} onClick={()=> this.addCharacterToList(character)} className={this.props.currentSelectedCharacters.includes(character.character) ? "selectedIndividualCharacters" : "individualCharacters"}>
                   {character.character}
@@ -166,15 +164,24 @@ class HiraganaTest extends Component{
                 </div>
             )
         });
-        const mappedQuestions = this.props.currentStudyList.map((character,i) => {
+        const mappedN5VocabCharacters = this.props.n5Vocab.map((character,i) => {
             return(
-                <div key={"x"+character+i} className="individualCharacters">
-                {character.character}
+                <div key={character+i} onClick={()=> this.addCharacterToList(character)} className={this.props.currentSelectedCharacters.includes(character.character) ? "selectedIndividualWord" : "individualWord"}>
+                    {character.word}
                 </div>
             )
         });
+        const mappedQuestions = this.props.currentStudyList.map((character,i) => {
+
+                return(
+                    <div key={"x"+character+i} className="individualCharacters">
+                    {character.character}
+                    </div>
+                )
+
+        });
         const mappedMultipleChoice = this.props.multipleChoice.map((character, i) => {
-            console.log(character.OnReading);
+            console.log(character);
             if(character.reading){
                 return(
                     <div key={"y"+character+i} className="individualQuestionCharacters">
@@ -227,10 +234,15 @@ class HiraganaTest extends Component{
                         {mappedN5KanjiCharacters}
                     </div>
                 : null}
+                {this.state.value.includes("N5Vocab") && this.state.value.length === 1 ?
+                    <div className="mappedCharacters">
+                        {mappedN5VocabCharacters}
+                    </div>
+                : null}
 
                 {this.state.value.length >= 2 ?
                     <Modal open={this.state.handleClose} trigger={<Button onClick={this.handleModalOpen} className="giantButton"> Select Characters </Button>}>
-                    <Modal.Header>Select Characters For Review: </Modal.Header>
+                    <Modal.Header>Select For Review: </Modal.Header>
                     <Modal.Content>
                     <Modal.Description>
                     {this.state.value.includes("Hiragana") ?
@@ -248,6 +260,11 @@ class HiraganaTest extends Component{
                         {mappedN5KanjiCharacters}
                     </div>
                     : null }
+                    {this.state.value.includes("N5Kanji") ? 
+                    <div className="mappedCharacters mappedCharactersModal">
+                        {mappedN5VocabCharacters}
+                    </div>
+                    : null }
                     <Button  onClick={this.addAllCharacters}> Add All Characters </Button> 
                     <Button onClick={this.handleModalClose}> Close </Button>
                     </Modal.Description>
@@ -256,9 +273,9 @@ class HiraganaTest extends Component{
                 : null}
 
                 <div className="buttonHolder"> 
-                    {this.state.value.length === 1 ? 
+                    {this.state.value.length === 1 && this.state.value.indexOf("N5Vocab") === -1 ? 
                     <div className="selectAllCharactersButton"> 
-                        <Button  onClick={this.addAllCharacters}> Add All Characters From Above List </Button> 
+                        <Button  onClick={this.addAllCharacters}> Add All Characters From Above List(s) </Button> 
                     </div>
                     : null}
                     <div> 
@@ -267,7 +284,7 @@ class HiraganaTest extends Component{
                     </div>
                     
                 </div>
-                <HiraganaTestComponent checkAnswer={this.checkAnswer} mappedQuestions={mappedQuestions} mappedMultipleChoice={mappedMultipleChoice}/>
+                <HiraganaTestComponent value={this.state.value} checkAnswer={this.checkAnswer} mappedQuestions={mappedQuestions} mappedMultipleChoice={mappedMultipleChoice}/>
             </div>
         )
     }
