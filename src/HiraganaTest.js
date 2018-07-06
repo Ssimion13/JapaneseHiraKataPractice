@@ -73,10 +73,7 @@ class HiraganaTest extends Component{
                     newStudyListArray = newStudyListArray.concat(word)
                 })
             }
-            console.log(newSelectedArray);
-            console.log(newStudyListArray);
         this.props.addAllCharacters(newStudyListArray, newSelectedArray);
-        
     }
 
     clearCharacters = () => {
@@ -89,6 +86,25 @@ class HiraganaTest extends Component{
             return;
         }
         var currentArray = [...this.props.currentStudyList];
+        if(this.state.value.indexOf("N5Vocab") !== -1){
+            var wordArray = [];
+            var characterArray = [];
+            currentArray.forEach(question => {
+                if(question.grammarType){
+                    wordArray.push(question);
+                } else {
+                    characterArray.push(question)
+                }
+            })
+            var randomArray = Math.floor(Math.random() * 2);
+            console.log(randomArray);
+            if(randomArray === 1){
+                currentArray = wordArray;
+            } else {
+                currentArray = characterArray;
+            }
+        }
+        console.log(currentArray);
         var randomNumber = Math.floor(Math.random() * currentArray.length)
         while(currentArray[randomNumber] === this.props.currentQuestion){
             randomNumber = Math.floor(Math.random() * currentArray.length)
@@ -164,10 +180,10 @@ class HiraganaTest extends Component{
                 </div>
             )
         });
-        const mappedN5VocabCharacters = this.props.n5Vocab.map((character,i) => {
+        const mappedN5VocabCharacters = this.props.n5Vocab.map((word,i) => {
             return(
-                <div key={character+i} onClick={()=> this.addCharacterToList(character)} className={this.props.currentSelectedCharacters.includes(character.character) ? "selectedIndividualWord" : "individualWord"}>
-                    {character.word}
+                <div key={word+i} onClick={()=> this.addCharacterToList(word)} className={this.props.currentSelectedCharacters.includes(word.word) ? "selectedIndividualWord" : "individualWord"}>
+                    {word.word}
                 </div>
             )
         });
@@ -178,10 +194,8 @@ class HiraganaTest extends Component{
                     {character.character}
                     </div>
                 )
-
         });
         const mappedMultipleChoice = this.props.multipleChoice.map((character, i) => {
-            console.log(character);
             if(character.reading){
                 return(
                     <div key={"y"+character+i} className="individualQuestionCharacters">
@@ -234,14 +248,10 @@ class HiraganaTest extends Component{
                         {mappedN5KanjiCharacters}
                     </div>
                 : null}
-                {this.state.value.includes("N5Vocab") && this.state.value.length === 1 ?
-                    <div className="mappedCharacters">
-                        {mappedN5VocabCharacters}
-                    </div>
-                : null}
 
-                {this.state.value.length >= 2 ?
-                    <Modal open={this.state.handleClose} trigger={<Button onClick={this.handleModalOpen} className="giantButton"> Select Characters </Button>}>
+
+                {this.state.value.length >= 2 || this.state.value.indexOf("N5Vocab") !== -1 ?
+                    <Modal open={this.state.handleClose} trigger={<Button onClick={this.handleModalOpen} className="giantButton"> Select Characters/Words </Button>}>
                     <Modal.Header>Select For Review: </Modal.Header>
                     <Modal.Content>
                     <Modal.Description>
@@ -265,7 +275,13 @@ class HiraganaTest extends Component{
                         {mappedN5VocabCharacters}
                     </div>
                     : null }
-                    <Button  onClick={this.addAllCharacters}> Add All Characters </Button> 
+                    {this.state.value.includes("N5Vocab") && this.state.value.length === 1 ?
+                    <div className="mappedCharacters">
+                        {mappedN5VocabCharacters}
+                    </div>
+                    : null}
+                    <Button  onClick={this.addAllCharacters}> Add All </Button> 
+                    <Button onClick={this.clearCharacters}> Clear And Close </Button>
                     <Button onClick={this.handleModalClose}> Close </Button>
                     </Modal.Description>
                     </Modal.Content>

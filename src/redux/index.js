@@ -81,6 +81,9 @@ const initialState = {
 export const reducer = (prevState = initialState, action) => {
     switch(action.type) {
         case "ADD_CHARACTER_TO_LIST":
+            if(action.character.word){
+                action.character.character = action.character.word;
+            }
             return {
                 ...prevState,
                 currentStudyList: [...prevState.currentStudyList, action.character],
