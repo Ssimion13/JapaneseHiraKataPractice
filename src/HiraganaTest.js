@@ -91,7 +91,7 @@ class HiraganaTest extends Component{
             alert("Please add 5 characters/words to the study list!")
             return;
         }
-        if(this.props.currentStudyList.length < 5){
+        if(this.props.currentStudyList.length < 5 && this.props.currentStudyList.length !== 0){
             alert("Please add at least 5 characters/words to the study list!")
             return;
         }
@@ -107,14 +107,12 @@ class HiraganaTest extends Component{
                 }
             })
             var randomArray = Math.floor(Math.random() * 2);
-            console.log(randomArray);
             if(randomArray === 1){
                 currentArray = wordArray;
             } else {
                 currentArray = characterArray;
             }
         }
-        console.log(currentArray);
         var randomNumber = Math.floor(Math.random() * currentArray.length)
         while(currentArray[randomNumber] === this.props.currentQuestion){
             randomNumber = Math.floor(Math.random() * currentArray.length)
@@ -288,14 +286,14 @@ class HiraganaTest extends Component{
                         {mappedN5VocabCharacters}
                     </div>
                     : null }
-                    {this.state.value.includes("N5Vocab") && this.state.value.length === 1 ?
+                    {this.state.value.includes("N5Vocab") ?
                     <div className="mappedCharacters">
                         {mappedN5VocabCharacters}
                     </div>
                     : null}
                     <Button  onClick={this.addAllCharacters}> Add All </Button> 
                     <Button onClick={this.clearCharacters}> Clear And Close </Button>
-                    <Button onClick={this.handleModalClose}> Close </Button>
+                    <Button onClick={()=> {this.createMultipleChoice(); this.handleModalClose();}}> Close and Start</Button>
                     </Modal.Description>
                     </Modal.Content>
                     </Modal>
