@@ -35,7 +35,13 @@ class HiraganaTest extends Component{
     handleChange = (e, { value }) => this.setState({ value })
 
     handleModalOpen = () => this.setState({handleClose: true})
-    handleModalClose = () => this.setState({handleClose: false})
+    handleModalClose = () => {
+        if(this.props.currentStudyList.length > 4){
+            this.setState({handleClose: false})
+        } else {
+            alert("Please add at least 5 terms to review.")
+        }
+    }
 
     addCharacterToList(character){
         if(!this.props.currentStudyList.includes(character)){
@@ -82,7 +88,11 @@ class HiraganaTest extends Component{
     }
     createMultipleChoice = () => {
         if(this.props.currentStudyList.length === 0){
-            alert("Please add characters to the study list!")
+            alert("Please add 5 characters/words to the study list!")
+            return;
+        }
+        if(this.props.currentStudyList.length < 5){
+            alert("Please add at least 5 characters/words to the study list!")
             return;
         }
         var currentArray = [...this.props.currentStudyList];
@@ -213,6 +223,9 @@ class HiraganaTest extends Component{
                     <div key={"y"+character+i} className="individualQuestionMeanings">
                         <Button className="questionButton" onClick={()=> this.checkAnswer(character.word)}> {character.Meaning} </Button>
                     </div>)
+            }
+            else {
+                return null
             }
         })
 
