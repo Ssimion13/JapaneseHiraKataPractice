@@ -3,7 +3,8 @@ import {connect} from "react-redux"
 import {addCharacterToList, removeCharacterFromList, addAllCharacters, clearCharacters, createMultipleChoice, addCorrect, addIncorrect} from "./redux"
 import { Button, Header, Modal} from 'semantic-ui-react'
 import { Dropdown } from 'semantic-ui-react'
-import HiraganaTestComponent from "./HiraganaTestComponent";
+import Instructions from "./HiraganaTestInstructionComponent";
+import HiraganaTestQuestionComponent from "./HiraganaTestQuestionComponent";
 
 
 
@@ -230,17 +231,9 @@ class HiraganaTest extends Component{
         
         return(
             <div className="hiraganaTestMain">
-                <Modal trigger={<Button> Instructions </Button>}>
-                    <Modal.Header>How To Use</Modal.Header>
-                    <Modal.Content>
-                    <Modal.Description>
-                        <Header>Using the Japanese Quiz App</Header>
-                        <p>Use the dropdown list at the top of the page to select what you would like to review.</p>
-                        <p>Once selected, click any characters you would like to use, or click "all" to select all of that type.</p>
-                        <p> Once you are ready to begin, click start and the quiz will appear. Click the correct character listed below the question to answer! </p>
-                    </Modal.Description>
-                    </Modal.Content>
-                </Modal>
+                <div>
+                <Instructions />
+                </div>
                 <div className="alphabetDropdown">
                     <Dropdown placeholder="Select Characters For Review"  value = {this.state.value} onChange={this.handleChange} fluid multiple search selection options ={languageOptions}/>
                 </div>
@@ -311,7 +304,7 @@ class HiraganaTest extends Component{
                     </div>
                     
                 </div>
-                <HiraganaTestComponent value={this.state.value} checkAnswer={this.checkAnswer} mappedQuestions={mappedQuestions} mappedMultipleChoice={mappedMultipleChoice}/>
+                <HiraganaTestQuestionComponent value={this.state.value} checkAnswer={this.checkAnswer} mappedQuestions={mappedQuestions} mappedMultipleChoice={mappedMultipleChoice}/>
             </div>
         )
     }

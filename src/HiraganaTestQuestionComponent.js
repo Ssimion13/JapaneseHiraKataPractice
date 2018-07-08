@@ -3,9 +3,9 @@ import {connect} from "react-redux"
 import { Popup, Modal, Button, Header} from 'semantic-ui-react'
 
 
-function HiraganaTestComponent(props) {
+function HiraganaTestQuestionComponent(props) {
     return(
-        <div className="hiraganaTestComponentMain">
+        <div className="HiraganaTestComponentMain">
             { props.mappedQuestions.length > 0 ? 
             <Modal trigger={<Button className="giantButton"> Current Selected Characters </Button>}>
                 <Modal.Header>Currently Selected Characters</Modal.Header>
@@ -74,4 +74,4 @@ function HiraganaTestComponent(props) {
     )
 }
 
-export default connect(state => state, {})(HiraganaTestComponent);
+export default connect(state => state, {})(HiraganaTestQuestionComponent);

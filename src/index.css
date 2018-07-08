@@ -191,8 +191,17 @@ body {
   width: 100%;
   background-color: lightgrey;;
   height: 60px;
-  display: flex;
+  display: grid;
+  grid-template-areas: "Button Title Title";
   margin-bottom: -15px;
+}
+.navbarTitleDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.navbarTitle{
+
 }
 
 .ui.segment {
@@ -201,11 +210,12 @@ body {
 
 .topButton{
   border-radius: 0 !important;
-  width: 20% !important;
+  grid-area: Button !important;
 }
 
 .homepageMainDiv {
   height: 1000px;
+  background-color: whitesmoke;
 }
 
 .languageChartHolder {
