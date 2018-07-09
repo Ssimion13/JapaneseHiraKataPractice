@@ -16,27 +16,27 @@ class LanguageChart extends Component {
     render(){
         var hiraganaCharacterMap = this.props.hiraganaCharacters.map(character => {
             return (
-                <div key={character + "a"} className="languageChartCharacter"> 
-                {character.character} <br/>
-                {character.reading}
+                <div key={character.character + "Hiragana"} className="languageChartCharacter"> 
+                    {character.character} <br/>
+                    {character.reading}
                 </div>
             )
         })
         var katakanaCharacterMap = this.props.katakanaCharacters.map(character => {
             return (
-                <div key={character + "b"} className="languageChartCharacter"> 
-                {character.character} <br/>
-                {character.reading}
+                <div key={character.character + "Katakana"} className="languageChartCharacter"> 
+                    {character.character} <br/>
+                    {character.reading}
                 </div>
             )
         })
 
         var n5KanjiCharacterMap = this.props.n5KanjiCharacters.map(character => {
             return (
-                <Popup trigger={<div key={character + "c"} className="languageChartCharacter"> { character.character } </div>}>
-                Meaning: {character.Meaning} <br/>
-                On-Reading: {character.OnReading} <br/>
-                Kun-Reading: {character.KunReading}
+                <Popup key={character.character + "N5Kanji"} trigger={<div  className="languageChartCharacter"> { character.character } </div>}>
+                    Meaning: {character.Meaning} <br/>
+                    On-Reading: {character.OnReading} <br/>
+                    Kun-Reading: {character.KunReading}
                 </Popup>    
             )
         })
