@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import { Button,  Icon, Menu, Segment, Sidebar } from 'semantic-ui-react'
 import {Switch,Link, Route} from "react-router-dom"
-import HiraganaTest from "./HiraganaTest"
+import HiraganaTest from "./HiraganaTest/HiraganaTest.js"
 import HomePage from "./HomePage"
 import LanguageChart from "./LanguageChart"
+import BasicJapanese from "./BasicJapanese/BasicJapanese.js"
 
 export default class SidebarComponent extends Component {
   state = { visible: false }
@@ -20,7 +21,7 @@ export default class SidebarComponent extends Component {
         <div className="navbar">
         <Button className="topButton" onClick={this.handleButtonClick}> 三 </Button>
           <div className="navbarTitleDiv" >
-            <h2> You Can Learn Japanese! </h2>
+            <h2> Learn Japanese Quick </h2>
           </div>
         </div>
         <Sidebar.Pushable as={Segment}>
@@ -62,6 +63,7 @@ export default class SidebarComponent extends Component {
             <Switch>
               <Route path="/HiraganaTest" component={HiraganaTest} />
               <Route path="/LanguageChart" component={LanguageChart} />
+              <Route path="/BasicJapanese" component={BasicJapanese} />
               <Route exact path="/" component={HomePage} />
             </Switch>
           </Sidebar.Pusher>

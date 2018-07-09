@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import {connect} from "react-redux"
-import {addCharacterToList, removeCharacterFromList, addAllCharacters, clearCharacters, createMultipleChoice, addCorrect, addIncorrect} from "./redux"
-import { Button, Header, Modal} from 'semantic-ui-react'
+import {addCharacterToList, removeCharacterFromList, addAllCharacters, clearCharacters, createMultipleChoice, addCorrect, addIncorrect} from "../redux"
+import { Button, Modal} from 'semantic-ui-react'
 import { Dropdown } from 'semantic-ui-react'
 import Instructions from "./HiraganaTestInstructionComponent";
 import HiraganaTestQuestionComponent from "./HiraganaTestQuestionComponent";

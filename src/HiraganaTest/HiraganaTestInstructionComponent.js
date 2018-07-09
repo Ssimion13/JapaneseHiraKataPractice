@@ -1,5 +1,5 @@
 import React from "react"
-import { Dropdown, Button, Header, Modal} from 'semantic-ui-react'
+import {Button, Header, Modal} from 'semantic-ui-react'
 
 function HiraganaTestInstructionComponent(props){
     return(

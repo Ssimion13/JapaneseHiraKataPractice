@@ -214,8 +214,6 @@ body {
 }
 
 .homepageMainDiv {
-  height: 1000px;
-  background-color: whitesmoke;
 }
 
 .languageChartHolder {
@@ -242,4 +240,67 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.frontPageTitle {
+  font-size: 40px;
+  font-style: italic;
+  text-align: center;
+}
+
+.frontPageTitleDiv {
+  width: 100%;
+  height: 400px;
+  background-color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.frontPageSubText{
+  width: 80%;
+}
+
+.thumbnailHolder{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: whitesmoke;
+  padding-top: 30px;
+  padding-bottom: 50px;
+}
+
+.thumbnail {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 1px solid black;
+  padding: 65px;
+  border-radius: 50px;
+  margin-bottom: 30px;
+}
+
+.thumbnailBigText {
+  font-size: 55px;
+}
+
+.thumbnailBigTextLong {
+  font-size: 25px;
+}
+
+.thumbnailSmallText {
+  margin-top: 40px;
+  font-size: 24px;
+  border-top: 1px solid grey;
+}
+
+.thumbnailSmallTextLong {
+  margin-top: 15px;
+  font-size: 18px;
+  border-top: 1px solid grey;
+  text-align: center;
 }
