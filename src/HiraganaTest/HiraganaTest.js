@@ -87,6 +87,7 @@ class HiraganaTest extends Component{
         this.props.clearCharacters();
         this.setState({...initialState});
     }
+    
     createMultipleChoice = () => {
         if(this.props.currentStudyList.length === 0){
             alert("Please add 5 characters/words to the study list!")
