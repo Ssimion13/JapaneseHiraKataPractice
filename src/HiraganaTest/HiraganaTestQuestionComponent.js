@@ -53,13 +53,14 @@ function HiraganaTestQuestionComponent(props) {
                         : null}
                     {props.currentQuestion !== null && props.currentQuestion.type === "Vocab" ?
                         <div className="kanjiQuestion">
-                            <Popup trigger={<p> {props.currentQuestion.word} </p>}>
+                            <Popup trigger={<p> {props.currentQuestion.word} ({props.currentQuestion.romaji}) </p>}>
                                 The word in question in Hiragana/Katakana. 
                             </Popup> 
+
                             <Popup trigger={<p> Kanji: {props.currentQuestion.kanji} </p>}>
                                 The Kanji used in the word to denote it from homophones.
                             </Popup>
-                            <Popup trigger={<p> Grammar Type: {props.currentQuestion.grammarType} </p>}>
+                            <Popup trigger={<p> Type: {props.currentQuestion.grammarType} </p>}>
                                 How the word is used grammatically in the sentence.
                             </Popup> 
                             </div>

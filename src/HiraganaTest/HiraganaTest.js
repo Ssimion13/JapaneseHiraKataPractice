@@ -98,30 +98,38 @@ class HiraganaTest extends Component{
             return;
         }
         var currentArray = [...this.props.currentStudyList];
+        console.log(currentArray);
         if(this.state.value.indexOf("N5Vocab") !== -1){
             var wordArray = [];
             var characterArray = [];
             currentArray.forEach(question => {
-                if(question.grammarType){
+                if(question.type === "Vocab"){
                     wordArray.push(question);
                 } else {
                     characterArray.push(question)
                 }
             })
+            console.log(currentArray);
             var randomArray = Math.floor(Math.random() * 2);
-            if(randomArray === 1){
+            if(this.state.value.length !== 1 && this.state.value.indexOf("N5Vocab") !== -1){
+                if(randomArray === 1){
                 currentArray = wordArray;
-            } else {
+                } else {
                 currentArray = characterArray;
+                }
+            } else if(this.state.value.length === 1){
+                currentArray = wordArray;
             }
         }
+        console.log(wordArray);
+        console.log(currentArray);
         var randomNumber = Math.floor(Math.random() * currentArray.length)
         while(currentArray[randomNumber] === this.props.currentQuestion){
             randomNumber = Math.floor(Math.random() * currentArray.length)
         }
         var randomQuestion = currentArray[randomNumber]
         currentArray.splice(currentArray.indexOf(randomQuestion), 1)
-
+        console.log(currentArray);
         var multipleChoiceArray = currentArray.splice(currentArray[0], 4)
         var newArray = [randomQuestion, ...multipleChoiceArray]
         var j, x, i;
@@ -131,11 +139,14 @@ class HiraganaTest extends Component{
             newArray[i] = newArray[j];
             newArray[j] = x;
     }
+    console.log(newArray);
     this.props.createMultipleChoice(newArray, randomQuestion)
     }
 
     checkAnswer = (answer) => {
-        if(this.props.currentQuestion.reading){
+        console.log(answer) 
+        console.log("checkycheck");
+        if(this.props.currentQuestion.type === "Hiragana" || this.props.currentQuestion.type === "Katakana"){
             if(this.props.currentQuestion.reading === answer){
                 this.props.addCorrect();
                 this.createMultipleChoice();
@@ -144,7 +155,7 @@ class HiraganaTest extends Component{
                 this.createMultipleChoice();
             }
         }
-        else if(this.props.currentQuestion.OnReading){
+        else if(this.props.currentQuestion.type === "Kanji"){
             if(this.props.currentQuestion.OnReading === answer){
                 this.props.addCorrect();
                 this.createMultipleChoice();
@@ -153,7 +164,7 @@ class HiraganaTest extends Component{
                 this.createMultipleChoice();
             }
         }
-        else if(this.props.currentQuestion.grammarType){
+        else if(this.props.currentQuestion.type === "Vocab"){
             if(this.props.currentQuestion.word === answer){
                 this.props.addCorrect();
                 this.createMultipleChoice();
@@ -206,19 +217,20 @@ class HiraganaTest extends Component{
                 )
         });
         const mappedMultipleChoice = this.props.multipleChoice.map((character, i) => {
-            if(character.reading){
+            console.log("launch multiplechoicemap")
+            if(character.type === "Hiragana" || character.type === "Katakana"){
                 return(
                     <div key={"y"+character+i} className="individualQuestionCharacters">
                         <Button className="questionButton" onClick={()=> this.checkAnswer(character.reading)}> {character.character} </Button>
                     </div>)
             } 
-            else if(character.OnReading){
+            else if(character.type === "Kanji"){
                 return(
                     <div key={"y"+character+i} className="individualQuestionCharacters">
                         <Button className="questionButton" onClick={()=> this.checkAnswer(character.OnReading)}> {character.character} </Button>
                     </div>)
             }
-            else if(character.grammarType){
+            else if(character.type === "Vocab"){
                 return(
                     <div key={"y"+character+i} className="individualQuestionMeanings">
                         <Button className="questionButton" onClick={()=> this.checkAnswer(character.word)}> {character.Meaning} </Button>
@@ -287,7 +299,7 @@ class HiraganaTest extends Component{
                     : null}
                     <Button  onClick={this.addAllCharacters}> Add All </Button> 
                     <Button onClick={this.clearCharacters}> Clear And Close </Button>
-                    <Button onClick={()=> {this.createMultipleChoice(); this.handleModalClose();}}> Close and Start</Button>
+                    <Button onClick={()=> {this.handleModalClose();}}> Close</Button>
                     </Modal.Description>
                     </Modal.Content>
                     </Modal>
