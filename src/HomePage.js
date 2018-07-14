@@ -14,6 +14,12 @@ function HomePage(){
             </div>
 
             <div className="thumbnailHolder"> 
+                <Link to="./BasicJapanese">
+                    <div className="thumbnail">
+                        <h1 className="thumbnailBigText">  初心者 </h1>
+                        <p className="thumbnailSmallText"> For Beginners </p>
+                    </div>
+                </Link>
                 <Link to="./HiraganaTest">
                     <div className="thumbnail">
                         <h1 className="thumbnailBigText"> N5 </h1>
@@ -27,6 +33,7 @@ function HomePage(){
                     <p className="thumbnailSmallTextLong"> Hiragana/Katakana <br/> Language Charts</p>
                 </div>
             </Link>
+
             </div>
         </div>
     )

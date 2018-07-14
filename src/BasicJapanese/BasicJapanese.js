@@ -11,7 +11,7 @@ class BasicJapanese extends Component {
 
     render(){
         return(
-            <div>
+            <div className="basicJapaneseMainDiv">
                 Basic Japanese
             </div>
         )
