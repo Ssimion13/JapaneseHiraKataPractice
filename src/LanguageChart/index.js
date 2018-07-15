@@ -41,6 +41,18 @@ class LanguageChart extends Component {
             )
         })
 
+        var n5VocabMap = this.props.n5Vocab.map(word => {
+            return (
+                <div className="languageChartWord">
+                    <div className="wordChartWord"> {word.word} ({word.romaji}) </div> 
+                    <div className="wordChartKanji">{word.kanji} </div>
+                    <div className="wordChartGrammarType">{word.grammarType} </div>
+                    <div className="wordChartMeaning"> {word.Meaning} </div> 
+                    
+                </div>
+            )
+        })
+
         return(
             <div className="languageChartMainDiv">
                 <h2> Hiragana </h2>
@@ -54,6 +66,15 @@ class LanguageChart extends Component {
                 <h2> N5 Kanji List </h2>
                 <div className="languageChartHolder">
                     {n5KanjiCharacterMap}
+                </div>
+                <div className="languageChartWordMainDiv">
+                    <div className="languageChartWord">
+                        <div className="wordChartWordTop"> Word <br/> (w/ Romaji) </div> 
+                        <div className="wordChartKanji"> Kanji </div>
+                        <div className="wordChartGrammarType"> Grammar Type </div>
+                        <div className="wordChartMeaning"> Meaning </div> 
+                    </div>
+                    {n5VocabMap}
                 </div>
             </div>
         )

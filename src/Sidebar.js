@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import { Button,  Icon, Menu, Segment, Sidebar } from 'semantic-ui-react'
 import {Switch,Link, Route} from "react-router-dom"
-import HiraganaTest from "./HiraganaTest/HiraganaTest.js"
+import HiraganaTest from "./HiraganaTest/"
 import HomePage from "./HomePage"
-import LanguageChart from "./LanguageChart"
-import BasicJapanese from "./BasicJapanese/BasicJapanese.js"
+import LanguageChart from "./LanguageChart/"
+import BasicJapanese from "./BasicJapanese/"
 
 export default class SidebarComponent extends Component {
   state = { visible: false }

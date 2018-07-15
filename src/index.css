@@ -254,6 +254,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-top: 20px;
 }
 
 .frontPageTitle {
@@ -331,4 +332,52 @@ body {
 .basicJapaneseMainDiv {
   height: 1000px;
   background-color: whitesmoke;
+}
+
+.languageChartWord {
+  display: flex;
+  border: 1px solid black;
+  height: 40px;
+}
+
+.languageChartWordMainDiv {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+
+}
+
+.wordChartWord {
+  width: 25%;
+  text-align: center;
+  line-height: 40px;
+}
+.wordChartWordTop {
+  font-size: 14px;
+  text-align: center;
+  width: 25%;
+}
+
+.wordChartKanji {
+  width: 20%;
+  text-align: center;
+  line-height: 40px;
+}
+
+.wordChartGrammarType {
+  width: 20%;
+  text-align: center;
+  line-height: 40px;
+}
+
+.wordChartMeaning {
+  line-height: 40px;
+  text-align: center;
+  width: 35%;
+}
+
+@media(min-width: 800px){
+  .thumbnailHolder{
+    padding-top: 0px;
+  }
 }
