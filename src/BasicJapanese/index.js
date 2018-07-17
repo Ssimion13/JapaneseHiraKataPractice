@@ -12,7 +12,7 @@ class BasicJapanese extends Component {
     render(){
         return(
             <div className="basicJapaneseMainDiv">
-                Basic Japanese
+                Under Construction, please wait gently!
             </div>
         )
     }

@@ -131,7 +131,7 @@ body {
 
 .buttonHolder {
   display: flex;
-  margin-top: 10px;
+  margin-top: 40px;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
@@ -142,11 +142,16 @@ body {
 }
 
 .selectAllCharactersButton {
-  margin-bottom: 10px 
+}
+
+.centeredTitle {
+  text-align: center;
 }
 
 .alphabetDropdown{
-  width: 300px
+  width: 300px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .selectedCharacterDiv {

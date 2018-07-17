@@ -273,30 +273,41 @@ class HiraganaTest extends Component{
                     <Modal.Content>
                     <Modal.Description>
                     {this.state.value.includes("Hiragana") ?
-                    <div className="mappedCharacters mappedCharactersModal">
-                        {mappedHiraganaCharacters}
+                    <div>
+                        <h2 className="centeredTitle"> Hiragana </h2> <br/>
+                        <div className="mappedCharacters mappedCharactersModal">
+                            {mappedHiraganaCharacters}
+                        </div>
                     </div>
                     : null }
-                    {this.state.value.includes("Katakana") ?  
-                    <div className="mappedCharacters mappedCharactersModal">
-                        {mappedKatakanaCharacters}
+
+                    {this.state.value.includes("Katakana") ?
+                    <div>  
+                        <h2 className="centeredTitle"> Katakana </h2> <br/> 
+                        <div className="mappedCharacters mappedCharactersModal">
+                            {mappedKatakanaCharacters}
+                        </div>
                     </div>
                     : null }
+
                     {this.state.value.includes("N5Kanji") ? 
-                    <div className="mappedCharacters mappedCharactersModal">
-                        {mappedN5KanjiCharacters}
+                    <div>
+                        <h2 className="centeredTitle"> N5 Kanji </h2> <br/>
+                        <div className="mappedCharacters mappedCharactersModal">
+                            {mappedN5KanjiCharacters}
+                        </div>
                     </div>
                     : null }
-                    {this.state.value.includes("N5Kanji") ? 
-                    <div className="mappedCharacters mappedCharactersModal">
-                        {mappedN5VocabCharacters}
-                    </div>
-                    : null }
+
                     {this.state.value.includes("N5Vocab") ?
-                    <div className="mappedCharacters">
-                        {mappedN5VocabCharacters}
+                    <div>
+                        <h2 className="centeredTitle"> N5 Vocabulary </h2> <br/>
+                        <div className="mappedCharacters mappedCharactersModal">
+                            {mappedN5VocabCharacters}
+                        </div>
                     </div>
                     : null}
+
                     <Button  onClick={this.addAllCharacters}> Add All </Button> 
                     <Button onClick={this.clearCharacters}> Clear And Close </Button>
                     <Button onClick={()=> {this.handleModalClose();}}> Close</Button>
