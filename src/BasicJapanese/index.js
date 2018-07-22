@@ -1,6 +1,8 @@
 import React, {Component} from "react";
 import axios from "axios";
+import {Link} from "react-router-dom";
 import {hiraganaCharacters} from "../redux/dictionary.js"
+
 
 class BasicJapanese extends Component {
     constructor(){
@@ -14,13 +16,25 @@ class BasicJapanese extends Component {
         //          console.log(response.data)
         //     })
         // }
+        // axios.get("/Hiragana").then(response => {
+        //     console.log(response.data);
+        // })
     }
 
 
     render(){
         return(
             <div className="basicJapaneseMainDiv">
-                Under Construction, please wait gently!
+                <h2> Basic Japanese </h2>
+                <ol>
+                    <li> <Link to="/Intro"> Intro </Link> </li>
+                    <li> <Link to="/HiraganaBasics"> Hiragana Basics </Link> </li>
+                    <li> <Link to="/BasicGrammar" > Basic Grammar </Link> </li>
+                    <li> <Link to="/BasicSentenceStructure"> Basic Sentence Structure </Link> </li>
+                </ol>
+                    
+
+
             </div>
         )
     }

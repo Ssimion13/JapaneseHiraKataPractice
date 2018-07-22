@@ -349,8 +349,12 @@ body {
   display: flex;
   flex-direction: column;
   width: 85%;
+}
 
-
+.languageChartWordTitle {
+  line-height: 65px;
+  text-align: center;
+  width: 100%;
 }
 
 .wordChartWord {
@@ -393,6 +397,12 @@ body {
   width: 35%;
   text-align: center;
 }
+
+.informativePageDiv {
+  display: flex;
+  flex-direction: column;
+}
+
 
 @media(min-width: 800px){
   .thumbnailHolder{

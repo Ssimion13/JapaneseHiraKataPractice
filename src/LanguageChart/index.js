@@ -69,6 +69,9 @@ class LanguageChart extends Component {
                 </div>
                 <div className="languageChartWordMainDiv">
                     <div className="languageChartWord">
+                        <h2 className="languageChartWordTitle"> N5 Vocabulary </h2>
+                    </div>
+                    <div className="languageChartWord">
                         <div className="wordChartWordTop"> Word <br/> (w/ Romaji) </div> 
                         <div className="wordChartKanji"> Kanji </div>
                         <div className="wordChartGrammarType"> Grammar Type </div>
