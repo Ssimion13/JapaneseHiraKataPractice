@@ -25,6 +25,7 @@ class HiraganaBasics extends Component {
                     It will take a lot of practice to get the hang of using these particular vowel noises, especially when you are reading
                     Romaji (romanized Japanese)! Try your best to practice and memorize these sounds, and you will be able to correctly pronounce anything
                     in Japanese the first time. The pronunciation always matches what is written, unlike English!
+                    </p>
 
                 <h2> Voiced and Unvoiced Consonants </h2>
                 <p>    If you go through the hiragana list, you may end up asking yourself "Where are all the other letters?" 

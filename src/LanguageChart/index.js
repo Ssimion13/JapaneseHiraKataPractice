@@ -8,11 +8,6 @@ class LanguageChart extends Component {
         this.state = {}
     }
 
-
-
-
-
-
     render(){
         var hiraganaCharacterMap = this.props.hiraganaCharacters.map(character => {
             return (
@@ -41,9 +36,10 @@ class LanguageChart extends Component {
             )
         })
 
-        var n5VocabMap = this.props.n5Vocab.map(word => {
+        var n5VocabMap = this.props.n5Vocab.map((word, index) => {
+
             return (
-                <div className="languageChartWord">
+                <div className="languageChartWord" key={index}>
                     <div className="wordChartWord"> {word.word} ({word.romaji}) </div> 
                     <div className="wordChartKanji">{word.kanji} </div>
                     <div className="wordChartGrammarType">{word.grammarType} </div>

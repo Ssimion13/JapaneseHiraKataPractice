@@ -1,7 +1,7 @@
 import React, {Component} from "react";
-import axios from "axios";
 import {Link} from "react-router-dom";
-import {hiraganaCharacters} from "../redux/dictionary.js"
+// import axios from "axios";
+// import {hiraganaCharacters} from "../redux/dictionary.js"
 
 
 class BasicJapanese extends Component {
