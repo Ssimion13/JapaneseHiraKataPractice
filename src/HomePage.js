@@ -7,8 +7,8 @@ function HomePage(){
         <div className="homepageMainDiv"> 
             <div className="frontPageTitleDiv">
                 <h1 className="frontPageTitle"> You Can Learn Japanese! </h1>
-                <p className="frontPageSubText"> People tell you constantly that Japanese is too hard, that there is no way you can learn it, but with this website, it can make studying easy! </p>
-                <p className="frontPageSubText"> Use the grammar section to learn basic Japanese grammar structure and the lessons provided to learn the concepts, then put your skills to the test with the quiz page! </p>
+                <p className="frontPageSubText"> Make learning Japanese easy with <i> You Can Learn Japanese </i>!  </p>
+                <p className="frontPageSubText"> Use the website to learn the basics of Japanese, then put your skills to the test with the quiz page! </p>
                 <p className="frontPageSubText"> This website was designed (for the time being) to prepare you for the Japanese Language Placement Test (JLPT) level 5 examination. </p>
                 <p className="buttonAnnouncer"> Click The Buttons Below To Start! </p>
             </div>
