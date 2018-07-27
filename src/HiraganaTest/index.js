@@ -243,7 +243,7 @@ class HiraganaTest extends Component{
 
         
         return(
-            <div className="hiraganaTestMain">
+            <div className= {this.state.value.length === 0 ? "hiraganaTestMain" : "hiraganaTestMainStart"}>
                 <div>
                 <Instructions />
                 </div>
@@ -322,7 +322,7 @@ class HiraganaTest extends Component{
                         <Button  onClick={this.addAllCharacters}> Add All Characters From Above List(s) </Button> 
                     </div>
                     : null}
-                    <div> 
+                    <div className="clearStartButtons"> 
                         <Button onClick={this.clearCharacters}> Clear </Button>
                         <Button onClick={this.createMultipleChoice}> Start </Button>
                     </div>

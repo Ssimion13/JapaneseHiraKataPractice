@@ -64,7 +64,7 @@ export default class SidebarComponent extends Component {
           </Sidebar>
 
           <Sidebar.Pusher>
-            <Switch>
+            <Switch className="app">
               <Route path="/HiraganaTest" component={HiraganaTest} />
               <Route path="/LanguageChart" component={LanguageChart} />
               <Route path="/BasicJapanese" component={BasicJapanese} />

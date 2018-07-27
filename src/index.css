@@ -18,14 +18,25 @@ body {
   font-family: sans-serif;
 }
 
+.pusher {
+  height: 100% !important;
+}
+
 .hiraganaTestMain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 100px;
+  height: 1000px;
+}
+.hiraganaTestMainStart {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding-top: 10px;
   padding-bottom: 100px;
-
 }
 
 .hiraganaTestComponentMain{
@@ -34,6 +45,10 @@ body {
   align-items:center;
   justify-content:center;
   width: 100%;
+}
+
+.clearStartButtons {
+  margin-top: 10px;
 }
 
 .mappedCharacters{
@@ -131,7 +146,7 @@ body {
 
 .buttonHolder {
   display: flex;
-  margin-top: 40px;
+  margin-top: 10px;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
@@ -287,6 +302,7 @@ body {
 
 .frontPageSubText{
   width: 80%;
+  text-align: center;
 }
 
 .thumbnailHolder{

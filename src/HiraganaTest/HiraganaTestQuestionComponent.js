@@ -5,7 +5,7 @@ import { Popup, Modal, Button, Header} from 'semantic-ui-react'
 
 function HiraganaTestQuestionComponent(props) {
     return(
-        <div className="HiraganaTestComponentMain">
+        <div className="hiraganaTestComponentMain">
             { props.mappedQuestions.length > 0 ? 
             <Modal trigger={<Button className="giantButton"> Current Selected Characters </Button>}>
                 <Modal.Header>Currently Selected Characters</Modal.Header>
