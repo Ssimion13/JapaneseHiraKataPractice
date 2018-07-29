@@ -20,4 +20,4 @@ const kanjiSchema = new Schema({
 
 })
 
-module.exports = mongoose.model("Kanji", characterSchema)
+module.exports = mongoose.model("Kanji", kanjiSchema)

@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import {Link} from "react-router-dom";
-// import axios from "axios";
-// import {hiraganaCharacters} from "../redux/dictionary.js"
+import axios from "axios";
+import {katakanaCharacters} from "../redux/dictionary.js"
 
 
 class BasicJapanese extends Component {
@@ -11,12 +11,12 @@ class BasicJapanese extends Component {
     }
     //this part will be removed later, this is a convenient place for me to migrate the objects inside of my dictionary into the database for access purposes
     componentDidMount(){
-        // for (var element in hiraganaCharacters){
-        //     axios.post("/Hiragana", hiraganaCharacters[element]).then(response => {
+        // for (var element in katakanaCharacters){
+        //     axios.post("/Katakana", katakanaCharacters[element]).then(response => {
         //          console.log(response.data)
         //     })
         // }
-        // axios.get("/Hiragana").then(response => {
+        // axios.get("/Katakana").then(response => {
         //     console.log(response.data);
         // })
     }
