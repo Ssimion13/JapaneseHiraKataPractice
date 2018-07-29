@@ -11,6 +11,8 @@ app.use(morgan('dev'));
 
 
 app.use("/Hiragana", require('./Routes/HiraganaCharacters.js'))
+app.use("/Vocab", require('./Routes/Vocab.js'))
+app.use("/Kanji", require('./Routes/Kanji.js'))
 
 
 mongoose.connect('mongodb://localhost/TeachingJapanese', err => {
