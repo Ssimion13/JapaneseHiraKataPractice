@@ -1,10 +1,11 @@
 import React, {Component} from "react";
 import {connect} from "react-redux"
-import {addCharacterToList, removeCharacterFromList, addAllCharacters, clearCharacters, createMultipleChoice, addCorrect, addIncorrect} from "../redux"
+import {getDataFromServer, addCharacterToList, removeCharacterFromList, addAllCharacters, clearCharacters, createMultipleChoice, addCorrect, addIncorrect} from "../redux"
 import { Button, Modal} from 'semantic-ui-react'
 import { Dropdown } from 'semantic-ui-react'
 import Instructions from "./HiraganaTestInstructionComponent";
 import HiraganaTestQuestionComponent from "./HiraganaTestQuestionComponent";
+import axios from "axios";
 
 
 
@@ -27,10 +28,12 @@ class HiraganaTest extends Component{
     this.addAllCharacters = this.addAllCharacters.bind(this);
     this.handleModalOpen = this.handleModalOpen.bind(this);
     this.handleModalClose = this.handleModalClose.bind(this);
+    this.getDataFromServer = this.getDataFromServer.bind(this);
     }
 
     componentDidMount() {
         this.props.clearCharacters();
+        this.getDataFromServer();
     }
 
     handleChange = (e, { value }) => this.setState({ value })
@@ -43,6 +46,19 @@ class HiraganaTest extends Component{
             alert("Please add at least 5 terms to review.")
         }
     }
+
+    getDataFromServer(){
+        axios.get("/Hiragana")
+          .then(response => {
+            console.log(response);
+            this.props.getDataFromServer(response.data, "hiraganaCharacters");
+          })
+        axios.get("/Katakana")
+            .then(response => {
+            console.log(response);
+            this.props.getDataFromServer(response.data, "katakanaCharacters");
+        })
+      }
 
     addCharacterToList(character){
         if(!this.props.currentStudyList.includes(character)){
@@ -178,6 +194,7 @@ class HiraganaTest extends Component{
 
 
     render(){
+
         const mappedHiraganaCharacters = this.props.hiraganaCharacters.map((character,i) => {
             return(
                 <div key={character+i} name={character.character} onClick={()=> this.addCharacterToList(character)} className={this.props.currentSelectedCharacters.includes(character.character) ? "selectedIndividualCharacters" : "individualCharacters"}>
@@ -334,4 +351,8 @@ class HiraganaTest extends Component{
     }
 }
 
-export default connect(state => state, {addCharacterToList, addAllCharacters, removeCharacterFromList, clearCharacters, addCorrect, addIncorrect, createMultipleChoice})(HiraganaTest);
+const mapStateToProps = state => {
+    return state;
+}
+
+export default connect(mapStateToProps, {getDataFromServer, addCharacterToList, addAllCharacters, removeCharacterFromList, clearCharacters, addCorrect, addIncorrect, createMultipleChoice})(HiraganaTest);

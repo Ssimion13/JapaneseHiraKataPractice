@@ -62,12 +62,22 @@ export const addAllCharacters = (studyArray, selectedArray) => {
     }
 }
 
+export const getDataFromServer = (data, datatype) => {
+    return dispatch => {
+        dispatch({
+            type:"GET_DATA_FROM_SERVER",
+            data: data,
+            datatype: datatype
+        })
+    }
+}
+
 
 
 const initialState = {
     characterTranslation: [],
-    hiraganaCharacters: hiraganaCharacters,
-    katakanaCharacters: katakanaCharacters,
+    hiraganaCharacters: [],
+    katakanaCharacters: [],
     n5KanjiCharacters: N5Kanji,
     n5Vocab: N5Vocab,
     currentStudyList: [],
@@ -80,6 +90,14 @@ const initialState = {
 
 export const reducer = (prevState = initialState, action) => {
     switch(action.type) {
+        case "GET_DATA_FROM_SERVER":
+        console.log(action);
+            return {
+                ...prevState,
+                [action.datatype] : action.data,
+            }
+
+
         case "ADD_CHARACTER_TO_LIST":
             if(action.character.word){
                 action.character.character = action.character.word;
@@ -123,7 +141,18 @@ export const reducer = (prevState = initialState, action) => {
                     numberIncorrect: prevState.numberIncorrect + 1
                 }
         case "CLEAR_CHARACTERS":
-            return initialState
+            return {
+                ...prevState,
+                characterTranslation: [],
+                n5KanjiCharacters: N5Kanji,
+                n5Vocab: N5Vocab,
+                currentStudyList: [],
+                currentSelectedCharacters: [],
+                multipleChoice: [],
+                currentQuestion: null,
+                numberCorrect: 0,
+                numberIncorrect: 0,
+            }
 
         default:
             return prevState;
