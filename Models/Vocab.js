@@ -17,7 +17,7 @@ const vocabSchema = new Schema({
     grammarType: {
         type: String,
     },
-    meaning: {
+    Meaning: {
         type: String,
     },
 

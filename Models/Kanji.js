@@ -8,13 +8,13 @@ const kanjiSchema = new Schema({
     character: {
         type: String,
     },
-    onReading: {
+    OnReading: {
         type: String,
     },
-    kunReading: {
+    KunReading: {
         type: String,
     },
-    meaning: {
+    Meaning: {
         type: String,
     }
 
