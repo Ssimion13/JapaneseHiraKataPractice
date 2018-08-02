@@ -9,7 +9,7 @@ function HomePage(){
                 <h1 className="frontPageTitle"> Learn Japanese! </h1>
                 <p className="frontPageSubText"> This app is designed to be used in tandem with other resources to further your understanding of Japanese! </p>
                 <p className="frontPageSubText"> Use the website to touch up on the basics, then put your skills to the test with the quiz page! </p>
-                <p className="frontPageSubText"> This website was designed (for the time being) to prepare you <br/> for the Japanese Language Placement Test (JLPT) level 5 examination. </p>
+                <p className="frontPageSubText"> This website was designed (for the time being!) to prepare you <br/> for the Japanese Language Placement Test (JLPT) level 5 examination. </p>
             </div>
 
             <div className="thumbnailHolder"> 

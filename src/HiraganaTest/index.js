@@ -334,7 +334,7 @@ class HiraganaTest extends Component{
                 <div className="buttonHolder"> 
                     {this.state.value.length === 1 && this.state.value.indexOf("N5Vocab") === -1 ? 
                     <div className="selectAllCharactersButton"> 
-                        <Button  onClick={this.addAllCharacters}> Add All Characters From Above List(s) </Button> 
+                        <Button  onClick={this.addAllCharacters}> Add All Characters From Above List </Button> 
                     </div>
                     : null}
                     <div className="clearStartButtons"> 
