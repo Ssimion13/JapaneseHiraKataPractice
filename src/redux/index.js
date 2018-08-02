@@ -91,7 +91,6 @@ const initialState = {
 export const reducer = (prevState = initialState, action) => {
     switch(action.type) {
         case "GET_DATA_FROM_SERVER":
-        console.log(action);
             return {
                 ...prevState,
                 [action.datatype] : action.data,
@@ -114,7 +113,6 @@ export const reducer = (prevState = initialState, action) => {
                 currentSelectedCharacters: [...action.selectedArray]
             }
         case "REMOVE_CHARACTER_FROM_LIST":
-            console.log(prevState.currentStudyList);
             return {
                 ...prevState,
                 currentStudyList: prevState.currentStudyList.filter(character => {

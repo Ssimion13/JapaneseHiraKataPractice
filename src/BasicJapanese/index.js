@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import {Link} from "react-router-dom";
- import axios from "axios";
- import {N5Vocab} from "../redux/dictionary.js"
+//  import axios from "axios";
+//  import {N5Vocab} from "../redux/dictionary.js"
 
 
 class BasicJapanese extends Component {
