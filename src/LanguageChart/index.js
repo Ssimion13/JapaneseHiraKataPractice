@@ -2,11 +2,20 @@ import React, { Component } from "react"
 import {connect} from "react-redux"
 import { Popup } from 'semantic-ui-react'
 
+const possibleCharacters = ["あ","い","う","え","お","か","き","く","け","こ","が","ぎ","ぐ","げ","ご","さ","し","す","せ","そ","ざ","じ",
+"ず","ぜ","ぞ","た","ち","つ","て","と","だ","ぢ","づ","で","ど","な","に","ぬ","ね","の","ま","み","む","め","も","は","ひ","ふ","へ","ほ","ば","び"
+,"ぶ","べ","ぼ","ぱ","ぴ","ぷ","ぺ","ぽ","や","ゆ","よ","ら","り","る","れ","ろ","ん",
+"ア","イ","ウ","エ","オ","カ","キ","ク","ケ","コ","ガ","ギ","グ","ゲ","ゴ","サ","シ","ス","セ","ソ","ザ","ジ","ズ","ゼ","ゾ",
+"タ","チ","ツ","テ","ト","ダ","ヂ","ヅ","デ","ド","ナ","ニ","ヌ","ネ","ノ","マ","ミ","ム","メ","モ","ハ","ヒ","フ","ヘ","ホ","バ","ビ","ブ","ベ","ボ","パ"
+,"ピ","プ","ペ","ポ","ヤ","ユ","ヨ","ラ","リ","ル","レ","ロ","ン"
+]
+
 class LanguageChart extends Component {
     constructor(){
         super();
         this.state = {}
     }
+
 
     render(){
         var hiraganaCharacterMap = this.props.hiraganaCharacters.map(character => {
@@ -48,7 +57,15 @@ class LanguageChart extends Component {
                 </div>
             )
         })
-
+        // var n5VocabMap = possibleCharacters.map((character,index) => {
+        //     console.log(character);
+        //     var wordHolder = this.props.n5Vocab.filter((word) => {    
+        //         console.log(word);
+        //         return word.word[0] === character;
+        //     })
+        //     wordHolder;
+        //     console.log(wordHolder);
+        // })
         return(
             <div className="languageChartMainDiv">
                 <h2> Hiragana </h2>

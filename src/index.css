@@ -251,6 +251,14 @@ body {
   border: none !important;
 }
 
+.ui.button {
+  background-color: lightgrey !important;
+}
+
+.ui.button:hover {
+  background-color: #e0e1e2 !important;
+}
+
 .topButton{
   border-radius: 0 !important;
   grid-area: Button !important;
@@ -335,7 +343,11 @@ body {
   border-radius: 50px;
   margin-bottom: 30px;
   color: black;
+}
 
+.thumbnail:hover {
+  background-color: lightgrey;
+  transition-duration: 0.25s;
 }
 
 .thumbnailBigText {

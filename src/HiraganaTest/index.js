@@ -263,7 +263,7 @@ class HiraganaTest extends Component{
                 <Instructions />
                 </div>
                 <div className="alphabetDropdown">
-                    <Dropdown placeholder="Select Characters For Review"  value = {this.state.value} onChange={this.handleChange} fluid multiple search selection options ={languageOptions}/>
+                    <Dropdown placeholder="Select For Review"  value = {this.state.value} onChange={this.handleChange} fluid multiple search selection options ={languageOptions}/>
                 </div>
                 {this.state.value.includes("Hiragana") && this.state.value.length === 1 ?
                     <div className="mappedCharacters">
