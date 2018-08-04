@@ -25,7 +25,7 @@ export default class SidebarComponent extends Component {
         <div className="navbar">
         <Button className="topButton" onClick={this.handleButtonClick}> Menu </Button>
           <div className="navbarTitleDiv" >
-            <h2> Learn Japanese Quick </h2>
+            <h2> Learn Japanese On The Go! </h2>
           </div>
         </div>
         <Sidebar.Pushable as={Segment}>

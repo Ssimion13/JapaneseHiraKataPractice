@@ -1,3 +1,5 @@
+
+
 a {
   color: black;
 }
@@ -309,7 +311,6 @@ body {
 
 .frontPageTitleDiv {
   width: 100%;
-  background-color: whitesmoke;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -328,7 +329,6 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: whitesmoke;
   padding-bottom: 50px;
 }
 
@@ -439,7 +439,9 @@ body {
   display: flex;
   flex-direction: column;
 }
-
+.ui {
+  background-color: #EDEAE5 !important;
+}
 
 @media(min-width: 800px){
   .sidebar {
