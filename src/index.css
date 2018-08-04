@@ -234,7 +234,7 @@ body {
 
 .navbar {
   width: 100%;
-  background-color: lightgrey;;
+  background-color: rgb(134, 194, 223);
   height: 60px;
   display: grid;
   grid-template-areas: "Button Title  Title Title";
@@ -254,13 +254,15 @@ body {
 }
 
 .ui.button {
-  background-color: lightgrey !important;
+  background-color: rgb(134, 194, 223) !important;
 }
 
 .ui.button:hover {
-  background-color: #e0e1e2 !important;
+  background-color: rgb(84, 176, 219) !important;
 }
-
+.ui.overlay {
+  background-color: #0c1313f6 !important;
+}
 .topButton{
   border-radius: 0 !important;
   grid-area: Button !important;
@@ -343,10 +345,11 @@ body {
   border-radius: 50px;
   margin-bottom: 30px;
   color: black;
+  background-color: rgb(134, 194, 223);
 }
 
 .thumbnail:hover {
-  background-color: lightgrey;
+  background-color: rgb(84, 176, 219);
   transition-duration: 0.25s;
 }
 
@@ -440,7 +443,7 @@ body {
   flex-direction: column;
 }
 .ui {
-  background-color: #EDEAE5 !important;
+  
 }
 
 @media(min-width: 800px){

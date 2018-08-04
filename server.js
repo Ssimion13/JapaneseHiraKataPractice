@@ -9,7 +9,6 @@ const port = process.env.PORT || 7000;
 
 app.use(bodyParser.json());
 app.use(morgan('dev'));
-app.disable('etag');
 
 app.use("/Hiragana", require('./Routes/HiraganaCharacters.js'))
 app.use("/Katakana", require('./Routes/KatakanaCharacters.js'))
