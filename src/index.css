@@ -240,6 +240,14 @@ body {
   grid-template-areas: "Button Title  Title Title";
   margin-bottom: -15px;
 }
+.topNavbar {
+  width: 100%;
+  background-color: rgb(134, 194, 223);
+  height: 60px;
+  display: flex;
+  margin-bottom: -15px;
+}
+
 .navbarTitleDiv {
   display: flex;
   align-items: center;
@@ -340,7 +348,7 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  border: 1.5px solid darkslategrey;
+  border: 1.5px solid rgb(117, 189, 224);
   padding: 65px;
   border-radius: 50px;
   margin-bottom: 30px;
@@ -442,7 +450,8 @@ body {
   display: flex;
   flex-direction: column;
 }
-.ui {
+
+.navbarButtons {
   
 }
 

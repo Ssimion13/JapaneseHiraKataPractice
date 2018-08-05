@@ -4,6 +4,7 @@ import axios from "axios";
 import {connect} from "react-redux";
 import {getDataFromServer} from "./redux"
 import { withRouter } from 'react-router-dom'
+import TopNavbar from "./TopNavbar"
 
 
 class App extends Component {
@@ -38,6 +39,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <TopNavbar />
         <Sidebar />
       </div>
     );

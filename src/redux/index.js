@@ -1,6 +1,6 @@
 import {createStore, applyMiddleware} from "redux";
 import thunk from "redux-thunk"
-import {N5Kanji, N5Vocab} from "./dictionary.js"
+import {hiraganaCharacters,katakanaCharacters} from "./dictionary.js"
 
 export const addCharacterToList = (character) => {
     return dispatch => {
@@ -76,8 +76,8 @@ export const getDataFromServer = (data, datatype) => {
 
 const initialState = {
     characterTranslation: [],
-    hiraganaCharacters: [],
-    katakanaCharacters: [],
+    hiraganaCharacters: hiraganaCharacters,
+    katakanaCharacters: katakanaCharacters,
     n5KanjiCharacters: [],
     n5Vocab: [],
     currentStudyList: [],
@@ -142,8 +142,6 @@ export const reducer = (prevState = initialState, action) => {
             return {
                 ...prevState,
                 characterTranslation: [],
-                n5KanjiCharacters: N5Kanji,
-                n5Vocab: N5Vocab,
                 currentStudyList: [],
                 currentSelectedCharacters: [],
                 multipleChoice: [],

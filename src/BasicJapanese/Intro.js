@@ -16,7 +16,7 @@ class Intro extends Component {
                     </p>
                     <h4> Hiragana </h4>
                     <p>
-                        Hiragana (ひらがな) is, at its core, the fundamental building block of written Japanese. There are 46 hiragana that all represent
+                        Hiragana (ひらがな) is at its core the fundamental building block of written Japanese. There are 46 hiragana that all represent
                         a phoneme, that is, a distinct sound in the language. You may be thinking "jeez, that's almost double the English alphabet!", but
                         luckily for us, these 46 characters and their slight derivatives make up the entirety of the Japanese vocal palate, which means that once you can
                         write and speak these sounds, <i> everything </i> is pronounced as it is written in Japanese the same way every time!
@@ -24,7 +24,7 @@ class Intro extends Component {
                     </p>
                     <h4> Katakana </h4>
                     <p> 
-                        Katakana (カタカナ)　is another 46 character 'alphabet' in Japanese-- it is used almost exclusively for loan words (of varying origins, but often English!), for advertisements (eg. billboards),
+                        Katakana (カタカナ)　is another 46 character 'alphabet' (linguistically called a 'syllabary') in Japanese-- it is used almost exclusively for loan words (of varying origins, but often English!), for advertisements (eg. billboards),
                         and at times for emphasis. It is not <i> necessarily </i> truly essential to learn Katakana to understand Japanese, but as time goes on and the world globalizes,
                         the amount of loan words increases and we find ourselves needing it far more than, say, 30 years ago.
                     </p>
