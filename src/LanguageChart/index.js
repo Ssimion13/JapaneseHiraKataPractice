@@ -76,13 +76,13 @@ class LanguageChart extends Component {
                 <div className="languageChartHolder">
                     {katakanaCharacterMap}
                 </div>
-                <h2> N5 Kanji List </h2>
+                <h2 className="centeredText"> N5 Kanji List <br/> (Click on Kanji for reading)</h2>
                 <div className="languageChartHolder">
                     {n5KanjiCharacterMap}
                 </div>
                 <div className="languageChartWordMainDiv">
                     <div className="languageChartWord">
-                        <h2 className="languageChartWordTitle"> N5 Vocabulary </h2>
+                        <h2 className="languageChartWordTitle"> N5 Vocabulary  </h2>
                     </div>
                     <div className="languageChartWord">
                         <div className="wordChartWordTop"> Word <br/> (w/ Romaji) </div> 

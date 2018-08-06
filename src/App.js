@@ -17,14 +17,6 @@ class App extends Component {
   }
 
   getDataFromServer(){
-    axios.get("/Hiragana")
-      .then(response => {
-        this.props.getDataFromServer(response.data, "hiraganaCharacters");
-      })
-    axios.get("/Katakana")
-        .then(response => {
-        this.props.getDataFromServer(response.data, "katakanaCharacters");
-    })
     axios.get("/Kanji")
         .then(response => {
         this.props.getDataFromServer(response.data, "n5KanjiCharacters");
