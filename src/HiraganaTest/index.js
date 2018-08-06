@@ -225,7 +225,6 @@ class HiraganaTest extends Component{
             )
         });
         const mappedQuestions = this.props.currentStudyList.map((character,i) => {
-
                 return(
                     <div key={"x"+character+i} className="individualCharacters">
                     {character.character}
@@ -317,7 +316,7 @@ class HiraganaTest extends Component{
                     {this.state.value.includes("N5Vocab") ?
                     <div>
                         <h2 className="centeredTitle"> N5 Vocabulary </h2> <br/>
-                        <div className="mappedCharacters mappedCharactersModal">
+                        <div className="mappedWordsModal">
                             {mappedN5VocabCharacters}
                         </div>
                     </div>

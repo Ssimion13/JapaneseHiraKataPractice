@@ -63,9 +63,12 @@ body {
 }
 
 .mappedCharacters{
-  display: flex;
-  flex-wrap: wrap;
-  width: 80%;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(5,60px);
+  justify-content: space-around;
+  width: 40%;
+  margin-top: 10px;
   margin-bottom: 10px;
 }
 
@@ -78,36 +81,54 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 30px;
-  height: 30px;
-  border: 1px solid black;
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgb(67, 170, 221);
+  background-color: rgb(134, 194, 223);
   border-radius: 5px;
   margin-bottom: 5px;
   margin-right: 5px;
+  font-size: 20px;
+  font-weight: bold;
 }
 .selectedIndividualCharacters{
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 30px;
-  height: 30px;
-  border: 1px solid black;
-  background-color: red;
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgb(236, 137, 24);
+  background-color: rgb(236, 154, 59);
   border-radius: 5px;
   margin-bottom: 5px;
   margin-right: 5px;
+  font-size: 20px;
+  font-weight: bold;
 }
+
+.mappedWordsModal {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 .individualWord{
   display: flex;
   justify-content: center;
   align-items: center;
   width: auto;
   height: 30px;
-  border: 1px solid black;
+  border: 1px solid rgb(67, 170, 221);
+  background-color: rgb(134, 194, 223);
+  font-size: 20px;
+  font-weight: bold;
   border-radius: 5px;
   margin-bottom: 5px;
   margin-right: 5px;
-  padding: 2px;
+  padding: 20px;
 }
 .selectedIndividualWord{
   display: flex;
@@ -115,12 +136,14 @@ body {
   align-items: center;
   width: auto;
   height: 30px;
-  border: 1px solid black;
-  background-color: red;
+  border: 1px solid rgb(236, 137, 24);
+  background-color: rgb(236, 154, 59);
   border-radius: 5px;
   margin-bottom: 5px;
   margin-right: 5px;
-  padding: 2px;
+  padding: 20px;
+  font-size: 20px;
+  font-weight: bold;
 }
 .individualQuestionCharacters {
   display: flex;
@@ -294,7 +317,8 @@ body {
 
 .languageChartCharacter {
   display: flex;
-  border: 1px solid black;
+  border: 1px solid rgb(67, 170, 221);
+  background-color: rgb(134, 194, 223);
   border-radius: 15%;
   width: 50px;
   height: 60px;
@@ -303,7 +327,8 @@ body {
   font-size: 20px;
   line-height: 1.5;
   margin-top: 10px;
-  
+  font-weight: bold;
+  font-size: 20px;
 }
 
 .languageChartMainDiv {
