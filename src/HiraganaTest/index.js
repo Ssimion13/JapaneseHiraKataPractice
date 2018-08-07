@@ -28,12 +28,10 @@ class HiraganaTest extends Component{
     this.addAllCharacters = this.addAllCharacters.bind(this);
     this.handleModalOpen = this.handleModalOpen.bind(this);
     this.handleModalClose = this.handleModalClose.bind(this);
-    this.getDataFromServer = this.getDataFromServer.bind(this);
     }
 
     componentDidMount() {
         this.props.clearCharacters();
-        this.getDataFromServer();
     }
 
     handleChange = (e, { value }) => this.setState({ value })
@@ -46,26 +44,6 @@ class HiraganaTest extends Component{
             alert("Please add at least 5 terms to review.")
         }
     }
-
-    getDataFromServer(){
-        axios.get("/Hiragana")
-          .then(response => {
-            this.props.getDataFromServer(response.data, "hiraganaCharacters");
-          })
-        axios.get("/Katakana")
-            .then(response => {
-            this.props.getDataFromServer(response.data, "katakanaCharacters");
-        })
-        axios.get("/Kanji")
-            .then(response => {
-            this.props.getDataFromServer(response.data, "n5KanjiCharacters");
-        })
-        axios.get("/Vocab")
-            .then(response => {
-
-            this.props.getDataFromServer(response.data, "n5Vocab");
-        })
-      }
 
     addCharacterToList(character){
         if(!this.props.currentStudyList.includes(character)){
