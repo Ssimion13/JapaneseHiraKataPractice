@@ -16,7 +16,9 @@ class LanguageChart extends Component {
         super();
         this.state = {}
     }
-
+    componentDidMount() {
+        window.scrollTo(0, 0)
+    }
 
     render(){
         var hiraganaCharacterMap = this.props.hiraganaCharacters.map(character => {

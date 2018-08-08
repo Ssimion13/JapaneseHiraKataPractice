@@ -9,6 +9,10 @@ class BasicJapanese extends Component {
         super();
         this.state = {}
     }
+
+    componentDidMount() {
+        window.scrollTo(0, 0)
+      }
     //this part will be removed later, this is a convenient place for me to migrate the objects inside of my dictionary into the database for access purposes
     // componentDidMount(){
     //     for (var element in katakanaCharacters){
@@ -25,14 +29,29 @@ class BasicJapanese extends Component {
     render(){
         return(
             <div className="basicJapaneseMainDiv">
-                <h2> Basic Japanese </h2>
-                <ol>
-                    <li> <Link to="/Intro"> Intro </Link> </li>
-                    <li> <Link to="/HiraganaBasics"> Hiragana Basics </Link> </li>
-                    <li> <Link to="/BasicGrammar" > Basic Grammar </Link> </li>
-                    <li> <Link to="/BasicSentenceStructure"> Basic Sentence Structure </Link> </li>
-                </ol>
-                    
+                <div className="introductionThumbnailHolder">
+                    <h2 className="centeredTitle centeredText"> Basic Japanese </h2>
+                        <Link to="/Intro">
+                            <div className="thumbnail"> 
+                                <p className="thumbnailBigTextLong centeredText"> Introduction to Japanese </p> 
+                            </div>
+                        </Link> 
+                        <Link to="/HiraganaBasics">
+                            <div className="thumbnail">
+                                <p className="thumbnailBigTextLong centeredText"> Hiragana Basics </p> 
+                            </div> 
+                        </Link> 
+                        <Link to="/BasicGrammar" > 
+                            <div className="thumbnail"> 
+                                <p className="thumbnailBigTextLong centeredText"> Basic Grammar </p> 
+                            </div> 
+                        </Link> 
+                        <Link to="/BasicSentenceStructure">
+                            <div className="thumbnail"> 
+                                <p className="thumbnailBigTextLong centeredText"> Basic Sentence Structure </p>
+                            </div> 
+                        </Link> 
+                </div>    
 
 
             </div>
