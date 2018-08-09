@@ -5,7 +5,6 @@ import { Button, Modal} from 'semantic-ui-react'
 import { Dropdown } from 'semantic-ui-react'
 import Instructions from "./HiraganaTestInstructionComponent";
 import HiraganaTestQuestionComponent from "./HiraganaTestQuestionComponent";
-import axios from "axios";
 
 
 

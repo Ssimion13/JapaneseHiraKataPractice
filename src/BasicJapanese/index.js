@@ -30,27 +30,29 @@ class BasicJapanese extends Component {
         return(
             <div className="basicJapaneseMainDiv">
                 <div className="introductionThumbnailHolder">
-                    <h2 className="centeredTitle centeredText"> Basic Japanese </h2>
-                        <Link to="/Intro">
-                            <div className="thumbnail"> 
-                                <p className="thumbnailBigTextLong centeredText"> Introduction to Japanese </p> 
+                    <h2 className="centeredTitle centeredText"> Section 1: <br/> Basic Japanese </h2>
+                        
+                            <div className="introductionThumbnail"> 
+                                <Link to="/Intro">
+                                    <p className="thumbnailBigTextLong centeredText"> Introduction to Japanese </p> 
+                                </Link> 
                             </div>
-                        </Link> 
-                        <Link to="/HiraganaBasics">
-                            <div className="thumbnail">
-                                <p className="thumbnailBigTextLong centeredText"> Hiragana Basics </p> 
+                            <div className="introductionThumbnail">
+                                <Link to="/HiraganaBasics">
+                                    <p className="thumbnailBigTextLong centeredText"> Hiragana Basics </p> 
+                                </Link> 
                             </div> 
-                        </Link> 
-                        <Link to="/BasicGrammar" > 
-                            <div className="thumbnail"> 
-                                <p className="thumbnailBigTextLong centeredText"> Basic Grammar </p> 
+                            <div className="introductionThumbnail"> 
+                                <Link to="/BasicGrammar" > 
+                                    <p className="thumbnailBigTextLong centeredText"> Basic Grammar </p> 
+                                </Link> 
                             </div> 
-                        </Link> 
-                        <Link to="/BasicSentenceStructure">
-                            <div className="thumbnail"> 
-                                <p className="thumbnailBigTextLong centeredText"> Basic Sentence Structure </p>
+                            <div className="introductionThumbnail">
+                                <Link to="/BasicSentenceStructure"> 
+                                    <p className="thumbnailBigTextLong centeredText"> Basic Sentence Structure </p>
+                                </Link> 
                             </div> 
-                        </Link> 
+
                 </div>    
 
 

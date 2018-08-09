@@ -1,6 +1,6 @@
 import {createStore, applyMiddleware} from "redux";
 import thunk from "redux-thunk"
-import {hiraganaCharacters,katakanaCharacters} from "./dictionary.js"
+import {hiraganaCharacters,katakanaCharacters, N5Vocab, N5Kanji} from "./dictionary.js"
 
 export const addCharacterToList = (character) => {
     return dispatch => {
@@ -78,8 +78,8 @@ const initialState = {
     characterTranslation: [],
     hiraganaCharacters: hiraganaCharacters,
     katakanaCharacters: katakanaCharacters,
-    n5KanjiCharacters: [],
-    n5Vocab: [],
+    n5KanjiCharacters: N5Kanji,
+    n5Vocab: N5Vocab,
     currentStudyList: [],
     currentSelectedCharacters: [],
     multipleChoice: [],
