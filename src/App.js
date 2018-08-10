@@ -11,9 +11,10 @@ class App extends Component {
   //   super();
   //   // this.getDataFromServer = this.getDataFromServer.bind(this);
   // }
-//   componentDidMount(){
-//     this.getDataFromServer();
-//   }
+  componentDidMount(){
+    document.title = 'Japanese On The Go!'
+    //this.getDataFromServer();
+  }
 
 //   getDataFromServer(){
 //     axios.get("/Kanji")

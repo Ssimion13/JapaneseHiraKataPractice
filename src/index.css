@@ -439,6 +439,7 @@ body {
 
 .thumbnailBigTextLong {
   font-size: 25px;
+  border-bottom: 1px solid grey;
 }
 
 .thumbnailSmallText {
@@ -450,8 +451,14 @@ body {
 .thumbnailSmallTextLong {
   margin-top: 15px;
   font-size: 18px;
-  border-top: 1px solid grey;
   text-align: center;
+}
+
+.lessonThumbnailText {
+  margin-top: 15px;
+  font-size: 14px;
+  text-align: center;
+  font-weight: bold;
 }
 
 .basicJapaneseMainDiv {
@@ -463,7 +470,7 @@ body {
 }
 
 .introductionThumbnailHolder {
-  width: 60%;
+  width: 33%;
   margin-top: 10px;
   display: flex;
   flex-direction: column;
@@ -475,13 +482,13 @@ body {
 
 .introductionThumbnail {
   height: 30px;
-  width: 60%;
+  width: 90%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   border: 1.5px solid rgb(117, 189, 224);
-  padding: 65px;
+  padding: 20px;
   border-radius: 50px;
   margin-bottom: 30px;
   color: black;
@@ -574,5 +581,8 @@ body {
   }
   .frontPageTitleDiv {
     width: 50%;
+  }
+  .quizSection {
+    width: 70%;
   }
 }
