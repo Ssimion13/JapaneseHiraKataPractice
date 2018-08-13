@@ -1,7 +1,7 @@
 
 
 a {
-  color: black;
+  color: black !important;
 }
 a:visited {
   color: black;
@@ -510,7 +510,7 @@ body {
 }
 
 .introductionThumbnailHolder {
-  width: 33%;
+  width: 80%;
   margin-top: 10px;
   display: flex;
   flex-direction: column;
@@ -603,10 +603,12 @@ body {
 .informativePageDiv {
   display: flex;
   flex-direction: column;
+  padding-top: 10px;
 }
 
-.navbarButtons {
-  
+.paragraph {
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 @media(min-width: 800px){
@@ -630,5 +632,8 @@ body {
     text-align: center;
     font-size: 30px;
     font-weight: bold;
+  }
+  .introductionThumbnailHolder {
+    width: 33%;  
   }
 }

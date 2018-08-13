@@ -302,8 +302,8 @@ class HiraganaTest extends Component{
                     : null}
 
                     <Button  onClick={this.addAllCharacters}> Add All </Button> 
-                    <Button onClick={this.clearCharacters}> Clear And Close </Button>
-                    <Button onClick={()=> {this.handleModalClose();}}> Close</Button>
+                    <Button onClick={this.clearCharacters}> Clear all and close </Button>
+                    <Button onClick={()=> {this.handleModalClose();}}> Ok </Button>
                     </Modal.Description>
                     </Modal.Content>
                     </Modal>
