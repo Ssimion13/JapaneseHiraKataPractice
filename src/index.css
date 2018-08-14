@@ -1,3 +1,7 @@
+* {
+  font-family: "Droid-Sans";
+}
+
 a {
   color: white !important; }
 
@@ -531,11 +535,15 @@ body {
   display: flex;
   flex-direction: column;
   padding-top: 10px;
-  height: 100vh; }
+  align-items: center; }
 
 .textSection {
   padding-left: 15px;
-  padding-right: 15px; }
+  padding-right: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 16px; }
 
 .nextButton {
   display: flex;
@@ -545,7 +553,29 @@ body {
 
 .prevNextButtonHolder {
   display: flex;
-  justify-content: space-around; }
+  justify-content: space-around; 
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.section {
+  background-color: #86c2df;
+  padding: 20px;
+  border-radius: 30px;
+  width: 60%; 
+  margin-top: 15px;
+}
+
+.sectionSplitter {
+  display: flex;
+  align-items: space-around;
+  justify-content: center;
+}
+
+.hiraganaTable {
+  height: 350px;
+  width: 350px;
+}
 
 @media (min-width: 800px) {
   .sidebar {
