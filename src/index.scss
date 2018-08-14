@@ -1,32 +1,41 @@
-a {
-  color: white !important; }
 
+
+a {
+  color: white !important;
+}
 a:visited {
-  color: black; }
+  color: black;
+}
 
 a:hover {
-  color: black; }
-
+  color: black;
+}
 a:active {
-  color: black; }
+  color: black;
+}
 
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif; }
+  font-family: sans-serif;
+}
 
 .pusher {
-  height: 100% !important; }
+  height: 100% !important;
+}
 
 .sidebar {
-  width: 25% !important; }
+  width: 25% !important;
+}
 
 .text {
   font-size: 16px !important;
-  color: black; }
+  color: black;
+}
 
 .pusher {
-  background-color: #dff2fd !important; }
+  background-color: rgb(223, 242, 253) !important;
+}
 
 .hiraganaTestMain {
   display: flex;
@@ -34,66 +43,72 @@ body {
   align-items: center;
   padding-top: 10px;
   padding-bottom: 100px;
-  height: 1000px; }
-
+  height: 1000px;
+}
 .hiraganaTestMainStart {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding-top: 10px;
-  padding-bottom: 100px; }
+  padding-bottom: 100px;
+}
 
-.hiraganaTestComponentMain {
+.hiraganaTestComponentMain{
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%; }
+  align-items:center;
+  justify-content:center;
+  width: 100%;
+}
 
 .clearStartButtons {
-  margin-top: 10px; }
+  margin-top: 10px;
+}
 
-.mappedCharacters {
+.mappedCharacters{
   display: grid;
   grid-template-rows: auto;
-  grid-template-columns: repeat(5, 60px);
+  grid-template-columns: repeat(5,60px);
   justify-content: space-around;
   width: 40%;
   margin-top: 10px;
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+}
 
-.mappedCharactersModal {
+.mappedCharactersModal{
   width: 100%;
-  justify-content: center; }
+  justify-content: center;
+}
 
-.individualCharacters {
+.individualCharacters{
   display: flex;
   justify-content: center;
   align-items: center;
   width: 40px;
   height: 40px;
-  border: 1px solid #43aadd;
-  background-color: #86c2df;
+  border: 1px solid rgb(67, 170, 221);
+  background-color: rgb(134, 194, 223);
   border-radius: 5px;
   margin-bottom: 5px;
   margin-right: 5px;
   font-size: 20px;
-  font-weight: bold; }
-
-.selectedIndividualCharacters {
+  font-weight: bold;
+}
+.selectedIndividualCharacters{
   display: flex;
   justify-content: center;
   align-items: center;
   width: 40px;
   height: 40px;
-  border: 1px solid #ec8918;
-  background-color: #ec9a3b;
+  border: 1px solid rgb(236, 137, 24);
+  background-color: rgb(236, 154, 59);
   border-radius: 5px;
   margin-bottom: 5px;
   margin-right: 5px;
   font-size: 20px;
-  font-weight: bold; }
+  font-weight: bold;
+}
 
 .mappedWordsModal {
   display: flex;
@@ -101,116 +116,131 @@ body {
   align-items: center;
   justify-content: center;
   margin-top: 10px;
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+}
 
-.individualWord {
+.individualWord{
   display: flex;
   justify-content: center;
   align-items: center;
   width: auto;
   height: 30px;
-  border: 1px solid #43aadd;
-  background-color: #86c2df;
+  border: 1px solid rgb(67, 170, 221);
+  background-color: rgb(134, 194, 223);
   font-size: 20px;
   font-weight: bold;
   border-radius: 5px;
   margin-bottom: 5px;
   margin-right: 5px;
-  padding: 20px; }
-
-.selectedIndividualWord {
+  padding: 20px;
+}
+.selectedIndividualWord{
   display: flex;
   justify-content: center;
   align-items: center;
   width: auto;
   height: 30px;
-  border: 1px solid #ec8918;
-  background-color: #ec9a3b;
+  border: 1px solid rgb(236, 137, 24);
+  background-color: rgb(236, 154, 59);
   border-radius: 5px;
   margin-bottom: 5px;
   margin-right: 5px;
   padding: 20px;
   font-size: 20px;
-  font-weight: bold; }
-
+  font-weight: bold;
+}
 .individualQuestionCharacters {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 60px;
   height: 60px;
-  margin-bottom: 5px; }
+  margin-bottom: 5px;
+}
 
 .individualQuestionMeanings {
   margin-bottom: 8px;
-  width: 75%; }
+  width: 75%;
+}
 
-.questionButton {
+.questionButton{
   width: 100%;
   height: 100%;
-  font-size: 30px; }
+  font-size: 30px;
+}
 
 .kanjiQuestion {
-  display: flex;
+  display:flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 25px; }
+  font-size: 25px;
+}
 
 .scoreHolder {
   display: flex;
-  justify-content: space-around; }
+  justify-content: space-around;
+}
 
 .buttonHolder {
   display: flex;
   margin-top: 10px;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+}
 
 .giantButton {
-  margin-top: 10px !important; }
+  margin-top: 10px !important;
+}
 
 .selectAllCharactersButton {
-  margin-top: 10px; }
+  margin-top: 10px;
+}
 
 .centeredTitle {
   text-align: center;
   margin: auto;
-  margin-bottom: 15px; }
+  margin-bottom: 15px;
+}
 
-.alphabetDropdown {
+.alphabetDropdown{
   width: 300px;
   margin-top: 20px;
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+}
 
 .selectedCharacterDiv {
-  display: flex;
+  display:flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-top: 50px;
   width: 80%;
-  background-color: whitesmoke; }
+  background-color: whitesmoke;
+}
 
 .mappedQuestions {
   display: flex;
   flex-wrap: wrap;
-  padding-bottom: 10px; }
+  padding-bottom: 10px;
+}
 
-.multipleChoiceSelections {
+.multipleChoiceSelections{
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around; }
+  justify-content: space-around;
+}
 
 .multipleChoiceVocabularyMeanings {
-  display: flex;
+  display:flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-top: 10px;
   padding-top: 15px;
-  border-top: 1px solid rgba(0, 0, 0, 0.144); }
+  border-top: 1px solid rgba(0, 0, 0, 0.144);
+}
 
 .quizSection {
   display: flex;
@@ -220,7 +250,8 @@ body {
   padding-left: 10px;
   padding-right: 10px;
   width: 95%;
-  background-color: whitesmoke; }
+  background-color: whitesmoke;
+}
 
 .question {
   height: 300px;
@@ -228,67 +259,78 @@ body {
   align-items: center;
   display: flex;
   flex-direction: column;
-  font-size: 40px; }
+  font-size: 40px;
+}
 
 .navbar {
   width: 100%;
-  background-color: #86c2df;
+  background-color: rgb(134, 194, 223);
   height: 60px;
   display: grid;
   grid-template-areas: "Button Title  Title Title";
-  margin-bottom: -15px; }
-
+  margin-bottom: -15px;
+}
 .topNavbar {
   width: 100%;
-  background-color: #86c2df;
+  background-color: rgb(134, 194, 223);
   height: 60px;
   display: flex;
-  margin-bottom: -15px; }
+  margin-bottom: -15px;
+}
 
 .navbarTitleDiv {
   display: flex;
   align-items: center;
   justify-content: center;
-  grid-area: Title; }
+  grid-area: Title;
+}
+.navbarTitle{
+
+}
 
 .ui.segment {
-  border: none !important; }
+  border: none !important;
+}
 
 .ui.button {
-  background-color: #86c2df !important; }
+  background-color: rgb(134, 194, 223) !important;
+}
 
 .ui.button:hover {
-  background-color: #54b0db !important; }
-
+  background-color: rgb(84, 176, 219) !important;
+}
 .ui.overlay {
-  background-color: #0c1313f6 !important; }
-
-.topButton {
+  background-color: #0c1313f6 !important;
+}
+.topButton{
   border-radius: 0 !important;
-  grid-area: Button !important; }
+  grid-area: Button !important;
+}
 
 .homepageMainDiv {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; }
-
+  justify-content: center;
+}
 .centeredText {
-  text-align: center; }
+  text-align: center;
+}
 
 .languageChartHolder {
   display: grid;
   grid-template-rows: auto;
-  grid-template-columns: repeat(5, 60px);
+  grid-template-columns: repeat(5,60px);
   justify-content: space-around;
   width: 80%;
   margin-top: 10px;
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+}
 
 .languageChartCharacter {
   display: flex;
-  border: 1px solid #43aadd;
-  background-color: #86c2df;
+  border: 1px solid rgb(67, 170, 221);
+  background-color: rgb(134, 194, 223);
   border-radius: 15%;
   width: 50px;
   height: 60px;
@@ -298,14 +340,16 @@ body {
   line-height: 1.5;
   margin-top: 10px;
   font-weight: bold;
-  font-size: 20px; }
+  font-size: 20px;
+}
 
 .languageChartMainDiv {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 20px; }
+  padding-top: 20px;
+}
 
 .frontPageTitleHolder {
   width: 100%;
@@ -316,31 +360,36 @@ body {
   flex-direction: column;
   background: url("./milk.jpg");
   background-size: cover;
-  background-position: center; }
+  background-position: center;
+}
 
 .titleText {
   color: white;
-  text-align: center; }
+  text-align: center;
+}
 
 .frontPageButton {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  border: 1.5px solid #75bde0;
-  background-color: #86c2df;
+  border: 1.5px solid rgb(117, 189, 224);
+  background-color: rgb(134, 194, 223);
   padding: 3px;
   padding-left: 25px;
   padding-right: 25px;
-  border-radius: 30px; }
+  border-radius: 30px;
+}
 
 .frontPageButton:hover {
-  background-color: #54b0db;
-  transition-duration: 0.25s; }
+  background-color: rgb(84, 176, 219);
+  transition-duration: 0.25s;
+}
 
 .titleButtonText {
   color: white;
-  font-weight: bold; }
+  font-weight: bold;
+}
 
 .frontPageTitle {
   width: 120px;
@@ -350,13 +399,13 @@ body {
   border-radius: 50%;
   display: flex;
   align-items: center;
-  justify-content: center; }
-
+  justify-content: center;
+}
 .frontPageTitleText {
   color: white;
   font-size: 22px;
-  text-align: center; }
-
+  text-align: center;
+}
 .frontPageTitleDiv {
   width: 65%;
   height: 300px;
@@ -368,13 +417,16 @@ body {
   padding-top: 50px;
   padding-bottom: 50px;
   border: 3px solid whitesmoke;
-  background-color: white; }
-
+  background-color: white;
+}
 .buttonAnnouncer {
   font-size: 20px;
   border-bottom: 1px solid grey;
   margin-bottom: 20px;
-  padding-bottom: 10px; }
+  padding-bottom: 10px;
+}
+
+
 
 .frontPageSubTextHolder {
   display: flex;
@@ -382,25 +434,28 @@ body {
   flex-direction: column;
   -ms-flex-align: center;
   align-items: center;
-  border: 1px solid #75bde0;
+  border: 1px solid rgb(117, 189, 224);
   margin-bottom: 30px;
   width: 100%;
-  background-color: #86c2df;
+  background-color: rgb(134, 194, 223);
   height: 400px;
-  justify-content: center; }
+  justify-content: center;
+}
 
-.frontPageSubText {
+.frontPageSubText{
   width: 80%;
   text-align: center;
   font-size: 20px;
-  font-weight: bold; }
+  font-weight: bold;
+}
 
-.thumbnailHolder {
+.thumbnailHolder{
   display: flex;
   height: 1000px;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 50px; }
+  padding-bottom: 50px;
+}
 
 .thumbnail {
   height: 100px;
@@ -408,55 +463,64 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  border: 1.5px solid #75bde0;
+  border: 1.5px solid rgb(117, 189, 224);
   padding: 65px;
   border-radius: 50px;
   margin-bottom: 30px;
   color: black;
-  background-color: #86c2df; }
+  background-color: rgb(134, 194, 223);
+}
 
 .thumbnail:hover {
-  background-color: #54b0db;
-  transition-duration: 0.25s; }
+  background-color: rgb(84, 176, 219);
+  transition-duration: 0.25s;
+}
 
 .thumbnailBigText {
-  font-size: 55px; }
+  font-size: 55px;
+}
 
 .thumbnailBigTextLong {
-  font-size: 25px; }
+  font-size: 25px;
+}
 
 .thumbnailSmallText {
   margin-top: 40px;
   font-size: 24px;
-  border-top: 1px solid grey; }
+  border-top: 1px solid grey;
+}
 
 .thumbnailSmallTextLong {
   margin-top: 15px;
   font-size: 18px;
-  text-align: center; }
+  text-align: center;
+}
 
 .lessonThumbnailText {
   margin-top: 15px;
   font-size: 14px;
   text-align: center;
-  font-weight: bold; }
+  font-weight: bold;
+}
 
 .basicJapaneseMainDiv {
   height: 1000px;
   background-color: whitesmoke;
   display: flex;
   flex-direction: column;
-  align-items: center; }
+  align-items: center;
+}
 
 .introductionThumbnailHolder {
   width: 80%;
   margin-top: 10px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items:center;
   justify-content: center;
   border: 2px solid lightgrey;
-  border-radius: 30px; }
+  border-radius: 30px;
+}
 
 .introductionThumbnail {
   height: 30px;
@@ -465,31 +529,37 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  border: 1.5px solid #75bde0;
+  border: 1.5px solid rgb(117, 189, 224);
   padding: 20px;
   border-radius: 50px;
   margin-bottom: 30px;
   color: black !important;
-  background-color: #86c2df; }
+  background-color: rgb(134, 194, 223);
+}
 
 .introductionThumbnail:hover {
-  background-color: #54b0db;
-  transition-duration: 0.25s; }
+  background-color: rgb(84, 176, 219);
+  transition-duration: 0.25s;
+}
+
 
 .languageChartWord {
   display: flex;
   border: 1px solid black;
-  height: 65px; }
+  height: 65px;
+}
 
 .languageChartWordMainDiv {
   display: flex;
   flex-direction: column;
-  width: 85%; }
+  width: 85%;
+}
 
 .languageChartWordTitle {
   line-height: 65px;
   text-align: center;
-  width: 100%; }
+  width: 100%;
+}
 
 .wordChartWord {
   display: flex;
@@ -497,71 +567,88 @@ body {
   align-items: center;
   width: 40%;
   font-size: 14px;
-  text-align: center; }
-
+  text-align: center;
+}
 .wordChartWordTop {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 40%;
-  font-size: 14px; }
+  font-size: 14px;
+}
 
 .wordChartKanji {
   width: 20%;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center; }
+  text-align: center;
+
+}
 
 .wordChartGrammarType {
   width: 20%;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center; }
+  text-align: center;
+}
 
 .wordChartMeaning {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 35%;
-  text-align: center; }
+  text-align: center;
+}
 
 .informativePageDiv {
   display: flex;
   flex-direction: column;
   padding-top: 10px;
-  height: 100vh; }
+  height: 100vh;
+}
 
 .textSection {
   padding-left: 15px;
-  padding-right: 15px; }
+  padding-right: 15px;
+}
 
 .nextButton {
   display: flex;
   flex-direction: row-reverse;
   padding-bottom: 15px;
-  padding-right: 15px; }
+  padding-right: 15px;
+}
 
 .prevNextButtonHolder {
-  display: flex;
-  justify-content: space-around; }
+    display: flex;
+    justify-content: space-around;
+}
 
-@media (min-width: 800px) {
+@media(min-width: 800px){
   .sidebar {
-    width: 15% !important; }
+    width: 15% !important;
+  }
   .navbar {
-    grid-template-areas: "Button Title Title Title Title Title"; }
+    grid-template-areas: "Button Title Title Title Title Title";
+  }
   .languageChartHolder {
-    width: auto; }
+    width: auto;
+  }
   .frontPageTitleDiv {
-    width: 50%; }
+    width: 50%;
+  }
   .quizSection {
-    width: 70%; }
-  .frontPageSubText {
+    width: 70%;
+  }
+  .frontPageSubText{
     width: 80%;
     text-align: center;
     font-size: 30px;
-    font-weight: bold; }
+    font-weight: bold;
+  }
   .introductionThumbnailHolder {
-    width: 33%; } }
+    width: 33%;  
+  }
+}
