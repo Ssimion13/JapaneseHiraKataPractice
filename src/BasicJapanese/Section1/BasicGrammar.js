@@ -17,6 +17,9 @@ class BasicGrammar extends Component {
                     <Link to="/HiraganaBasics" className="nextButton">
                         <Button> Previous </Button>
                     </Link>
+                    <Link to="/BasicJapanese" className="nextButton">
+                        <Button> Return to Front </Button>
+                    </Link>
                     <Link to="/BasicSentenceStructure" className="nextButton">
                         <Button> Next </Button>
                     </Link>

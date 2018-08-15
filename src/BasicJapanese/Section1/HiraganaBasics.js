@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import {Link} from "react-router-dom";
-import { Button } from 'semantic-ui-react'
+import { Button, Modal} from 'semantic-ui-react'
 import hiraganaTable from "./hiraganatable.png"
 
 class HiraganaBasics extends Component {
@@ -14,9 +14,9 @@ class HiraganaBasics extends Component {
                         <h2 className="centeredTitle"> Hiragana Basics </h2>
                         <div className="sectionSplitter">
                             <div className="paragraph" > <br/> Hiragana consists of 5 'vowel' characters: 'a, i, u, e, o' , 40 consonant(s) + vowel characters,
-                                and one solo consonant character (n), seen in the picture to the right.
+                                and one solo consonant character (n), seen in the picture.
                                 <br/> 
-                                If you look at the above figure,
+                                If you look at the figure,
                                 you'll see that the below each of the vowel characters lies characters that represent a consonant plus
                                 the vowel above it: <br/> k + a = 'Ka' (か), <br/> s + u = "Su" (す). <br/>
                                 This is true of all consonant-vowel characters
@@ -32,9 +32,9 @@ class HiraganaBasics extends Component {
                             <ul> 
                                 <li> "A: (Ah)", </li>
                                 <li> "I: (the e in eagle)", </li>
-                                <li> "u: (The first o in oops)", </li>
-                                <li> "e: (Eh)", </li>
-                                <li> "o: (Oh)" </li>
+                                <li> "U: (The first o in oops)", </li>
+                                <li> "E: (Eh)", </li>
+                                <li> "O: (Oh)" </li>
                             </ul>
                         
                         It will take a lot of practice to get the hang of using these particular vowel noises, especially when you are reading
@@ -51,20 +51,20 @@ class HiraganaBasics extends Component {
                         The conversions are as follows:
                     </div>
                     <ul>
-                        <li> K -> G </li>
-                        <li> S -> Z (or J*) </li>
-                        <li> T -> D </li>
-                        <li> H -> B (or P**) </li>
+                        <li> K → G </li>
+                        <li> S → Z (or J*) </li>
+                        <li> T → D </li>
+                        <li> H → B (or P**) </li>
                     </ul>
                     <div className="paragraph">
                         For example, the K section of Hiragana ( Ka, Ki, Ku, Ke, Ko, か き く け こ ) can be changed
                         to the G section simply by the addition of apostrophes in the top right of each character:
                         <ul>
-                            <li> Ka か -> Ga が   </li>
-                            <li> Ki き -> Gi ぎ  </li>
-                            <li> Ku く -> Gu ぐ  </li>
-                            <li> Ke け -> Ge げ  </li>
-                            <li> Ko こ -> Go ご. </li>
+                            <li> Ka か → Ga が   </li>
+                            <li> Ki き → Gi ぎ  </li>
+                            <li> Ku く → Gu ぐ  </li>
+                            <li> Ke け → Ge げ  </li>
+                            <li> Ko こ → Go ご. </li>
                         </ul>
 
                         You may be wondering why certain characters and sounds map to each other-- base Hiragana covers all the <i> unvoiced </i>
@@ -72,10 +72,15 @@ class HiraganaBasics extends Component {
                         For example, if you say "ka", then "ga", you will notice that they use the same parts of your mouth!
                     </div>
                     </div>
-                
+                    <div className="section"> 
+
+                    </div>
                     <div className="prevNextButtonHolder">
                         <Link to="/Intro">
                             <Button> Previous </Button>
+                        </Link>
+                        <Link to="/BasicJapanese" className="nextButton">
+                            <Button> To Top </Button>
                         </Link>
                         <Link to="/BasicGrammar" >
                             <Button> Next </Button>

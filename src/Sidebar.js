@@ -5,10 +5,10 @@ import HiraganaTest from "./HiraganaTest/"
 import HomePage from "./HomePage"
 import LanguageChart from "./LanguageChart/"
 import BasicJapanese from "./BasicJapanese/"
-import BasicGrammar from "./BasicJapanese/BasicGrammar";
-import BasicSentenceStructure from "./BasicJapanese/BasicSentenceStructure";
-import Intro from "./BasicJapanese/Intro";
-import HiraganaBasics from "./BasicJapanese/HiraganaBasics";
+import BasicGrammar from "./BasicJapanese/Section1/BasicGrammar";
+import BasicSentenceStructure from "./BasicJapanese/Section1/BasicSentenceStructure";
+import Intro from "./BasicJapanese/Section1/Intro";
+import HiraganaBasics from "./BasicJapanese/Section1/HiraganaBasics";
 
 export default class SidebarComponent extends Component {
   state = { visible: false }
@@ -75,10 +75,10 @@ export default class SidebarComponent extends Component {
               <Route path="/HiraganaTest" component={HiraganaTest} />
               <Route path="/LanguageChart" component={LanguageChart} />
               <Route path="/BasicJapanese" component={BasicJapanese} />
-              <Route path="/BasicGrammar" component={BasicGrammar} />
-              <Route path="/BasicSentenceStructure" component={BasicSentenceStructure} />
-              <Route path="/HiraganaBasics" component={HiraganaBasics} />
-              <Route path="/Intro" component={Intro} />
+              <Route path="/Section1/BasicGrammar" component={BasicGrammar} />
+              <Route path="/Section1/BasicSentenceStructure" component={BasicSentenceStructure} />
+              <Route path="/Section1/HiraganaBasics" component={HiraganaBasics} />
+              <Route path="/Section1/Intro" component={Intro} />
               <Route exact path="/" component={HomePage} />
             </Switch>
           </Sidebar.Pusher>

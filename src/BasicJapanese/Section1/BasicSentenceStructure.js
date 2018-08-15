@@ -12,6 +12,9 @@ class BasicSentenceStructure extends Component {
                 Basic Sentence Structure
                 </div>
                 <Link to="/BasicJapanese" className="nextButton">
+                    <Button> Previous </Button>
+                </Link>
+                <Link to="/BasicJapanese" className="nextButton">
                     <Button> Return to Front </Button>
                 </Link>
             </div>

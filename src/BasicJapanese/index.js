@@ -30,17 +30,17 @@ class BasicJapanese extends Component {
         return(
             <div className="basicJapaneseMainDiv">
                 <div className="introductionThumbnailHolder">
-                    <h2 className="centeredTitle centeredText"> Section 1: <br/> Basics </h2>
-                            <Link to="/Intro" className="introductionThumbnail">
+                    <h2 className="centeredTitle centeredText"> Section 1: <br/> Basic Written Japanese </h2>
+                            <Link to="/Section1/Intro" className="introductionThumbnail">
                                 <p className="lessonThumbnailText centeredText"> Introduction</p> 
                             </Link>
-                            <Link to="/HiraganaBasics" className="introductionThumbnail">
+                            <Link to="/Section1/HiraganaBasics" className="introductionThumbnail">
                                 <p className="lessonThumbnailText centeredText"> Hiragana</p> 
                             </Link> 
-                            <Link to="/BasicGrammar" className="introductionThumbnail"> 
+                            <Link to="/Section1/BasicGrammar" className="introductionThumbnail"> 
                                 <p className="lessonThumbnailText centeredText"> Grammar </p> 
                             </Link> 
-                            <Link to="/BasicSentenceStructure" className="introductionThumbnail"> 
+                            <Link to="/Section1/BasicSentenceStructure" className="introductionThumbnail"> 
                                 <p className="lessonThumbnailText centeredText"> Sentence Structure </p>
                             </Link> 
 

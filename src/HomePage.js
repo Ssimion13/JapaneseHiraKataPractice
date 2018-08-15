@@ -19,9 +19,9 @@ function HomePage(){
                 </Link>
             </div>
         <div className="frontPageSubTextHolder"> 
-            <p className="frontPageSubText"> Use this app to learn or further your understanding of Japanese! </p>
-            <p className="frontPageSubText"> Use the website to touch up on the basics, then put your skills to the test with the quiz page! </p>
-            <p className="frontPageSubText"> This website was designed (for the time being!) to prepare you <br/> for the Japanese Language Placement Test (JLPT) level 5 examination. </p>
+                <p className="frontPageSubText"> Use this app to learn or further your understanding of Japanese! </p>
+                <p className="frontPageSubText"> Use the website to touch up on the basics, then put your skills to the test with the quiz page! </p>
+                <p className="frontPageSubText"> This website was designed (for the time being!) to prepare you <br/> for the Japanese Language Placement Test (JLPT) level 5 examination. </p>
         </div>
         <div className="thumbnailHolder"> 
             <Link to="./BasicJapanese">
@@ -43,6 +43,7 @@ function HomePage(){
                 <p className="thumbnailSmallTextLong"> Hiragana/Katakana <br/> Language Charts</p>
             </div>
         </Link>
+        
 
         </div>
         </div>

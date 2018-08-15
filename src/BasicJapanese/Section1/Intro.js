@@ -11,22 +11,27 @@ class Intro extends Component {
                 <h1 className="centeredTitle"> Intro </h1>
                 <div className="textSection">
                     <div className="section">
-                        <h2 className="centeredTitle"> English vs. Japanese </h2>
-                        <p> 
-                            English has 26 letters in its alphabet that constitute the entire written language,
-                            whereas Japanese has two written 'alphabets' (linguistically called 'syllabary'), <br/> Hiragana and Katakana, as well as Chinese characters
-                            that the Japanese use known as Kanji. Romanized Japanese, or Romaji are also used on occasion. 
-                            These four are used in tandem to form written Japanese.  
+                        <h2 className="centeredTitle"> Intro to Written Japanese </h2>
+                        <p> Japanese has two written 'alphabets' (linguistically called 'syllabary'), <br/> Hiragana and Katakana, as well as the Chinese characters
+                            that the Japanese use known as Kanji. 
+                            These four are used in tandem to form written Japanese.
+                            Romanized Japanese, or Romaji are used on occasion but not commonly.  
+                        </p>
+                        <p> These three forms of writing are very commonly seen together in one sentence: for example: <br/>
+                            "私  は  タイラー  です" <br/>
+                            (Watashi wa TAIRAA desu) <br/>
+                            (I am Tyler) <br/>
+                            With the first character being kanji, the 2nd and 4th being hiragana, and the third being Katakana.
                         </p>
                     </div>
                     <div className="section">
                         <h4 className="centeredTitle"> Hiragana </h4>
                         <p>
-                            Hiragana (ひらがな) is at its core the fundamental building block of written Japanese. There are 46 hiragana that all represent
-                            a phoneme, that is, a distinct sound in the language. You may be thinking "Well, that's almost double the English alphabet!", but
-                            luckily for us, these 46 characters and their derivatives make up the entirety of the Japanese vocal palate, which means that once you can
+                            Hiragana (ひらがな) fundamental building block of written Japanese. There are 46 hiragana (and 23 small variants of these) that all represent
+                            a distinct sound in the language (a phoneme). 
+                            Luckily, these 69 characters and their derivatives make up the entirety of the Japanese vocal palate, which means that once you can
                             write and speak these sounds, <i> everything </i> is pronounced as it is written in Japanese the same way every time!
-                            No worrying about how to spell something or pronounce words like 'silhouette'!
+                            The next section will cover Hiragana in more detail.
                         </p>
                     </div>
                     <div className="section">
@@ -52,6 +57,9 @@ class Intro extends Component {
                 </div>
                 <Link to="/HiraganaBasics" className="nextButton">
                     <Button> Next </Button>
+                </Link>
+                <Link to="/BasicJapanese" className="nextButton">
+                    <Button> To Top </Button>
                 </Link>
             </div>
         )
