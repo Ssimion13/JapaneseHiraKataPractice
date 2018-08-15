@@ -14,13 +14,13 @@ class BasicGrammar extends Component {
                 </div>
             
                 <div className="prevNextButtonHolder">
-                    <Link to="/HiraganaBasics" className="nextButton">
+                    <Link to="/Section1/HiraganaBasics" className="nextButton">
                         <Button> Previous </Button>
                     </Link>
                     <Link to="/BasicJapanese" className="nextButton">
                         <Button> Return to Front </Button>
                     </Link>
-                    <Link to="/BasicSentenceStructure" className="nextButton">
+                    <Link to="/Section1/BasicSentenceStructure" className="nextButton">
                         <Button> Next </Button>
                     </Link>
                 </div>

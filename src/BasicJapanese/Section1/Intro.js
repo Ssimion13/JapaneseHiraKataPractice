@@ -55,7 +55,7 @@ class Intro extends Component {
                         </p> 　
                     </div>
                 </div>
-                <Link to="/HiraganaBasics" className="nextButton">
+                <Link to="/Section1/HiraganaBasics" className="nextButton">
                     <Button> Next </Button>
                 </Link>
                 <Link to="/BasicJapanese" className="nextButton">

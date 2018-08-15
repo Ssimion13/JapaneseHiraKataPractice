@@ -76,13 +76,13 @@ class HiraganaBasics extends Component {
 
                     </div>
                     <div className="prevNextButtonHolder">
-                        <Link to="/Intro">
+                        <Link to="/Section1/Intro">
                             <Button> Previous </Button>
                         </Link>
-                        <Link to="/BasicJapanese" className="nextButton">
+                        <Link to="/Section1/BasicJapanese">
                             <Button> To Top </Button>
                         </Link>
-                        <Link to="/BasicGrammar" >
+                        <Link to="/Section1/BasicGrammar" >
                             <Button> Next </Button>
                         </Link>
                     </div>
