@@ -4,7 +4,19 @@ import { Button, Modal} from 'semantic-ui-react'
 import hiraganaTable from "./hiraganatable.png"
 
 class HiraganaBasics extends Component {
+    constructor(){
+        super();
+        this.state = {
+            handleClose: false
+        }
+        this.handleModalOpen = this.handleModalOpen.bind(this);
+        this.handleModalClose = this.handleModalClose.bind(this);
+    }
+    handleModalOpen = () => this.setState({handleClose: true})
 
+    handleModalClose = () => {
+            this.setState({handleClose: false})
+    }
 
     render(){
         return(
@@ -22,7 +34,13 @@ class HiraganaBasics extends Component {
                                 This is true of all consonant-vowel characters
                                 except for three: <br/> s + i = "Shi" (し), <br/> t + u = "Tsu" (つ), <br/> and h + u = "Fu" (ふ). <br/> 
                             </div>
-                            <img src={hiraganaTable} className="hiraganaTable"/>
+                            <Modal open={this.state.handleClose} trigger={ <img onClick={this.handleModalOpen} src={hiraganaTable} alt="hiraganatable" className="hiraganaTable"/>}>
+                                <Modal.Header> Hiragana Table</Modal.Header>
+                                <Modal.Content>
+                                <img onClick={this.handleModalOpen} src={hiraganaTable} alt="hiraganatable" className="modalPicture" />
+                                <Button onClick={()=> {this.handleModalClose();}}> Ok </Button>
+                                </Modal.Content>
+                            </Modal>
                         </div>
                     </div>
                     <div className="section">
