@@ -4,11 +4,11 @@ import {Switch,Link, Route} from "react-router-dom"
 import HiraganaTest from "./HiraganaTest/"
 import HomePage from "./HomePage"
 import LanguageChart from "./LanguageChart/"
-import BasicJapanese from "./BasicJapanese/"
-import BasicGrammar from "./BasicJapanese/Section1/BasicGrammar";
-import BasicSentenceStructure from "./BasicJapanese/Section1/BasicSentenceStructure";
-import Intro from "./BasicJapanese/Section1/Intro";
-import HiraganaBasics from "./BasicJapanese/Section1/HiraganaBasics";
+import JapaneseLessons from "./JapaneseLessons/"
+import BasicGrammar from "./JapaneseLessons/Section1/BasicGrammar";
+import BasicSentenceStructure from "./JapaneseLessons/Section1/BasicSentenceStructure";
+import Intro from "./JapaneseLessons/Section1/Intro";
+import HiraganaBasics from "./JapaneseLessons/Section1/HiraganaBasics";
 
 export default class SidebarComponent extends Component {
   state = { visible: false }
@@ -40,32 +40,32 @@ export default class SidebarComponent extends Component {
             width='thin'
           >
             <Menu.Item>
-              <Link to="./" >
+              <Link to="/" >
               <Icon name='home' /> <br/>
-              Home
+                Home
               </Link>
             </Menu.Item>
             <Menu.Item>
-              <Link to="/BasicJapanese">
+              <Link to="/JapaneseLessons">
               <Icon name='clipboard' /> <br/>
-              Basic <br/>
-              Japanese
+                Basic <br/>
+                Japanese
               </Link>
             </Menu.Item>
             <Menu.Item>
               <Link to="/HiraganaTest">
-              <Icon name='book' /> <br/>
-              Hiragana <br/>
-              Katakana <br/>
-              Kanji <br/> 
-              Quiz
+                <Icon name='book' /> <br/>
+                Hiragana <br/>
+                Katakana <br/>
+                Kanji <br/> 
+                Quiz
               </Link>
             </Menu.Item>
             <Menu.Item>
               <Link to="/LanguageChart">
-              <Icon name='clipboard' /> <br/>
-              Language <br/> 
-              Charts
+                <Icon name='clipboard' /> <br/>
+                Language <br/> 
+                Charts
               </Link>
             </Menu.Item>
           </Sidebar>
@@ -74,7 +74,7 @@ export default class SidebarComponent extends Component {
             <Switch className="app">
               <Route path="/HiraganaTest" component={HiraganaTest} />
               <Route path="/LanguageChart" component={LanguageChart} />
-              <Route path="/BasicJapanese" component={BasicJapanese} />
+              <Route path="/JapaneseLessons" component={JapaneseLessons} />
               <Route path="/Section1/BasicGrammar" component={BasicGrammar} />
               <Route path="/Section1/BasicSentenceStructure" component={BasicSentenceStructure} />
               <Route path="/Section1/HiraganaBasics" component={HiraganaBasics} />

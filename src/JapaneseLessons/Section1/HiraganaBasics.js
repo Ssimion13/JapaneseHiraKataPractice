@@ -91,16 +91,20 @@ class HiraganaBasics extends Component {
                     </div>
                     </div>
                     <div className="section"> 
-
+                        <h2 className="centeredTitle"> Stroke Order </h2>
+                        <p> If you look at the Hiragana table, you can see lines on each labelling which parts of the character to start writing first;
+                            for example, for the あ (A) character, you start with the horizonal stroke, then the vertical stroke, then finish with the loop. 
+                            Follow these stroke orders as well as you can! It may seem like you can free hand these characters without following the order,
+                            but as a whole, following the orders will result in characters that are more consistent and easily read. </p>
                     </div>
                     <div className="prevNextButtonHolder">
                         <Link to="/Section1/Intro">
                             <Button> Previous </Button>
                         </Link>
-                        <Link to="/Section1/BasicJapanese">
+                        <Link to="/JapaneseLessons">
                             <Button> To Top </Button>
                         </Link>
-                        <Link to="/Section1/BasicGrammar" >
+                        <Link to="/Section1/BasicSentenceStructure" >
                             <Button> Next </Button>
                         </Link>
                     </div>

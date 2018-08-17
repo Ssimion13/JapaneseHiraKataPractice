@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 //  import {katakanaCharacters} from "../redux/dictionary.js"
 
 
-class BasicJapanese extends Component {
+class JapaneseLessons extends Component {
     constructor(){
         super();
         this.state = {}
@@ -37,12 +37,13 @@ class BasicJapanese extends Component {
                             <Link to="/Section1/HiraganaBasics" className="introductionThumbnail">
                                 <p className="lessonThumbnailText centeredText"> Hiragana</p> 
                             </Link> 
-                            <Link to="/Section1/BasicGrammar" className="introductionThumbnail"> 
-                                <p className="lessonThumbnailText centeredText"> Grammar </p> 
-                            </Link> 
                             <Link to="/Section1/BasicSentenceStructure" className="introductionThumbnail"> 
                                 <p className="lessonThumbnailText centeredText"> Sentence Structure </p>
                             </Link> 
+                            <Link to="/Section1/BasicGrammar" className="introductionThumbnail"> 
+                                <p className="lessonThumbnailText centeredText"> Grammar </p> 
+                            </Link> 
+
 
                 </div>    
 
@@ -52,4 +53,4 @@ class BasicJapanese extends Component {
     }
 }
 
-export default BasicJapanese;
+export default JapaneseLessons;

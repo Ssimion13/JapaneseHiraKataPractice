@@ -9,19 +9,17 @@ class BasicGrammar extends Component {
     render(){
         return(
             <div className="basicJapaneseMainDiv">
-                <div className="textSection">
-                Basic Grammar
-                </div>
-            
+                    <div className="section"> 
+                        Under Construction! 
+                    </div>
+                   
                 <div className="prevNextButtonHolder">
-                    <Link to="/Section1/HiraganaBasics" className="nextButton">
+
+                    <Link to="/Section1/BasicSentenceStructure" className="nextButton">
                         <Button> Previous </Button>
                     </Link>
-                    <Link to="/BasicJapanese" className="nextButton">
+                    <Link to="/JapaneseLessons" className="nextButton">
                         <Button> Return to Front </Button>
-                    </Link>
-                    <Link to="/Section1/BasicSentenceStructure" className="nextButton">
-                        <Button> Next </Button>
                     </Link>
                 </div>
             </div>

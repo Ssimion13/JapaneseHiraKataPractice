@@ -1,6 +1,4 @@
-* {
-  font-family: "Droid-Sans";
-}
+
 
 a {
   color: white !important; }
@@ -17,10 +15,13 @@ a:active {
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif; }
+  font-family: sans-serif; 
+  background-color: #035e92 !important;
+}
 
 .pusher {
-  height: 100% !important; }
+  height: 100% !important; 
+  background-color: #035e92 !important; }
 
 .sidebar {
   width: 25% !important; }
@@ -29,8 +30,7 @@ body {
   font-size: 16px !important;
   color: black; }
 
-.pusher {
-  background-color: #dff2fd !important; }
+
 
 .hiraganaTestMain {
   display: flex;
@@ -236,7 +236,7 @@ body {
 
 .navbar {
   width: 100%;
-  background-color: #86c2df;
+  background-color: #75bde0;
   height: 60px;
   display: grid;
   grid-template-areas: "Button Title  Title Title";
@@ -340,7 +340,7 @@ body {
   justify-content: center;
   flex-direction: column;
   border: 1.5px solid #75bde0;
-  background-color: #86c2df;
+  background-color: #75bde0;
   padding: 3px;
   padding-left: 25px;
   padding-right: 25px;
@@ -399,7 +399,7 @@ body {
   border: 1px solid #75bde0;
   margin-bottom: 30px;
   width: 100%;
-  background-color: #86c2df;
+  background-color: #63b5dd;
   height: 400px;
   justify-content: center; }
 
@@ -414,7 +414,8 @@ body {
   height: 1000px;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 50px; }
+  padding-bottom: 50px;
+}
 
 .thumbnail {
   height: 100px;
@@ -422,15 +423,15 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  border: 1.5px solid #75bde0;
+  border: 1.5px solid whitesmoke;
   padding: 65px;
   border-radius: 50px;
   margin-bottom: 30px;
   color: black;
-  background-color: #86c2df; }
+  background-color: #63b5dd; }
 
 .thumbnail:hover {
-  background-color: #54b0db;
+  background-color: #25a0da;
   transition-duration: 0.25s; }
 
 .thumbnailBigText {
@@ -457,10 +458,11 @@ body {
 
 .basicJapaneseMainDiv {
   height: 1000px;
-  background-color: whitesmoke;
+  background-color: #035e92;
   display: flex;
   flex-direction: column;
-  align-items: center; }
+  align-items: center;
+ }
 
 .introductionThumbnailHolder {
   width: 80%;
@@ -470,7 +472,9 @@ body {
   align-items: center;
   justify-content: center;
   border: 2px solid lightgrey;
-  border-radius: 30px; }
+  border-radius: 30px;
+  background-color: whitesmoke;
+}
 
 .introductionThumbnail {
   height: 30px;
