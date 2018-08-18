@@ -236,7 +236,7 @@ body {
 
 .navbar {
   width: 100%;
-  background-color: #75bde0;
+  background-color: #63b5dd;
   height: 60px;
   display: grid;
   grid-template-areas: "Button Title  Title Title";
