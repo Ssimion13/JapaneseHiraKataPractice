@@ -71,15 +71,15 @@ class LanguageChart extends Component {
         // })
         return(
             <div className="languageChartMainDiv">
-                <h2> Hiragana </h2>
+                <h2 className="paddedTitle" > Hiragana </h2>
                 <div className="languageChartHolder">
                     {hiraganaCharacterMap}
                 </div>
-                <h2> Katakana </h2>
+                <h2 className="paddedTitle"> Katakana </h2>
                 <div className="languageChartHolder">
                     {katakanaCharacterMap}
                 </div>
-                <h2 className="centeredText"> N5 Kanji List <br/> (Click on Kanji for reading)</h2>
+                <h2 className="paddedTitle centeredText"> N5 Kanji List <br/> (Click on Kanji for reading)</h2>
                 <div className="languageChartHolder">
                     {n5KanjiCharacterMap}
                 </div>

@@ -8,7 +8,6 @@ class Intro extends Component {
     render(){
         return(
             <div className="informativePageDiv">
-                <h1 className="centeredTitle"> Intro </h1>
                 <div className="textSection">
                     <div className="section">
                         <h2 className="centeredTitle"> Intro to Written Japanese </h2>
@@ -55,12 +54,14 @@ class Intro extends Component {
                         </p> 　
                     </div>
                 </div>
-                <Link to="/Section1/HiraganaBasics" className="nextButton">
-                    <Button> Next </Button>
-                </Link>
-                <Link to="/JapaneseLessons" className="nextButton">
-                    <Button> To Top </Button>
-                </Link>
+                <div className="prevNextButtonHolder">
+                    <Link to="/Section1/HiraganaBasics" className="nextButton">
+                        <Button> Next </Button>
+                    </Link>
+                    <Link to="/JapaneseLessons" className="nextButton">
+                        <Button> To Top </Button>
+                    </Link>
+                </div>
             </div>
         )
     }

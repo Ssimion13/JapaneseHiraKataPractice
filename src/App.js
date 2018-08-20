@@ -30,7 +30,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">z
+      <div className="App">
         <Sidebar />
       </div>
     );
