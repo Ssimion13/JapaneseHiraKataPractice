@@ -31,6 +31,7 @@ class JapaneseLessons extends Component {
             <div className="basicJapaneseMainDiv">
                 <div className="introductionThumbnailHolder">
                     <h2 className="centeredTitle centeredText"> Section 1: <br/> Basic Written Japanese </h2>
+                        <h2> Note: These sections are still WIP! </h2>
                             <Link to="/Section1/Intro" className="introductionThumbnail">
                                 <p className="lessonThumbnailText centeredText"> Introduction</p> 
                             </Link>
