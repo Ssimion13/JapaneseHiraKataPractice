@@ -1,9 +1,21 @@
 import React, {Component} from "react";
 import {Link} from "react-router-dom";
-import { Button } from 'semantic-ui-react'
+import { Button, Modal} from 'semantic-ui-react'
 
 class Intro extends Component {
+    constructor(){
+        super();
+        this.state = {
+            handleClose: false
+        }
+        this.handleModalOpen = this.handleModalOpen.bind(this);
+        this.handleModalClose = this.handleModalClose.bind(this);
+    }
+    handleModalOpen = () => this.setState({handleClose: true})
 
+    handleModalClose = () => {
+            this.setState({handleClose: false})
+    }
 
     render(){
         return(
@@ -11,55 +23,76 @@ class Intro extends Component {
                 <div className="textSection">
                     <div className="section">
                         <h2 className="centeredTitle"> Intro to Written Japanese </h2>
-                        <p> Japanese has two written 'alphabets' (linguistically called 'syllabary'), <br/> Hiragana and Katakana, as well as the Chinese characters
-                            that the Japanese use known as Kanji. 
-                            These four are used in tandem to form written Japanese.
-                            Romanized Japanese, or Romaji are used on occasion but not commonly.  
+                        <p className="sectionText"> 
+                            Written Japanese has two 'alphabets' (linguistically called 'syllabary'), <br/> Hiragana and Katakana. The characters used in Hiragana and Katakana represent either a vowel, consonant(s) + vowel,
+                            or the letter "n". There are also Kanji (lit. Chinese Characters) that are used to represent various sounds, but more importantly to express concepts and meanings.  
+                            Finally, there is Romanized Japanese, or Romaji. 
                         </p>
-                        <p> These three forms of writing are very commonly seen together in one sentence: for example: <br/>
+
+
+                        {/* <p> These three forms of writing are very commonly seen together in one sentence: for example: <br/>
                             "私  は  タイラー  です" <br/>
                             (Watashi wa TAIRAA desu) <br/>
                             (I am Tyler) <br/>
                             With the first character being kanji, the 2nd and 4th being hiragana, and the third being Katakana.
+                        </p> */}
+                    </div>
+                    <div className="section">
+                        <h2 className="centeredTitle"> Hiragana </h2>
+                        <p className="sectionText">
+                            Hiragana (ひらがな) fundamental building block of written Japanese. Everything there is in Written Japanese can be written in Hiragana,  
+                            and as such, it is the most important of all the character sets for learning Japanese. 
+                            There are 46 hiragana (and 23 small variants of these) in total, and once you can read
+                            these characters, you will have all you need to write Basic Japanese!  
+                        </p>
+                        <p className="sectionText"> The following section will cover Hiragana in greater detail. </p>
+                            <Modal open={this.state.handleClose} trigger={ <Button onClick={this.handleModalOpen} alt="AuthorsNotes" className=""> Author's Notes </Button>}>
+                                <Modal.Header> Author's Notes </Modal.Header>
+                                <Modal.Content>
+                                    <p className="sectionText"> 
+                                        It is important to note that while anything in written Japanese can be conveyed with either Romaji or with Hiragana and be perfectly understood,
+                                        it is very uncommon in actual real life settings to see <i> just </i> Hiragana or <i> just </i> Romaji, and generically Japanese purely written in Hiragana is
+                                        in the realm of children's text and text targetting foreigners.  
+                                    </p>
+                                    <br/>
+                                <Button className="rightFloatButton" onClick={()=> {this.handleModalClose();}}> Ok </Button>
+                                </Modal.Content>
+                            </Modal>
+                    </div>
+                    <div className="section">
+                        <h2 className="centeredTitle"> Katakana </h2>
+                        <p className="sectionText"> 
+                            Katakana (カタカナ)　is another 46 character 'alphabet'  in Japanese-- it is used 
+                            almost exclusively for loan words (of varying origins, but often English!), for advertisements (eg. billboards),
+                            and at times for emphasis. While it is not the most important syllabary to learn relative to Hiragana and Kanji,
+                            nonetheless it is incredibly common, especially in the modern era where globalization causes loan words to appear
+                            in greater frequency.  
                         </p>
                     </div>
                     <div className="section">
-                        <h4 className="centeredTitle"> Hiragana </h4>
-                        <p>
-                            Hiragana (ひらがな) fundamental building block of written Japanese. There are 46 hiragana (and 23 small variants of these) that all represent
-                            a distinct sound in the language (a phoneme). 
-                            Luckily, these 69 characters and their derivatives make up the entirety of the Japanese vocal palate, which means that once you can
-                            write and speak these sounds, <i> everything </i> is pronounced as it is written in Japanese the same way every time!
-                            The next section will cover Hiragana in more detail.
-                        </p>
-                    </div>
-                    <div className="section">
-                        <h4 className="centeredTitle"> Katakana </h4>
-                        <p> 
-                            Katakana (カタカナ)　is another 46 character 'alphabet'  in Japanese-- it is used almost exclusively for loan words (of varying origins, but often English!), for advertisements (eg. billboards),
-                            and at times for emphasis. It is not <i> necessarily </i> truly essential to learn Katakana to understand Japanese, but as time goes on and the world globalizes,
-                            the amount of loan words increases and so the Japanese use Katakana far more than in past years.
-                        </p>
-                    </div>
-                    <div className="section">
-                        <h4 className="centeredTitle"> Kanji </h4>
-                        <p> 
-                            Finally, Kanji (漢字) (lit. "Chinese characters") are characters taken from the Chinese language that are used (with Japanese pronunciation, often adopted from old Chinese pronunciation).
-                            While it is certainly possible to convey anything purely in Hiragana or Katakana, Kanji exist because they are characters
-                            that represent concepts-- from fire (火), feelings (嬉)　, places (店), and all the combinations that can be made between concepts,
-                            Kanji allow for quick translation of concepts as an alternative to English's use of longer words and different spelling.
-                            Since there are only so few sounds that Japanese uses as a whole, Kanji also exist in writing to allow for differentiation between homophones--
-                            in English, we often use the spelling to differentiate, but in Japanese, there are such a degree of homophones due to relative lack of phonemes that
-                            Kanji are often the easiest way to differentiate concepts with the same spelling/pronunciation.
+                        <h2 className="centeredTitle"> Kanji </h2>
+                        <p className="sectionText"> 
+                             Kanji (漢字) (lit. "Chinese characters") are characters taken from the Chinese language that are used in written Japanese.
+                            Unlike Hiragana and Katakana which purely represent sounds, Kanji themselves represent concepts -- from fire (火), feelings (嬉)　, places (店), etc.
+                        </p> <br/>
+                        <p className="sectionText">
+                            The existence of Kanji allows for complex concepts to be created in an alternative method to English's use of combination words, roots, etc.
+                            Kanji also exist in writing to allow for differentiation between homophones, as Hiragana and Katakana do not have different spellings for the same characters, unlike in English.
+                            It may seem intimidating to see Kanji as they are probably foreign to most English speakers, but once you understand a Kanji and its meaning, it is very similar
+                            to understanding a root in English; for example, "Bi" in English means "Two", which means if you see "Bi" in another word, you'd know it has something to do with two;
+                            the same applies to Japanese with the kanji 二 (Two)!
                         </p> 　
+                        <p className="sectionText"> 
+                            Later sections will cover Kanji in much more detail.
+                        </p>
                     </div>
                 </div>
                 <div className="prevNextButtonHolder">
-                    <Link to="/Section1/HiraganaBasics" className="nextButton">
-                        <Button> Next </Button>
-                    </Link>
                     <Link to="/JapaneseLessons" className="nextButton">
                         <Button> To Top </Button>
+                    </Link>
+                    <Link to="/Section1/HiraganaBasics" className="nextButton">
+                        <Button> Next </Button>
                     </Link>
                 </div>
             </div>

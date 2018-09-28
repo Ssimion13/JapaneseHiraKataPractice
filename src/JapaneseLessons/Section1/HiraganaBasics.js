@@ -24,27 +24,26 @@ class HiraganaBasics extends Component {
                 <div className="textSection">
                     <div className="section">
                         <h2 className="centeredTitle"> Hiragana Basics </h2>
-                        <div className="sectionSplitter">
-                            <div className="paragraph" > <br/> Hiragana consists of 5 'vowel' characters: 'a, i, u, e, o' , 40 consonant(s) + vowel characters,
-                                and one solo consonant character (n), seen in the picture.
-                                <br/> 
-                                If you look at the figure,
-                                you'll see that the below each of the vowel characters lies characters that represent a consonant plus
-                                the vowel above it: <br/> k + a = 'Ka' (か), <br/> s + u = "Su" (す). <br/>
-                                This is true of all consonant-vowel characters
-                                except for three: <br/> s + i = "Shi" (し), <br/> t + u = "Tsu" (つ), <br/> and h + u = "Fu" (ふ). <br/> 
-                            </div>
-                            <Modal open={this.state.handleClose} trigger={ <img onClick={this.handleModalOpen} src={hiraganaTable} alt="hiraganatable" className="hiraganaTable"/>}>
-                                <Modal.Header> Hiragana Table</Modal.Header>
-                                <Modal.Content>
-                                <img onClick={this.handleModalOpen} src={hiraganaTable} alt="hiraganatable" className="modalPicture" />
-                                <Button onClick={()=> {this.handleModalClose();}}> Ok </Button>
-                                </Modal.Content>
-                            </Modal>
+                        <div className="paragraph">
+                            Hiragana consists of 46 characters and 23 variants of certain characters. 
+                            These characters represent sounds; 5 represent the 5 vowels of Japanese: "a, i, u, e, o", 40 represent consonant(s), followed by a vowel,
+                            and 1 character represents the sound 'n'. The sounds from these characters represent the entire Japanese vocal 'palate', and so if you understand 
+                            how to pronounce all the sounds in the characters, you have the means to pronounce <i> -correctly!- </i> any Japanese word you find.
                         </div>
                     </div>
+
                     <div className="section">
-                        <h2 className="centeredTitle"> Vowel Pronunciation </h2>
+                    <h2 className="centeredTitle"> Hiragana Table </h2>
+                        <Modal open={this.state.handleClose} trigger={ <img onClick={this.handleModalOpen} src={hiraganaTable} alt="hiraganatable" className="hiraganaTable"/>}>
+                            <Modal.Header> Hiragana Table</Modal.Header>
+                            <Modal.Content>
+                            <img onClick={this.handleModalOpen} src={hiraganaTable} alt="hiraganatable" className="modalPicture" />
+                            <Button onClick={()=> {this.handleModalClose();}}> Ok </Button>
+                            </Modal.Content>
+                        </Modal>
+                    </div>
+                    <div className="section">
+                        <h2 className="centeredTitle"> Vowels </h2>
                         <div className="paragraph"> As listed above, there are five vowels in Japanese: a, i, u, e,  and o; these are pronounced distinctly and 
                             every time as: <br/>
                             <ul> 
@@ -55,9 +54,8 @@ class HiraganaBasics extends Component {
                                 <li> "O: (Oh)" </li>
                             </ul>
                         
-                        It will take a lot of practice to get the hang of using these particular vowel noises, especially when you are reading
-                        Romaji (romanized Japanese)! Try your best to practice and memorize these sounds, and you will be able to correctly pronounce anything
-                        in Japanese the first time. The pronunciation always matches what is written, unlike English, and there are no long or short vowels to confuse you.
+                        It will take a lot of practice to get the hang of using these particular vowel sounds, especially when you are reading
+                        Romaji (romanized Japanese)! 
                         </div>
                     </div>
                     <div className="section">
