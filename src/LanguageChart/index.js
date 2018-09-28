@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import {connect} from "react-redux"
 import { Popup } from 'semantic-ui-react'
+import CharactersList from "./CharactersList"
 
 //i don't think i need this anymore, remove on final
 // const possibleCharacters = ["あ","い","う","え","お","か","き","く","け","こ","が","ぎ","ぐ","げ","ご","さ","し","す","せ","そ","ざ","じ",
@@ -21,14 +22,6 @@ class LanguageChart extends Component {
     }
 
     render(){
-        var hiraganaCharacterMap = this.props.hiraganaCharacters.map(character => {
-            return (
-                <div key={character.character + "Hiragana"} className="languageChartCharacter"> 
-                    {character.character} <br/>
-                    {character.reading}
-                </div>
-            )
-        })
         var katakanaCharacterMap = this.props.katakanaCharacters.map(character => {
             return (
                 <div key={character.character + "Katakana"} className="languageChartCharacter"> 
@@ -72,13 +65,9 @@ class LanguageChart extends Component {
         return(
             <div className="languageChartMainDiv">
                 <h2 className="paddedTitle" > Hiragana </h2>
-                <div className="languageChartHolder">
-                    {hiraganaCharacterMap}
-                </div>
+                    <CharactersList characters = {this.props.hiraganaCharacters}/>
                 <h2 className="paddedTitle"> Katakana </h2>
-                <div className="languageChartHolder">
-                    {katakanaCharacterMap}
-                </div>
+                    <CharactersList characters = {this.props.katakanaCharacters} />
                 <h2 className="paddedTitle centeredText"> N5 Kanji List <br/> (Click on Kanji for reading)</h2>
                 <div className="languageChartHolder">
                     {n5KanjiCharacterMap}

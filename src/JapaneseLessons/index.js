@@ -36,15 +36,28 @@ class JapaneseLessons extends Component {
                                 <p className="lessonThumbnailText centeredText"> Introduction</p> 
                             </Link>
                             <Link to="/Section1/HiraganaBasics" className="introductionThumbnail">
-                                <p className="lessonThumbnailText centeredText"> Hiragana</p> 
+                                <p className="lessonThumbnailText centeredText"> Hiragana Basics </p> 
                             </Link> 
-                            <Link to="/Section1/BasicSentenceStructure" className="introductionThumbnail"> 
-                                <p className="lessonThumbnailText centeredText"> Sentence Structure </p>
+                            <Link to="/Section1/HiraganaBasics2" className="introductionThumbnail"> 
+                                <p className="lessonThumbnailText centeredText"> Hiragana Basics (2) </p>
                             </Link> 
-                            <Link to="/Section1/BasicGrammar" className="introductionThumbnail"> 
-                                <p className="lessonThumbnailText centeredText"> Grammar </p> 
+                            <Link to="/Section1/Katakana" className="introductionThumbnail"> 
+                                <p className="lessonThumbnailText centeredText"> Katakana Basics </p> 
+                            </Link> 
+                            <Link to="/Section1/IntroductionToKanji" className="introductionThumbnail"> 
+                                <p className="lessonThumbnailText centeredText"> Introduction to Kanji </p> 
                             </Link> 
                 </div>    
+                <div className="introductionThumbnailHolder">
+                    <h2 className="centeredTitle centeredText"> Section 2: <br/> Basic Japanese Grammar </h2>
+                        <h2 className="centeredTitle"> Note: These sections are still WIP! </h2>
+                            <Link to="/Section2/BasicSentenceStructure" className="introductionThumbnail"> 
+                                <p className="lessonThumbnailText centeredText"> Basic Sentence Structure </p>
+                            </Link> 
+                            <Link to="/Section2/BasicGrammar" className="introductionThumbnail"> 
+                                <p className="lessonThumbnailText centeredText"> Grammar </p> 
+                            </Link> 
+                </div>  
 
 
             </div>

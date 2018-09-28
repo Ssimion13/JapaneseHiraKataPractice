@@ -661,8 +661,9 @@ body {
 }
 
 .sectionText {
-  font-size: 18px;
+  font-size: 20px;
 }
+
 .rightFloatButton{ 
   float: right !important;
   margin: 15px !important;
@@ -680,8 +681,8 @@ body {
 }
 
 .hiraganaTable {
-  height: 250px;
-  width: 250px;
+  height: 100%;
+  width: 100%;
 }
 .modalPicture {
   height: 100%;
@@ -720,10 +721,6 @@ body {
     width: 33%; } 
   .section {
     width: 60%;
-  }
-  .hiraganaTable {
-    height: 350px;
-    width: 350px;
   }
   .modalPicture {
     height: 100%;

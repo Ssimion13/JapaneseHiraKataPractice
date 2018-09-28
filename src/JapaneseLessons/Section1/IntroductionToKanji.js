@@ -3,19 +3,19 @@ import {Link} from "react-router-dom";
 import { Button } from 'semantic-ui-react'
 
 
-class BasicGrammar extends Component {
+class IntroductionToKanji extends Component {
 
 
     render(){
         return(
             <div className="basicJapaneseMainDiv">
                     <div className="section"> 
-                        Under Construction! 
+                        Introduction To Kanji Under Construction! 
                     </div>
                    
                 <div className="prevNextButtonHolder">
 
-                    <Link to="/Section1/BasicSentenceStructure" className="nextButton">
+                    <Link to="/Section1/KatakanaBasics" className="nextButton">
                         <Button> Previous </Button>
                     </Link>
                     <Link to="/JapaneseLessons" className="nextButton">
@@ -28,4 +28,4 @@ class BasicGrammar extends Component {
 
 }
 
-export default BasicGrammar
+export default IntroductionToKanji

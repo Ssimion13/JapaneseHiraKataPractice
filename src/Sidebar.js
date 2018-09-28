@@ -5,10 +5,14 @@ import HiraganaTest from "./HiraganaTest/"
 import HomePage from "./HomePage"
 import LanguageChart from "./LanguageChart/"
 import JapaneseLessons from "./JapaneseLessons/"
-import BasicGrammar from "./JapaneseLessons/Section1/BasicGrammar";
-import BasicSentenceStructure from "./JapaneseLessons/Section1/BasicSentenceStructure";
+import BasicGrammar from "./JapaneseLessons/Section2/BasicGrammar";
+import BasicSentenceStructure from "./JapaneseLessons/Section2/BasicSentenceStructure";
 import Intro from "./JapaneseLessons/Section1/Intro";
 import HiraganaBasics from "./JapaneseLessons/Section1/HiraganaBasics";
+import HiraganaBasics2 from "./JapaneseLessons/Section1/HiraganaBasics2";
+import KatakanaBasics from "./JapaneseLessons/Section1/KatakanaBasics";
+import IntroductionToKanji from "./JapaneseLessons/Section1/IntroductionToKanji";
+
 
 export default class SidebarComponent extends Component {
   state = { visible: false }
@@ -75,9 +79,12 @@ export default class SidebarComponent extends Component {
               <Route path="/HiraganaTest" component={HiraganaTest} />
               <Route path="/LanguageChart" component={LanguageChart} />
               <Route path="/JapaneseLessons" component={JapaneseLessons} />
-              <Route path="/Section1/BasicGrammar" component={BasicGrammar} />
-              <Route path="/Section1/BasicSentenceStructure" component={BasicSentenceStructure} />
+              <Route path="/Section2/BasicGrammar" component={BasicGrammar} />
+              <Route path="/Section2/BasicSentenceStructure" component={BasicSentenceStructure} />
               <Route path="/Section1/HiraganaBasics" component={HiraganaBasics} />
+              <Route path="/Section1/HiraganaBasics2" component={HiraganaBasics2} />
+              <Route path="/Section1/KatakanaBasics" component={KatakanaBasics} />
+              <Route path="/Section1/IntroductionToKanji" component={IntroductionToKanji} />
               <Route path="/Section1/Intro" component={Intro} />
               <Route exact path="/" component={HomePage} />
             </Switch>

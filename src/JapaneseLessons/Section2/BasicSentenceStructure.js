@@ -17,13 +17,11 @@ class BasicSentenceStructure extends Component {
                     </div>
                 </div>
                 <div className="prevNextButtonHolder">
-                    <Link to="HiraganaBasics" className="nextButton">
-                        <Button> Previous </Button>
-                    </Link>
+
                     <Link to="/JapaneseLessons" className="nextButton">
                         <Button> To Top </Button>
                     </Link>
-                    <Link to="/Section1/BasicGrammar" className="nextButton">
+                    <Link to="/Section2/BasicGrammar" className="nextButton">
                             <Button> Next </Button>
                     </Link>
                 </div>
