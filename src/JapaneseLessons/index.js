@@ -31,7 +31,7 @@ class JapaneseLessons extends Component {
             <div className="basicJapaneseMainDiv">
                 <div className="introductionThumbnailHolder">
                     <h2 className="centeredTitle centeredText"> Section 1: <br/> Basic Written Japanese </h2>
-                        <h2 className="centeredTitle"> Note: These sections are still WIP! </h2>
+                        <h2 className="centeredTitle"> Note: These sections' content is still WIP! </h2>
                             <Link to="/Section1/Intro" className="introductionThumbnail">
                                 <p className="lessonThumbnailText centeredText"> Introduction</p> 
                             </Link>
@@ -50,7 +50,7 @@ class JapaneseLessons extends Component {
                 </div>    
                 <div className="introductionThumbnailHolder">
                     <h2 className="centeredTitle centeredText"> Section 2: <br/> Basic Japanese Grammar </h2>
-                        <h2 className="centeredTitle"> Note: These sections are still WIP! </h2>
+                        <h2 className="centeredTitle"> Note: These sections are still  entirely WIP! </h2>
                             <Link to="/Section2/BasicSentenceStructure" className="introductionThumbnail"> 
                                 <p className="lessonThumbnailText centeredText"> Basic Sentence Structure </p>
                             </Link> 
