@@ -41,7 +41,7 @@ class JapaneseLessons extends Component {
                             <Link to="/Section1/HiraganaBasics2" className="introductionThumbnail"> 
                                 <p className="lessonThumbnailText centeredText"> Hiragana Basics (2) </p>
                             </Link> 
-                            <Link to="/Section1/Katakana" className="introductionThumbnail"> 
+                            <Link to="/Section1/KatakanaBasics" className="introductionThumbnail"> 
                                 <p className="lessonThumbnailText centeredText"> Katakana Basics </p> 
                             </Link> 
                             <Link to="/Section1/IntroductionToKanji" className="introductionThumbnail"> 

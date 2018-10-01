@@ -22,13 +22,26 @@ class Intro extends Component {
             <div className="informativePageDiv">
                 <div className="textSection">
                     <div className="section">
-                        <h2 className="centeredTitle"> Intro to Written Japanese </h2>
+                        <h1 className="centeredTitle"> Intro to Written Japanese </h1>
                         <p className="sectionText"> 
-                            Written Japanese has two 'alphabets' (linguistically called 'syllabary'), <br/> Hiragana and Katakana. The characters used in Hiragana and Katakana represent either a vowel, consonant(s) + vowel,
+                            Written Japanese has two 'alphabets', <br/> Hiragana and Katakana. The characters used in Hiragana and Katakana represent either a vowel, consonant(s) + vowel,
                             or the letter "n". There are also Kanji (lit. Chinese Characters) that are used to represent various sounds, but more importantly to express concepts and meanings.  
-                            Finally, there is Romanized Japanese, or Romaji. 
+                            Finally, there is Romanized Japanese, or Romaji. Romaji can be used to write anything in Japanese, although it is not commonly used by Japanese relative to the other three.
                         </p>
+                        <p className="sectionText">
+                            These parts of Japanese all work together within the framework of the language to convey thoughts and ideas, just like English. It is very common to see a sentence
+                            that contains some or all of these together. For example:
 
+                        </p>
+                        <br/>
+                        <h1> "私 は タイラー です" </h1>
+                        <h1> Watashi wa TAIRAA desu </h1>
+                        <h1> (I am Tyler) </h1>
+                        <br/>
+                        <p className="sectionText"> 
+                            It <i> is </i> necessary to learn these alphabets and Kanji to be a proficient Japanese writer, but learning Japanese is not as daunting of a task as you would think.
+                            Japanese has several advantages over other languages that allow it to be an easy language to pick up as long as you are willing to give it a try and step out of the comfort zone.
+                        </p>
 
                         {/* <p> These three forms of writing are very commonly seen together in one sentence: for example: <br/>
                             "私  は  タイラー  です" <br/>
@@ -37,19 +50,24 @@ class Intro extends Component {
                             With the first character being kanji, the 2nd and 4th being hiragana, and the third being Katakana.
                         </p> */}
                     </div>
+
                     <div className="section">
                         <h2 className="centeredTitle"> Hiragana </h2>
                         <p className="sectionText">
-                            Hiragana (ひらがな) fundamental building block of written Japanese. Everything there is in Written Japanese can be written in Hiragana,  
+                            If you are starting to learn Japanese, learning Hiragana is an absolute must to make any progress in learning the written language.
+                            Hiragana (ひらがな) is fundamental building block of written Japanese. Everything there is in Written Japanese can be written in Hiragana,  
                             and as such, it is the most important of all the character sets for learning Japanese. 
-                            There are 46 hiragana (and 23 small variants of these) in total, and once you can read
-                            these characters, you will have all you need to write Basic Japanese!  
+                            There are 46 hiragana (and 23 small variants of these) in total; this may sound like a large number, but given English has 52 letters you must learn due to
+                            upper and lower case letters and the fact that these letters have <i> thousands </i> of ways they can be pronounced based on the word and letters around them,
+                            Hiragana is a much easier 'alphabet' to ease into; once you know a character, you know it will be pronounced the same way every time!
+                            Once you can read these characters, you will have all you need to write Basic Japanese!  
                         </p>
+
                         <p className="sectionText"> The following section will cover Hiragana in greater detail. </p>
                             <Modal open={this.state.handleClose} trigger={ <Button onClick={this.handleModalOpen} alt="AuthorsNotes" className=""> Author's Notes </Button>}>
                                 <Modal.Header> Author's Notes </Modal.Header>
                                 <Modal.Content>
-                                    <p className="sectionText"> 
+                                    <p className="modelText"> 
                                         It is important to note that while anything in written Japanese can be conveyed with either Romaji or with Hiragana and be perfectly understood,
                                         it is very uncommon in actual real life settings to see <i> just </i> Hiragana or <i> just </i> Romaji, and generically Japanese purely written in Hiragana is
                                         in the realm of children's text and text targetting foreigners.  

@@ -654,16 +654,19 @@ body {
   align-items: center;
   justify-content: center;
   padding: 20px;
-  border-radius: 30px;
+  border-radius: 5px;
   width: 100%; 
   margin-top: 15px;
-  margin-top: 10px;
+  padding-bottom: 40px;
   border: 2px solid lightgrey;
   background-color: whitesmoke;
 }
 
 .sectionText {
   font-size: 20px;
+}
+.modelText {
+  font-size: 25px;
 }
 
 .rightFloatButton{ 
@@ -722,7 +725,10 @@ body {
   .introductionThumbnailHolder {
     width: 33%; } 
   .section {
-    width: 60%;
+    width: 80%;
+  }
+  .sectionText {
+    width: 75%;
   }
   .modalPicture {
     height: 100%;
