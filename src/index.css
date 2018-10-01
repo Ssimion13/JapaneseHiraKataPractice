@@ -31,7 +31,9 @@ body {
   font-size: 16px !important;
   color: black; }
 
-
+.holder {
+  grid-area: Holder
+}
 
 .hiraganaTestMain {
   display: flex;
@@ -240,7 +242,7 @@ body {
   background-color: #63b5dd;
   height: 60px;
   display: grid;
-  grid-template-areas: "Button Title  Title Title";
+  grid-template-areas: "Button Title Title Title Holder";
   margin-bottom: -15px; }
 
 .topNavbar {
@@ -274,7 +276,11 @@ body {
 
 .topButton {
   border-radius: 0 !important;
-  grid-area: "Button" !important; }
+  width: 20%;
+  height: 60px;
+  position: absolute;
+  left: 0;  
+}
 
 .homepageMainDiv {
   display: flex;
@@ -467,7 +473,7 @@ body {
   flex-direction: column;
   align-items: center;
   padding-bottom: 50px;
-  background-color: #63b5dd;
+  background-color: #046096;
   padding-top: 60px;
 }
 
@@ -521,7 +527,7 @@ body {
  }
 
 .introductionThumbnailHolder {
-  width: 80%;
+  width: 90%;
   margin-top: 10px;
   display: flex;
   flex-direction: column;
@@ -618,9 +624,9 @@ body {
 .informativePageDiv {
   display: flex;
   flex-direction: column;
-  padding-top: 10px;
   align-items: center; 
-  background-color: #035e92;
+  justify-content: center;
+  background-color: #020814
 }
 
 .textSection {
@@ -629,7 +635,13 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 16px; }
+  font-size: 16px;
+  background-color: #046096;
+  border-radius: 20px;
+  padding-bottom: 20px;
+  padding-top: 40px;
+  text-align: center;
+}
 
 .nextButton {
   display: flex;
@@ -654,16 +666,24 @@ body {
   align-items: center;
   justify-content: center;
   padding: 20px;
-  border-radius: 5px;
+  border-radius: 15px;
   width: 100%; 
   margin-top: 15px;
   padding-bottom: 40px;
   border: 2px solid lightgrey;
   background-color: whitesmoke;
+  font-family: "arial" sans-serif;
 }
-
+.example {
+  text-align: center;
+  padding: 20px;
+  background-color: whitesmoke;
+  border: 2px solid lightblue;
+  border-radius: 25px;
+  margin-bottom: 10px;
+}
 .sectionText {
-  font-size: 20px;
+  font-size: 22px;
 }
 .modelText {
   font-size: 25px;
@@ -707,7 +727,7 @@ body {
   .sidebar {
     width: 15% !important; }
   .navbar {
-    grid-template-areas: "Button Title Title Title Title Title"; }
+    grid-template-areas: "Button Title Title Title Title  Holder"; }
   .navbarTitle {
     font-size: 30px;
   }
@@ -727,8 +747,16 @@ body {
   .section {
     width: 80%;
   }
+  .textSection {
+    width: 95%;
+    text-align: none;
+  }
+
   .sectionText {
     width: 75%;
+  }
+  .example{
+    width: 50%;
   }
   .modalPicture {
     height: 100%;
