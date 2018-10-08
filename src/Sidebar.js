@@ -27,7 +27,9 @@ export default class SidebarComponent extends Component {
     return (
       <div>
         <div className="navbar">
-        <Button className="topButton" onClick={this.handleButtonClick}> Menu </Button>
+        <div className="topButtonHolder">
+          <Button className="topButton" onClick={this.handleButtonClick}> Menu </Button>
+        </div>
         <div className="navbarTitleDiv">
           <h2 className="navbarTitle"> Japanese On The Go! </h2>
         </div>

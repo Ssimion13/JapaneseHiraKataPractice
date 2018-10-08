@@ -19,7 +19,9 @@ body {
   padding: 0;
   font-family: sans-serif; 
 }
-
+.holder {
+  display: none;
+}
 .pusher {
   height: 100% !important; 
 ; }
@@ -31,9 +33,7 @@ body {
   font-size: 16px !important;
   color: black; }
 
-.holder {
-  grid-area: Holder
-}
+
 
 .hiraganaTestMain {
   display: flex;
@@ -239,10 +239,10 @@ body {
 
 .navbar {
   width: 100%;
-  background-color: #63b5dd;
+  background-color: #046096;
   height: 60px;
   display: grid;
-  grid-template-areas: "Button Title Title Title Holder";
+  grid-template-areas: "Button Title Title Title";
   margin-bottom: -15px; }
 
 .topNavbar {
@@ -266,13 +266,18 @@ body {
   border: none !important; }
 
 .ui.button {
-  background-color:  #54b0db !important; }
+  background-color:  #0284d1 !important; }
+  
 
 .ui.button:hover {
-  background-color: #86c2df !important; }
+  background-color: #54b0db !important; }
 
 .ui.overlay {
   background-color: #0c1313f6 !important; }
+
+.topButtonHolder {
+  grid-area: Button;
+}
 
 .topButton {
   border-radius: 0 !important;
@@ -411,7 +416,7 @@ body {
   justify-content: center;
   background-color: rgb(110, 59, 0);
   width: 100%;
-  height: 75vh;
+  height: 85vh;
   z-index: 1;
   position: relative;
 }
@@ -475,6 +480,7 @@ body {
   padding-bottom: 50px;
   background-color: #046096;
   padding-top: 60px;
+  justify-content: space-between;
 }
 
 .thumbnail {
@@ -488,7 +494,7 @@ body {
   border-radius: 50px;
   margin-bottom: 30px;
   color: black;
-  background-color: whitesmoke; }
+  background-color: #e2e2e2; }
 
 .thumbnail:hover {
   background-color: #63b5dd;
@@ -626,7 +632,9 @@ body {
   flex-direction: column;
   align-items: center; 
   justify-content: center;
-  background-color: #020814
+  background-color: #020814;
+  padding-top: 15px;
+  padding-bottom: 20px;
 }
 
 .textSection {
@@ -724,6 +732,9 @@ body {
 }
 
 @media (min-width: 800px) {
+  .holder {
+    grid-area: Holder
+  }
   .sidebar {
     width: 15% !important; }
   .navbar {
@@ -782,7 +793,7 @@ body {
   .thumbnailHolder {
     flex-direction: row;
     height: auto;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
   }
   .thumbnail {
