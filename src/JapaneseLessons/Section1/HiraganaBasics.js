@@ -12,6 +12,11 @@ class HiraganaBasics extends Component {
         this.handleModalOpen = this.handleModalOpen.bind(this);
         this.handleModalClose = this.handleModalClose.bind(this);
     }
+
+    componentDidMount() {
+        window.scrollTo(0, 0)
+    }
+
     handleModalOpen = () => this.setState({handleClose: true})
 
     handleModalClose = () => {
@@ -24,7 +29,7 @@ class HiraganaBasics extends Component {
                 <div className="textSection">
                     <div className="section">
                         <h2 className="centeredTitle"> Hiragana Basics </h2>
-                        <div>
+                        <div className="section">
                             <p className="sectionText">
                                 Hiragana consists of 46 characters and 23 variants of certain characters. 
                                 These characters represent sounds: 
@@ -54,9 +59,17 @@ class HiraganaBasics extends Component {
                             </Modal.Content>
                         </Modal>
                     </div>
+                    <div className="section"> 
+                        <h2 className="centeredTitle"> Stroke Order </h2>
+                        <p className="sectionText"> 
+                            If you look at the Hiragana table, you can see lines on each labelling which parts of the character to start writing first;
+                            for example, for the あ (A) character, you start with the horizonal stroke, then the vertical stroke, then finish with the loop. 
+                            Follow these stroke orders as well as you can! It may seem like you can free hand these characters without following the order,
+                            but as a whole, following the orders will result in characters that are more consistent and easily read. 
+                        </p>
+                    </div>
                     <div className="section">
                         <h2 className="centeredTitle"> Vowels </h2>
-                        <div> 
                             <p className="sectionText">
                             As listed above, there are five vowels in Japanese: a, i, u, e,  and o; these are pronounced distinctly and 
                             every time as: 
@@ -73,11 +86,9 @@ class HiraganaBasics extends Component {
                             It will take a lot of practice to get the hang of using these particular vowel sounds, especially when you are reading
                             Romaji (romanized Japanese)! 
                         </p>
-                        </div>
                     </div>
                     <div className="section">
                         <h2 className="centeredTitle"> Consonant + Vowel </h2>
-                        <div> 
                             <p className="sectionText">
                                 The majority of Hiragana are a combination of a consonant and a vowel. The Hiragana chart is organized with the consonants in the rows and the vowels in the columns, 
                                 which allows us to see how the consonant and vowel are combined.
@@ -94,11 +105,9 @@ class HiraganaBasics extends Component {
                                 These three are the notable exceptions to the consonant + vowels; you will find over time that there are several sounds missing in the Japanese palate, and even more missing consonants;
                                 this is not a problem for speaking pure Japanese, but loan words will often have to compensate for these additional or missing sounds.
                             </p>
-                        </div>
                     </div>
                     <div className="section">
                         <h2 className="centeredTitle"> The "n" (ん) </h2>
-                        <div>
                             <p className="sectionText">
                                 The final Hiragana character is the character "ん", or "n". Unlike the "n" in the "n + vowel" section of Hiragana, this singular n
                                 stands alone as its own sound; a good example of this in action is in the 2nd and 3rd 'n' of the company "Nintendo" (にんてんどう）, or the 2nd n in the word "Ninja".
@@ -106,11 +115,9 @@ class HiraganaBasics extends Component {
                                 <br/>
                                 You will never see a word begin with ん, as the "N + vowel" characters fulfill this role.
                             </p>
-                        </div>
                     </div>
                     <div className="section">
                     <h2 className="centeredTitle"> Voiced and Unvoiced Consonants </h2>
-                    <div>    
                         <p className="sectionText">
                             If you go through the hiragana list, you may end up asking yourself "Where are all the other letters?" 
                             To compensate for the fact that there are fewer characters in hiragana, most hiragana can be easily shifted
@@ -141,16 +148,7 @@ class HiraganaBasics extends Component {
                             For example, if you say "ka", then "ga", you will notice that they use the same parts of your mouth!
                         </p>
                     </div>
-                    </div>
-                    <div className="section"> 
-                        <h2 className="centeredTitle"> Stroke Order </h2>
-                        <p className="sectionText"> 
-                            If you look at the Hiragana table, you can see lines on each labelling which parts of the character to start writing first;
-                            for example, for the あ (A) character, you start with the horizonal stroke, then the vertical stroke, then finish with the loop. 
-                            Follow these stroke orders as well as you can! It may seem like you can free hand these characters without following the order,
-                            but as a whole, following the orders will result in characters that are more consistent and easily read. 
-                        </p>
-                    </div>
+
                     <div className="prevNextButtonHolder">
                         <Link to="/Section1/Intro">
                             <Button> Previous </Button>

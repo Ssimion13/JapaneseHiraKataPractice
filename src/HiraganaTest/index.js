@@ -99,10 +99,6 @@ class HiraganaTest extends Component{
             alert("Please add at least 5 characters/words to the study list!")
             return;
         }
-        if(this.props.currentQuestion){
-            alert("Please hit 'clear' before adding more to the quiz list!")
-            return;
-        }
         var currentArray = [...this.props.currentStudyList];
         if(this.state.value.indexOf("N5Vocab") !== -1){
             var wordArray = [];

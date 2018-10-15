@@ -22,14 +22,6 @@ class LanguageChart extends Component {
     }
 
     render(){
-        var katakanaCharacterMap = this.props.katakanaCharacters.map(character => {
-            return (
-                <div key={character.character + "Katakana"} className="languageChartCharacter"> 
-                    {character.character} <br/>
-                    {character.reading}
-                </div>
-            )
-        })
 
         var n5KanjiCharacterMap = this.props.n5KanjiCharacters.map(character => {
             return (

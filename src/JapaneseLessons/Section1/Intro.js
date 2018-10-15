@@ -11,6 +11,9 @@ class Intro extends Component {
         this.handleModalOpen = this.handleModalOpen.bind(this);
         this.handleModalClose = this.handleModalClose.bind(this);
     }
+    componentDidMount() {
+        window.scrollTo(0, 0)
+    }
     handleModalOpen = () => this.setState({handleClose: true})
 
     handleModalClose = () => {

@@ -6,6 +6,10 @@ import { Button } from 'semantic-ui-react'
 class HiraganaBasics2 extends Component {
 
 
+    componentDidMount() {
+        window.scrollTo(0, 0)
+    }
+
     render(){
         return(
             <div className="basicJapaneseMainDiv">
